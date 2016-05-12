@@ -15,7 +15,7 @@
   </properties>
 
   <modules>
-  	<module>dooriya</module>
+  	<module>blog</module>
   	<module>servletProj</module>
   </modules>
 </project>
