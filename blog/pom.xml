@@ -2,10 +2,10 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.ocean.frame</groupId>
-  <artifactId>dooriya</artifactId>
+  <artifactId>blog</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
-  <name>dooriya Maven Webapp</name>
+  <name>blog Maven Webapp</name>
   <url>http://maven.apache.org</url>
    <properties>
     <springframework.version>3.1.1.RELEASE</springframework.version>
@@ -417,7 +417,7 @@
 
   
   <build>
-<!--     <finalName>dooriya</finalName> -->
+<!--     <finalName>blog</finalName> -->
 <!--     <pluginManagement> -->
         <plugins>
           <plugin>
@@ -449,7 +449,7 @@
                     <stopKey>foo</stopKey>
                     <stopPort>9999</stopPort>
                     <webAppConfig>
-                        <contextPath>/dooriya</contextPath>
+                        <contextPath>/blog</contextPath>
                         <defaultsDescriptor>src/main/resources/webdefault.xml</defaultsDescriptor>
                     </webAppConfig>
                     <systemProperties>

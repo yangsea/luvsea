@@ -12,17 +12,16 @@
 <script type="text/javascript">
 
 function loginSub(){
-	
+	   
 // 	  location.href="www.baidu.com";
     $("#loginForm").form('submit', {
         url: 'login.html',
         onSubmit:function() {
             var isValid = $(this).form('validate');
-            alert(isValid);
             if (!isValid) {
 //                 $.messager.progress('close');
             }
-            return isValid;
+//             return isValid;
         },
         success:function(data){
         	//这里为什么如果用alert会有打出页面json的操作
@@ -39,24 +38,17 @@ function loginSub(){
 //                       location.href="login.html";
 // //             alert( "xxxx"+data+"$!request.contextPath/");
 //                 }
-$.messager.progress("loading");
+//                     $.messager.progress("loading");
                     data = JSON.parse(data);    
                 	if(data.ret=="0"){
                 		  location.href="toMain.html";
                 	}else{
-//                 	       $.messager.progress('close');
-$.messager.progress({
-                title:'Please waiting',
-                msg:'Loading data...'
-            });
-                		 $.messager.alert('My Title','Here is a error message!','error');
+       
+//                 		 $.messager.alert('My Title','Here is a error message!','error');
 //                 		  location.href="toLogin.html";
-//                 		  $("#errMsg").val("用户名或密码错误");
+                		  $("#errMsg").html("用户名或密码错误!");
 //                 		  alert("用户名或密码错误");  
 //为什么有了alert就要调到json输出页面？
-                		
-//                 		return true;
-                		  
                 	}
         }
     });
@@ -219,9 +211,8 @@ function logins(){
                                         <div class="widget-main">
                                             <h4 class="header blue lighter bigger">
                                                 <i class="icon-coffee green"></i>
-                                                <span id="errMsg"></span>
+                                                <span  id="errMsg" style="color:red"></span>
                                             </h4>
-
                                             <div class="space-6"></div>
 
                                             <form  name="loginForm" id="loginForm">
@@ -250,7 +241,7 @@ function logins(){
                                                             <span class="lbl"> Remember Me</span>
                                                         </label>
 
-                                                        <button onclick="loginSub()" type="submit" class="width-35 pull-right btn btn-sm btn-primary">
+                                                        <button onclick="loginSub()" type="button" class="width-35 pull-right btn btn-sm btn-primary">
                                                             <i class="icon-key"></i>
                                                             登录
                                                         </button>
