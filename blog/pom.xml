@@ -363,55 +363,6 @@
     <version>3.6.2</version>
 </dependency>
 
-<!-- vaddin -->
-<!-- <dependency> -->
-<!--     <groupId>com.vaadin</groupId> -->
-<!--     <artifactId>vaadin</artifactId> -->
-<!--     <version>6.8.17</version> -->
-<!-- </dependency> -->
-
-<dependency>
-    <groupId>com.vaadin</groupId>
-    <artifactId>vaadin-server</artifactId>
-    <version>7.6.5</version>
-</dependency>
-<dependency>
-    <groupId>com.vaadin</groupId>
-    <artifactId>vaadin-client-compiled</artifactId>
-    <version>7.6.5</version>
-</dependency>
-
-<!-- Optional for extending client-side See: https://vaadin.com/book/-/page/clientside.html
-<dependency>
-    <groupId>com.vaadin</groupId>
-    <artifactId>vaadin-client</artifactId>
-    <version>7.6.5</version>
-    <scope>provided</scope>
-</dependency>
--->
-
-<!-- Optional for optimizing client-side widgets See: https://vaadin.com/book/-/page/mobile.optimization.html
-<dependency>
-    <groupId>com.vaadin</groupId>
-    <artifactId>vaadin-client-compiler</artifactId>
-    <version>7.6.5</version>
-    <scope>provided</scope>
-</dependency>
--->
-
-<dependency>
-    <groupId>com.vaadin</groupId>
-    <artifactId>vaadin-themes</artifactId>
-    <version>7.6.5</version>
-</dependency>
-
-<!-- Optional push support for communication See: https://vaadin.com/book/-/page/advanced.push.html
-<dependency>
-    <groupId>com.vaadin</groupId>
-    <artifactId>vaadin-push</artifactId>
-    <version>7.6.5</version>
-</dependency>
--->
             
   </dependencies>
 

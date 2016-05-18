@@ -22,4 +22,14 @@
 <!--   <url-pattern>/*</url-pattern> -->
 <!--  </servlet-mapping> -->
   <display-name>Archetype Created Web Application</display-name>
+  
+  <servlet>
+    <servlet-name>vaadinTest</servlet-name>
+    <servlet-class>com.ocean.frame.main.action.TestServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>vaadinTest</servlet-name>
+    <url-pattern>vtest</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
