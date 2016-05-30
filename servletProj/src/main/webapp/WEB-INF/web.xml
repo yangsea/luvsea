@@ -29,7 +29,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>vaadinTest</servlet-name>
-    <url-pattern>vtest</url-pattern>
+    <url-pattern>/*</url-pattern>
   </servlet-mapping>
   
 </web-app>

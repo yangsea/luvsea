@@ -1,0 +1,7 @@
+
+关于project本地地址访问方法，以及脱离单点登录
+以及local配置单点登录
+
+解决 静态资源无法加载的问题
+
+ges、shop等依赖common，common的dependent里却没有gjw，只有parent
