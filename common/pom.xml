@@ -7,12 +7,12 @@
     <artifactId>marineProj</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-<!--   <groupId>com.ocean</groupId> -->
-  <artifactId>sso</artifactId>
-<!--   <version>0.0.1-SNAPSHOT</version> -->
+
+  <artifactId>common</artifactId>
   <packaging>war</packaging>
-  <name>sso Maven Webapp</name>
+  <name>common</name>
   <url>http://maven.apache.org</url>
+  
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -22,6 +22,6 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>sso</finalName>
+    <finalName>common</finalName>
   </build>
 </project>

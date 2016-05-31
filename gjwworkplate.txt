@@ -5,3 +5,5 @@
 解决 静态资源无法加载的问题
 
 ges、shop等依赖common，common的dependent里却没有gjw，只有parent
+
+ges mybatis local run!

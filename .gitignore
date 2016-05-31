@@ -5,3 +5,5 @@ servletProj/build
 servletProj/.settings/
 servletProj/.project
 servletProj/.classpath
+
+blog/src/main/webapp/logs
