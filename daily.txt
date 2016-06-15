@@ -16,3 +16,9 @@ Android
 maven 移动仓库地址，及设置中央仓库
 
 github权限分配
+
+android for blog
+
+ext
+
+struts2返回json！！！

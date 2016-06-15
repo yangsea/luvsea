@@ -20,6 +20,8 @@
   	<module>blog</module>
     <module>sso</module>
     <module>common</module>
+    <module>struts</module>
+    <module>shiro</module>
   </modules>
   <dependencies>
     <!--   junit -->
@@ -259,6 +261,41 @@
 <!--         <artifactId>shiro-cas</artifactId> -->
 <!--         <version>1.2.3</version> -->
 <!--     </dependency> -->
+<!--     <dependency>   -->
+<!--         <groupId>org.apache.shiro</groupId>   -->
+<!--         <artifactId>shiro-core</artifactId>   -->
+<!--         <version>1.2.5</version>   -->
+<!--     </dependency>   -->
+
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-core</artifactId>
+            <version>1.2.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-web</artifactId>
+            <version>1.2.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-cas</artifactId>
+            <version>1.2.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring</artifactId>
+            <version>1.2.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-all</artifactId>
+            <version>1.2.4</version>
+        </dependency>
     <!-- shiro end-->
     <!-- alibaba json start -->
     <dependency>
@@ -373,7 +410,12 @@
 	    <artifactId>hazelcast</artifactId>
 	    <version>3.6.2</version>
 	</dependency>
-	     
+	<dependency>
+    <groupId>cn.jpush.api</groupId>
+    <artifactId>jpush-client</artifactId>
+    <version>3.2.9</version>
+    </dependency>
+	
   </dependencies>
   <build>
    <plugins>

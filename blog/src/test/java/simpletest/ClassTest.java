@@ -11,7 +11,8 @@ public class ClassTest {
         
         System.out.println(ClassTest.class.getSimpleName());
     }
-    
+    private String aaa ;
+    private String AAA;
     @Test
     public void useTest(){
         System.out.println("this is test");
