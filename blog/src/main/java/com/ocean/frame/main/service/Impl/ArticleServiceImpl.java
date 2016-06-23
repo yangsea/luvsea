@@ -18,7 +18,8 @@ public class ArticleServiceImpl implements ArticleService {
     @Override
     public List<Article> articleList(Article article) {
 
-        return null;
+    	List<Article> articleList = articleDao.articleList(article);
+        return articleList;
     }
 
     @Override

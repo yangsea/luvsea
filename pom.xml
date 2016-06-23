@@ -22,6 +22,7 @@
     <module>common</module>
     <module>struts</module>
     <module>shiro</module>
+    <module>mybatis</module>
   </modules>
   <dependencies>
     <!--   junit -->
@@ -415,6 +416,26 @@
     <artifactId>jpush-client</artifactId>
     <version>3.2.9</version>
     </dependency>
+<!--     ehcache -->
+	<!-- https://mvnrepository.com/artifact/net.sf.ehcache/ehcache-core -->
+	<dependency>
+	    <groupId>net.sf.ehcache</groupId>
+	    <artifactId>ehcache-core</artifactId>
+	    <version>2.6.11</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/net.sf.ehcache/ehcache-web -->
+	<dependency>
+	    <groupId>net.sf.ehcache</groupId>
+	    <artifactId>ehcache-web</artifactId>
+	    <version>2.0.4</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-ehcache -->
+	<dependency>
+	    <groupId>org.hibernate</groupId>
+	    <artifactId>hibernate-ehcache</artifactId>
+	    <version>5.2.0.Final</version>
+	</dependency>
+			
 	
   </dependencies>
   <build>

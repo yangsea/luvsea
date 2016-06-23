@@ -1,5 +1,7 @@
 package com.ocean.frame.main.action;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,10 +21,11 @@ public class ArticleController {
     private ArticleService articleService;
 
     @RequestMapping("articleList")
-    public String articleList(){
+    public String articleList(Article article){
                 
         System.out.println("come in article list");
-        return "";
+        List<Article> articleList = articleService.articleList(article);
+        return articleList.toString();
     }
     
     @RequestMapping("addArticle")

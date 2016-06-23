@@ -28,7 +28,7 @@
         
         <!-- hibernate配置 -->
 <!--          <property name="annotatedClasses">  -->
-          <property name="packagesToScan"> 
+        <property name="packagesToScan"> 
 <!--          -->
            <list><value>com.ocean.frame.main.entity</value></list> 
         </property> 
@@ -49,6 +49,9 @@
         <property name="hibernateProperties">
             <props>
 <!--                 <prop key="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</prop> -->
+				<prop key="cache.use_query_cache">true</prop>
+				<prop key="cache.use_second_level_cache">true</prop>
+				<prop key="cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</prop>
 <!--                <prop key="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</prop> -->
                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLInnoDBDialect</prop>
 <!--                <prop key="hibernate.query.substitutions">true 1, false 0</prop>                 -->
