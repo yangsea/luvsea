@@ -4,7 +4,8 @@
 <!-- Generated 2013-10-22 15:28:34 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
     <class name="com.ocean.frame.main.entity.Article" table="article" schema="dooriya">
-        <id name="id" type="int">
+    	<cache usage="read-write" include="all"/>
+        <id name="id" type="long">
             <column name="id" precision="5" scale="0" />
             <generator class="assigned" />
         </id>

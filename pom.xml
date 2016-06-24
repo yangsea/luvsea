@@ -430,12 +430,31 @@
 	    <version>2.0.4</version>
 	</dependency>
 	<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-ehcache -->
+<!-- 	<dependency> -->
+<!-- 	    <groupId>org.hibernate</groupId> -->
+<!-- 	    <artifactId>hibernate-ehcache</artifactId> -->
+<!-- 	    <version>5.2.0.Final</version> -->
+<!-- 	</dependency> -->
+<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-ehcache -->
+<!-- 	<dependency> -->
+<!-- 	    <groupId>org.hibernate</groupId> -->
+<!-- 	    <artifactId>hibernate-ehcache</artifactId> -->
+<!-- 	    <version>3.3.2.GA</version> -->
+<!-- 	</dependency> -->
+			
+	<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-ehcache -->
+<!-- 	<dependency> -->
+<!-- 	    <groupId>org.hibernate</groupId> -->
+<!-- 	    <artifactId>hibernate-ehcache</artifactId> -->
+<!-- 	    <version>4.0.0.CR6</version> -->
+<!-- 	</dependency> -->
+	<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate -->
 	<dependency>
 	    <groupId>org.hibernate</groupId>
-	    <artifactId>hibernate-ehcache</artifactId>
-	    <version>5.2.0.Final</version>
+	    <artifactId>hibernate</artifactId>
+	    <version>3.2.6.ga</version>
 	</dependency>
-			
+	
 	
   </dependencies>
   <build>
