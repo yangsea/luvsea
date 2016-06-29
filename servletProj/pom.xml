@@ -7,11 +7,11 @@
     <artifactId>marineProj</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <groupId>com.ocean.servlet</groupId>
+  <groupId>com.ocean.servlet</groupId><!--这个可以直接去掉 ，或者是直接 com.ocean 效果是一样的 -->
   <artifactId>servletProj</artifactId>
   <version>0.0.1.1-SNAPSHOT</version>
   <packaging>war</packaging>
-  <name>servletProj Maven Webapp</name>
+  <name>servlet</name>
   <url>http://maven.apache.org</url>
   <dependencies>    
     <!-- vaddin -->

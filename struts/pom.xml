@@ -7,9 +7,8 @@
     <artifactId>marineProj</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <groupId>struts</groupId>
+<!--   <groupId>struts</groupId> -->
   <artifactId>struts</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
   <name>struts</name>
   <url>http://maven.apache.org</url>

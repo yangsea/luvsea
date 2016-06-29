@@ -9,7 +9,6 @@
   </parent>
 <!--   <groupId>com.ocean</groupId> -->
   <artifactId>sso</artifactId>
-<!--   <version>0.0.1-SNAPSHOT</version> -->
   <packaging>war</packaging>
   <name>sso Maven Webapp</name>
   <url>http://maven.apache.org</url>

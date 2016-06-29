@@ -6,11 +6,9 @@
     <artifactId>marineProj</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <groupId>com.ocean.frame</groupId>
   <artifactId>blog</artifactId>
   <packaging>war</packaging>
-<!--   <version>0.0.1-SNAPSHOT</version> -->
-  <name>blog Maven Webapp</name>
+  <name>blog</name>
   <url>http://maven.apache.org</url>
 
   <dependencies>

@@ -7,7 +7,7 @@
     <artifactId>marineProj</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <groupId>com.ocean</groupId>
+<!--   <groupId>com.ocean</groupId> -->
   <artifactId>mybatis</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
