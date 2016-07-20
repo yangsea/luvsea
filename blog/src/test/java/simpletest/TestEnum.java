@@ -1,5 +1,7 @@
 package simpletest;
 
+import org.junit.Test;
+
 //枚举， 1、用做常量，增强可读性，2、规定集合内容，保证安全
 public enum TestEnum {
 
@@ -8,9 +10,17 @@ public enum TestEnum {
     
     private int keys;
     private String values;
+    public EntityTestEnum entityTestEnum;
     
+    
+    public EntityTestEnum getEntityTestEnum() {
+        return entityTestEnum;
+    }
+
     TestEnum(int keys, String values){
         
+        this.entityTestEnum = new EntityTestEnum();
+        this.entityTestEnum.setId(keys);
         this.keys = keys;
         this.values = values;
         
@@ -31,5 +41,5 @@ public enum TestEnum {
     public void setValues(String values) {
         this.values = values;
     }
-    
+        
 }
