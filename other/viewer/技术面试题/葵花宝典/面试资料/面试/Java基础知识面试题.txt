@@ -1,0 +1,87 @@
+ 一些著名的大公司面试题目往往很基础.
+
+一、Java基础知识
+1. Java有那些基本数据类型，String是不是基本数据类型，他们有何区别。
+
+ Integer literals,Floating-point literals,character literals,Boolean literal,String iteral.
+ String 不是基本数据类型
+2. 字符串的操作：
+写一个方法，实现字符串的反转，如：输入abc，输出cba
+    public static String reverse(String s){
+        int length=s.length();
+        StringBuffer result=new StringBuffer(length);
+        for(int i=length-1;i>=0;i--)
+            result.append(s.charAt(i));
+        return result.toString();
+    }
+写一个方法，实现字符串的替换，如：输入bbbwlirbbb，输出bbbhhtccc。
+3. 数据类型之间的转换
+如何将数值型字符转换为数字（Integer，Double）
+如何将数字转换为字符
+如何去小数点前两位，并四舍五入。
+4. 日期和时间
+如何取得年月日，小时分秒
+Date dat=new Date();
+dat.getYear();dat.getMonth();dat.getDay();dat.getHours();...
+如何取得从1970年到现在的毫秒数
+long now=dat.getTime();
+如何获取某个日期是当月的最后一天
+如何格式化日期
+DateFormate df=DateFormate.getInstance();
+df.Format(dat);
+5. 数组和集合
+6. 文件和目录（I/O）操作
+如何列出某个目录下的所有文件
+如何列出某个目录下的所有子目录
+判断一个文件或目录是否存在
+如何读写文件
+7. Java多态的实现（继承、重载、覆盖）
+8. 编码转换，怎样实现将GB2312编码的字符串转换为ISO-8859-1编码的字符串。
+9. Java中访问数据库的步骤，Statement和PreparedStatement之间的区别。
+10. 找出下列代码可能存在的错误，并说明原因：
+二、JSP&Servlet技术
+1. 描述JSP和Servlet的区别、共同点、各自应用的范围
+2. 在Web开发中需要处理HTML标记时，应做什么样的处理，要筛选那些字符（< > & “”）
+3. 在JSP中如何读取客户端的请求，如何访问CGI变量，如何确定某个Jsp文件的真实路径。
+4. 描述Cookie和Session的作用，区别和各自的应用范围，Session工作原理。
+5. 列出Jsp中包含外部文件的方式，两者有何区别。
+6. 说明Jsp中errorPage的作用，应用范围。
+7. 介绍在Jsp中如何使用JavaBeans。
+8. 简单介绍JSP的标记库
+9. Jsp和Servlet中的请求转发分别如何实现。
+三、J2EE相关知识
+1. 介绍J2EE、J2SE、J2ME的区别。
+2. J2EE是一种技术还是一种平台，他提供了那些技术。
+3. 什么是Application Server，它有什么功能和优点。
+4. 简单介绍连接池的优点和原理。
+5. Web.xml的作用
+四、其他
+1. Web安全性的考虑（表单验证、浏览器Basic方式的验证，应用程序的安全性，SSL，代码考虑）
+2. 简单介绍您所了解的MVC。
+3. 简单介绍所了解的XML。
+4. 文档和编码规范
+5. Java中的分页、效率考虑。
+6. 简单介绍您所了解的structs。
+
+
+找出以下程序错误。
+Class Test{
+    private String par1;
+    private String par2;
+    Test(){
+    }
+    
+    public static void main(String[] arg){
+        int a ;
+        if(a){
+            System.out.println("par1="+par1);
+        }else{
+            System.out.println("par2=" + par2);
+        }
+    }
+}
+
+ 
+
+posted on 2004-07-20 20:08 Gary jin 阅读(419) 评论(0)  编辑 收藏 
+

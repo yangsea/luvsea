@@ -1,0 +1,58 @@
+jsp/j2ee方面的面试试题，与底层方面关系不大的。如果考官问socket，nio方面，题目不在此列 
+1. jsp页面有几个对象，分别实现自什么类
+答，其6个，request,response,session,application,out,page分别实现自
+   javax.servlet.ServletRequest,
+   javax.servlet.ServletResponse,
+   javax.servlet.http.HttpSession,
+   javax.servlet.ServletContext,
+   javax.servlet.jsp.JspWriter,
+   javax.servlet.jsp.JspPage
+
+2. 类之间的继承关系
+
+3. jdbc相关知识,其中Class.forName的作用
+答，Class.forName("...");  //加载类驱动
+    Connection conn = DriverManager.getConnection(sUrl, sUserName, sPassword);
+    Statement stmt = conn.createStatement();
+    ResultSet rs = stmt.executeQuery(sSQL);
+    ...
+4. 客户端连接EJB的代码
+答，InitialContext ctx = new InitialContext();
+    Object home = ctx.lookup("java:comp/env/ejb/account");
+    AccountHome accountHome = 
+        (AccountHome)PortableRemoteObject.narrow(home, AccountHome.class);
+        
+5. ejb的分类，用途
+答，session bean和entity bean,session bean分Stateful和stateless,entity bean分cmp和bmp
+
+6. java有些什么集合类型，各自的区别
+答，map,set,list
+   HashMap,HashTable，后者线程同步
+   set不允许重复元素
+   ArrayList,Vector,后者线程同步
+   ArrayList,LinkedList，前者读的速度快，后者修改速度快
+   
+7. 声明型异常和运行期异常的异同
+答，都是Exception的子类
+    声明型必须catch，运行期异常继承自RuntimeException.
+    
+8. XML相关
+答，分为SAX及DOM两种编程接口
+    SAX:轻量型的方法,事件驱动，部分读入文档
+    DOM:使用较简单，文档驱动，全部读入
+9. 你常用的java类
+答，String , StringBuffer, 集合类, ....
+
+10. struts的优点，流程
+答，优点：从mvc,BO VO方面回答
+    流程：client-->总控ActionServlet
+    总控调以下操作：
+        -->form收集数据
+        -->action调javbean处理业务(调ejb,DAO...)
+        -->转向相应的jsp
+    jsp从form中取得数据显示
+    
+11. 介绍一下所做过的项目
+答，介绍一个就可以，从如到终，加一些个人感想。注意在需求，设计，测试 方面多加点口水：）
+
+- 作者： haoqingshi 2004年04月22日，星期四　01:12:1
