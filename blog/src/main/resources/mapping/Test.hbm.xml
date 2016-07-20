@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 2013-10-22 15:28:34 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-    <class name="com.ocean.frame.main.entity.Test" table="test" schema="dooriya">
+    <class name="com.ocean.main.entity.Test" table="test" schema="dooriya">
        <id name="id" type="int">
             <column name="id" precision="5" scale="0" />
             <generator class="native" />

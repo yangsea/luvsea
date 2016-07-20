@@ -40,7 +40,7 @@
   </session-config>
   <filter>
     <filter-name>sessionFilter</filter-name>
-    <filter-class>com.ocean.frame.main.common.SessionFilter</filter-class>
+    <filter-class>com.ocean.main.common.SessionFilter</filter-class>
   </filter>
   <filter-mapping>
     <filter-name>sessionFilter</filter-name>

@@ -1,5 +1,5 @@
 package com.ocean.main.action;
-//package com.ocean.frame.main.action;
+//package com.ocean.main.action;
 //
 //import org.springframework.stereotype.Controller;
 //import org.springframework.web.bind.annotation.RequestMapping;

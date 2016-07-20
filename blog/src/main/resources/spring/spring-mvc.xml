@@ -25,7 +25,7 @@
      <!--    <tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true" mode="aspectj"/> -->
      
      <!-- 启动包扫描功能，以便注册带有@Controller、@Service、@repository、@Component等注解的类成为spring的bean -->
-     <context:component-scan base-package="com.ocean.frame.*" />
+     <context:component-scan base-package="com.ocean.*" />
 
      <!-- 启动Spring MVC的注解功能，完成请求和注解POJO的映射 -->
     <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />

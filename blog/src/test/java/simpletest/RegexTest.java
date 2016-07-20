@@ -15,14 +15,14 @@ public class RegexTest {
         
     }
     
-    @Test
-    public void onlyUper(){
-        
-        String onlyU = "^[A-Z]+$";
-        String testStr = "AAAA";
-        boolean res = testStr.matches(onlyU);
-        
-        System.out.println(res);
-    }
+//    @Test
+//    public void onlyUper(){
+//        
+//        String onlyU = "^[A-Z]+$";
+//        String testStr = "AAAA";
+//        boolean res = testStr.matches(onlyU);
+//        
+//        System.out.println(res);
+//    }
 
 }

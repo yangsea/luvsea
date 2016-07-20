@@ -36,7 +36,7 @@
         <property name="mappingDirectoryLocations"> 
 <!--             <property name="mappingResources"> -->
             <list> 
-<!--                 <value>classpath:com/ocean/frame/main/entity</value> -->
+<!--                 <value>classpath:com/ocean/main/entity</value> -->
 <!-- 自动装载hbm -->
                 <value>classpath:mapping/</value>
 <!--                 <value>classpath:com/saye/systemset/depart/model</value> -->
@@ -44,7 +44,7 @@
         </property>
 
 <!--          <property name="mappingResources"> -->
-<!--                  <value>classpath:com/ocean/frame/main/entity/MenuRole</value> -->
+<!--                  <value>classpath:com/ocean/main/entity/MenuRole</value> -->
 <!--          </property> -->
         <property name="hibernateProperties">
             <props>
