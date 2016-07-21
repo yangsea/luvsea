@@ -2,74 +2,35 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title>jquery网格插件 - Bootstrap后台管理系统模版Ace下载</title>
-
+		<title>文章列表</title>
 		<meta name="keywords" content="Bootstrap模版,Bootstrap模版下载,Bootstrap教程,Bootstrap中文" />
 		<meta name="description" content="站长素材提供Bootstrap模版,Bootstrap教程,Bootstrap中文翻译等相关Bootstrap插件下载" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-		<!-- basic styles -->
-
-		<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-		<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
-
-		<!--[if IE 7]>
-		  <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css" />
-		<![endif]-->
-
-		<!-- page specific plugin styles -->
-
-		<link rel="stylesheet" href="assets/css/jquery-ui-1.10.3.full.min.css" />
-		<link rel="stylesheet" href="assets/css/datepicker.css" />
-		<link rel="stylesheet" href="assets/css/ui.jqgrid.css" />
-
-		<!-- fonts -->
-
-<!-- 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" /> -->
-
-		<!-- ace styles -->
-
-		<link rel="stylesheet" href="assets/css/ace.min.css" />
-		<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
-		<link rel="stylesheet" href="assets/css/ace-skins.min.css" />
-
-		<!--[if lte IE 8]>
-		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
-		<![endif]-->
-
-		<!-- inline styles related to this page -->
-
-		<!-- ace settings handler -->
-
-		<script src="assets/js/ace-extra.min.js"></script>
-
-		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-
-		<!--[if lt IE 9]>
-		<script src="assets/js/html5shiv.js"></script>
-		<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
+		<link href="../uiframe/../uiframe/assets/css/bootstrap.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../uiframe/assets/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="../uiframe/assets/css/jquery-ui-1.10.3.full.min.css" />
+		<link rel="stylesheet" href="../uiframe/assets/css/datepicker.css" />
+		<link rel="stylesheet" href="../uiframe/assets/css/ui.jqgrid.css" />
+		<link rel="stylesheet" href="../uiframe/assets/css/ace.min.css" />
+		<link rel="stylesheet" href="../uiframe/assets/css/ace-rtl.min.css" />
+		<link rel="stylesheet" href="../uiframe/assets/css/ace-skins.min.css" />
+		<script src="../uiframe/assets/js/ace-extra.min.js"></script>
 	</head>
-
 	<body>
 		<div class="navbar navbar-default" id="navbar">
 			<script type="text/javascript">
 				try{ace.settings.check('navbar' , 'fixed')}catch(e){}
 			</script>
-
-			
-				<div class="main-content">
+				<div >
 					<div class="breadcrumbs" id="breadcrumbs">
 						<script type="text/javascript">
 							try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
 						</script>
-
 						<ul class="breadcrumb">
 							<li>
 								<i class="icon-home home-icon"></i>
 								<a href="#">Home</a>
 							</li>
-
 							<li>
 								<a href="#">Tables</a>
 							</li>
@@ -85,7 +46,6 @@
 							</form>
 						</div><!-- #nav-search -->
 					</div>
-
 					<div class="page-content">
 						<div class="page-header">
 							<h1>
@@ -96,7 +56,6 @@
 								</small>
 							</h1>
 						</div><!-- /.page-header -->
-
 						<div class="row">
 							<div class="col-xs-12">
 								<!-- PAGE CONTENT BEGINS -->
@@ -123,58 +82,24 @@
 						</div><!-- /.row -->
 					</div><!-- /.page-content -->
 				</div><!-- /.main-content -->
-
-				
 			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
 				<i class="icon-double-angle-up icon-only bigger-110"></i>
 			</a>
 		</div><!-- /.main-container -->
 
-		<!-- basic scripts -->
-
-		<!--[if !IE]> -->
-
-<!-- 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> -->
-
-		<!-- <![endif]-->
-
-		<!--[if IE]>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<![endif]-->
-
-		<!--[if !IE]> -->
-
 		<script type="text/javascript">
-			window.jQuery || document.write("<script src='assets/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
+			window.jQuery || document.write("<script src='../uiframe/assets/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
 		</script>
-
-		<!-- <![endif]-->
-
-		<!--[if IE]>
-<script type="text/javascript">
- window.jQuery || document.write("<script src='assets/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
-</script>
-<![endif]-->
-
 		<script type="text/javascript">
-			if("ontouchend" in document) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+			if("ontouchend" in document) document.write("<script src='../uiframe/assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
 		</script>
-		<script src="assets/js/bootstrap.min.js"></script>
-		<script src="assets/js/typeahead-bs2.min.js"></script>
-
-		<!-- page specific plugin scripts -->
-
-		<script src="assets/js/date-time/bootstrap-datepicker.min.js"></script>
-		<script src="assets/js/jqGrid/jquery.jqGrid.min.js"></script>
-		<script src="assets/js/jqGrid/i18n/grid.locale-en.js"></script>
-
-		<!-- ace scripts -->
-
-		<script src="assets/js/ace-elements.min.js"></script>
-		<script src="assets/js/ace.min.js"></script>
-
-		<!-- inline scripts related to this page -->
-
+		<script src="../uiframe/assets/js/bootstrap.min.js"></script>
+		<script src="../uiframe/assets/js/typeahead-bs2.min.js"></script>
+		<script src="../uiframe/assets/js/date-time/bootstrap-datepicker.min.js"></script>
+		<script src="../uiframe/assets/js/jqGrid/jquery.jqGrid.min.js"></script>
+		<script src="../uiframe/assets/js/jqGrid/i18n/grid.locale-en.js"></script>
+		<script src="../uiframe/assets/js/ace-elements.min.js"></script>
+		<script src="../uiframe/assets/js/ace.min.js"></script>
 		<script type="text/javascript">
 			var grid_data = 
 			[ 
@@ -421,45 +346,6 @@
 					style_edit_form(form);
 				}
 			
-			
-			
-				//it causes some flicker when reloading or navigating grid
-				//it may be possible to have some custom formatter to do this as the grid is being created to prevent this
-				//or go back to default browser checkbox styles for the grid
-				function styleCheckbox(table) {
-				/**
-					$(table).find('input:checkbox').addClass('ace')
-					.wrap('<label />')
-					.after('<span class="lbl align-top" />')
-			
-			
-					$('.ui-jqgrid-labels th[id*="_cb"]:first-child')
-					.find('input.cbox[type=checkbox]').addClass('ace')
-					.wrap('<label />').after('<span class="lbl align-top" />');
-				*/
-				}
-				
-			
-				//unlike navButtons icons, action icons in rows seem to be hard-coded
-				//you can change them like this in here if you want
-				function updateActionIcons(table) {
-					/**
-					var replacement = 
-					{
-						'ui-icon-pencil' : 'icon-pencil blue',
-						'ui-icon-trash' : 'icon-trash red',
-						'ui-icon-disk' : 'icon-ok green',
-						'ui-icon-cancel' : 'icon-remove red'
-					};
-					$(table).find('.ui-pg-div span.ui-icon').each(function(){
-						var icon = $(this);
-						var $class = $.trim(icon.attr('class').replace('ui-icon', ''));
-						if($class in replacement) icon.attr('class', 'ui-icon '+replacement[$class]);
-					})
-					*/
-				}
-				
-				//replace icons with FontAwesome icons like above
 				function updatePagerIcons(table) {
 					var replacement = 
 					{
@@ -481,11 +367,7 @@
 					$(table).find('.ui-pg-div').tooltip({container:'body'});
 				}
 			
-				//var selr = jQuery(grid_selector).jqGrid('getGridParam','selrow');
-			
-			
 			});
 		</script>
-<!-- 	<div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div> -->
 </body>
 </html>
