@@ -15,7 +15,6 @@
         <property name="content" type="string">
             <column name="content" length="20" />
         </property>
-        
         <property name="status" type="integer">
             <column name="status" length="1" />
         </property>
@@ -25,5 +24,6 @@
          <property name="updateTime" type="timestamp">
             <column name="updateTime" length="32" />
         </property>
+        <one-to-one name="author" class="com.ocean.main.entity.Author" property-ref="article"/>
     </class>
 </hibernate-mapping>

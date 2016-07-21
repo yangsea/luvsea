@@ -7,7 +7,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.alibaba.fastjson.JSON;
+import com.ocean.common.json.PageResult;
 import com.ocean.main.entity.Article;
 import com.ocean.main.service.ArticleService;
 
@@ -21,11 +24,16 @@ public class ArticleController {
     private ArticleService articleService;
 
     @RequestMapping("articleList")
-    public String articleList(Article article){
+    public @ResponseBody  PageResult<List<Article>> articleList(Article article){
                 
         System.out.println("come in article list");
         List<Article> articleList = articleService.articleList(article);
-        return articleList.toString();
+        //list转为json
+        PageResult<List<Article>> pr = new PageResult<List<Article>>();
+        pr.setRows(articleList);
+        pr.setTotal(10);
+//        return JSON.toJSONString(articleList);
+        return pr;
     }
     
     @RequestMapping("addArticle")

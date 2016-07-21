@@ -2,6 +2,8 @@ package com.ocean.main.entity;
 
 import java.sql.Timestamp;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 //有refactor的意识，先把Id用在每个类的本身
 public class Article {
     
@@ -16,7 +18,11 @@ public class Article {
     private Timestamp createTime;
     
     private Timestamp updateTime;
-
+    
+    //每个文章，都有一个唯一对应的作者
+    @JsonIgnore
+    private Author author;
+    
     public Long getId() {
         return id;
     }
@@ -64,5 +70,14 @@ public class Article {
     public void setUpdateTime(Timestamp updateTime) {
         this.updateTime = updateTime;
     }
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
+    }
+    
     
 }

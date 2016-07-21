@@ -45,7 +45,11 @@ form异步跳转页面，无法做到alert定住不跳转到字符串页面，�
 //加入权限控制
 
 
-测试hibernate one-to-one 设计表=》用户对应文章，为一对一的关系
+测试hibernate one-to-one 设计表=》用户对应文章，为一对一的关系 （未解决）
+
+2016 07 21
+
+解决articleList。html乱码问题
 
 
 

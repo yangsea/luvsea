@@ -50,7 +50,6 @@ public class ManagerAction {
         return "manager/login";
     }
     
-     
     //权限控制，后台使用bootstrap
     public String getMenuByRoleId(){
         return "";
@@ -72,5 +71,6 @@ public class ManagerAction {
       
         return "manager/articleList";
     }
+    
     
 }
