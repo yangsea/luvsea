@@ -1,6 +1,6 @@
 研究参数传入，如何智能处理
 
-jetty方式启动，无法启动
+jetty方式启动，无法启动, 插件直接启动  maven  => [install] jetty:run -Djetty.port=8080 注意在dos中，等号两边不能有空格
 
 整套系统本地运行，独立单点登录并渗透
 
