@@ -12,15 +12,15 @@
   <packaging>jar</packaging>
   <name>common</name>
   <url>http://maven.apache.org</url>
-  
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
+<!--   此处的引用会让主目录下的4.0版本失效 -->
+<!--   <dependencies> -->
+<!--     <dependency> -->
+<!--       <groupId>junit</groupId> -->
+<!--       <artifactId>junit</artifactId> -->
+<!--       <version>3.8.1</version> -->
+<!--       <scope>test</scope> -->
+<!--     </dependency> -->
+<!--   </dependencies> -->
   <build>
     <finalName>common</finalName>
   </build>
