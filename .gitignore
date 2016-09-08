@@ -5,5 +5,22 @@ servletProj/build
 servletProj/.settings/
 servletProj/.project
 servletProj/.classpath
+common/.classpath
+common/target
+common/build
+common/.settings/
+common/.project
 
 blog/src/main/webapp/logs
+blog/.classpath
+blog/target
+blog/build
+blog/.settings/
+blog/.project
+
+*/src/main/webapp/logs
+*/.classpath
+*/target
+*/build
+*/.settings/
+*/.project
