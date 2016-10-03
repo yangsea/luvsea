@@ -6,7 +6,7 @@
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xmlns:tx="http://www.springframework.org/schema/tx"
  xsi:schemaLocation="http://www.springframework.org/schema/mvc
-       http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+       http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
        http://www.springframework.org/schema/beans 
        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
        http://www.springframework.org/schema/tx 
@@ -45,8 +45,14 @@
         <mvc:interceptor>
           <mvc:mapping path="/**"/> 
 <!--               <beans:bean class="interceptor.LoginInterceptor"/> -->
-            <bean class="com.ocean.main.common.interceptor.GlobalInterceptor"/>
-                
+            <bean class="com.ocean.main.common.interceptor.GlobalInterceptor">
+<!--                 <property name="excludedUrls"> -->
+<!--                     <list> -->
+<!--                         <value>/userwx/authWx</value> -->
+<!--                     </list> -->
+<!--                 </property> -->
+            </bean>
+            <mvc:exclude-mapping path="/login.htm"/>       
         </mvc:interceptor>
     </mvc:interceptors>
 
