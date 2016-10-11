@@ -7,7 +7,7 @@
     <artifactId>marineProj</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>shiro</artifactId>
+  <artifactId>marine-shiro</artifactId>
   <packaging>war</packaging>
   <name>shiro</name>
   <url>http://maven.apache.org</url>

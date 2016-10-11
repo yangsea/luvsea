@@ -6,7 +6,7 @@
     <artifactId>marineProj</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>blog</artifactId>
+  <artifactId>marine-blog</artifactId>
   <packaging>war</packaging>
   <name>blog</name>
   <url>http://maven.apache.org</url>
@@ -19,9 +19,77 @@
     </dependency>
   </dependencies>
 
-  
+  <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <env>dev</env>
+                <myName>dev</myName>
+            </properties>
+            <activation><!--默认激活-->
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>test</id>
+            <properties>
+                <env>test</env><!--相当于定义一个变量 供下面使用-->
+                <myName>test</myName><!--使用一个properties文件中未定义，但是其他地方会取值的变量-->
+            </properties>
+<!--             <activation>默认激活 -->
+<!--                 <activeByDefault>false</activeByDefault> -->
+<!--             </activation> -->
+        </profile>
+        <profile>
+            <id>product</id>
+            <properties>
+                <env>product</env>
+            </properties>
+        </profile>
+  </profiles>
   <build>
-    <finalName>blog</finalName>
+      <finalName>blog</finalName>
+      <filters><!--获得过滤使用的源文件  即有实际数据的地反-->
+          <filter>src/main/resources/properties/jdbc/${env}.properties</filter>
+          <filter>src/main/resources/properties/wx/${env}.properties</filter>
+      </filters>
+       <!-- 指定 src/main/resources下所有文件及文件夹为资源文件 -->
+      <resources>
+         <resource>
+            <directory>src/main/resources</directory>
+             <filtering>true</filtering> <!--是否使用过滤器-->
+         </resource>
+<!--          如果报错为： 3 字节的 UTF-8 序列的字节 3 无效，则这样写： -->
+<!--          <resource> -->
+<!--             <directory>src/main/resources</directory> -->
+<!--               <includes>  -->
+<!--                  <include>**/*</include>  -->
+<!--             </includes>  -->
+<!--          </resource> -->
+          <!-- 第二中方式 设置对dev.properties，等进行过虑，即这些文件中的${key}会被替换掉为真正的值-->
+          <!-- jdbc -->
+         <resource>
+              <directory>src/main/resources/properties/jdbc</directory><!-- 一定要指向上层目录 -->
+              <includes>
+                  <include>dev.properties</include>
+                  <include>product.properties</include>
+                  <include>test.properties</include>
+                  <include>db.properties</include>
+              </includes>
+              <filtering>true</filtering>
+         </resource>
+          <!-- wechat -->
+         <resource>
+              <directory>src/main/resources/properties/wx</directory>
+              <includes>
+                  <include>product.properties</include>
+                  <include>dev.properties</include>
+                  <include>test.properties</include>
+                  <include>wx.properties</include>
+              </includes>
+              <filtering>true</filtering>
+         </resource>
+     </resources>
 <!--     <pluginManagement> -->
         <plugins>
           <plugin>

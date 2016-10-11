@@ -1,4 +1,4 @@
-package com.ocean.frame.main.entity;
+package com.ocean.servlet.entity;
 
 import java.util.Date;
 

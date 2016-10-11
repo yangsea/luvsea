@@ -1,4 +1,4 @@
-package com.ocean.frame.main.form;
+package com.ocean.servlet.form;
 
 import com.vaadin.ui.DateField;
 import com.vaadin.ui.FormLayout;

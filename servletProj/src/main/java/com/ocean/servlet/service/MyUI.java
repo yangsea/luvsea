@@ -1,4 +1,4 @@
-package com.ocean.frame.main.service;
+package com.ocean.servlet.service;
 
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.ui.Button;

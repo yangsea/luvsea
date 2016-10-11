@@ -8,9 +8,9 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 <!--   <groupId>com.ocean</groupId> -->
-  <artifactId>sso</artifactId>
+  <artifactId>marine-sso</artifactId>
   <packaging>war</packaging>
-  <name>sso Maven Webapp</name>
+  <name>sso</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>

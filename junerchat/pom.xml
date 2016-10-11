@@ -7,9 +7,9 @@
     <artifactId>marineProj</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>junerchat</artifactId>
+  <artifactId>marine-wechat</artifactId>
   <packaging>war</packaging>
-  <name>junerchat Maven Webapp</name>
+  <name>wechat</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
@@ -25,6 +25,6 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>junerchat</finalName>
+    <finalName>wechat</finalName>
   </build>
 </project>

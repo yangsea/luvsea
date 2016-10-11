@@ -1,4 +1,4 @@
-package com.ocean.frame.main.action;
+package com.ocean.servlet.action;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -9,9 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.ocean.frame.main.entity.Person;
-import com.ocean.frame.main.form.PersonForm;
-import com.ocean.frame.main.service.MyUI;
 import com.vaadin.data.fieldgroup.BeanFieldGroup;
 import com.vaadin.data.util.BeanItemContainer;
 import com.vaadin.server.Page;

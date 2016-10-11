@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.ocean</groupId>
-  <artifactId>marineProj</artifactId>
+  <artifactId>marine</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
-  <name>marineProj</name>
+  <name>marine</name>
   <url>http://maven.apache.org</url>
 
   <properties>
@@ -33,12 +33,19 @@
         <version>4.11</version>
         <scope>test</scope>
     </dependency>
-    <dependency>
-        <groupId>javax.servlet</groupId>
-        <artifactId>servlet-api</artifactId>
-        <version>2.5</version>
-        <scope>provided</scope>
-    </dependency>
+<!--     <dependency> -->
+<!--         <groupId>javax.servlet</groupId> -->
+<!--         <artifactId>servlet-api</artifactId> -->
+<!--         <version>2.5</version> -->
+<!--         <scope>provided</scope> -->
+<!--     </dependency> -->
+	<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+	<dependency>
+	    <groupId>javax.servlet</groupId>
+	    <artifactId>javax.servlet-api</artifactId>
+	    <version>3.1.0</version>
+	</dependency>
+
     <dependency>
     <groupId>javax.servlet</groupId>
     <artifactId>jstl</artifactId>

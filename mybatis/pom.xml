@@ -4,14 +4,12 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.ocean</groupId>
-    <artifactId>marineProj</artifactId>
+    <artifactId>marine</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-<!--   <groupId>com.ocean</groupId> -->
-  <artifactId>mybatis</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <artifactId>marine-mybatis</artifactId>
   <packaging>war</packaging>
-  <name>mybatis Maven Webapp</name>
+  <name>mybatis</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
