@@ -4,20 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.ocean</groupId>
-    <artifactId>marineProj</artifactId>
+    <artifactId>marine</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>marine-wechat</artifactId>
-  <packaging>war</packaging>
+  <packaging>jar</packaging>
   <name>wechat</name>
-  <url>http://maven.apache.org</url>
   <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
     <dependency>
         <groupId>com.ocean</groupId>
         <artifactId>common</artifactId>

@@ -23,7 +23,7 @@ public class ArticleDaoImpl extends BaseHibernateTemplate implements ArticleDao 
         // use ehcache ,necessary sessionfactory model
         Session session = this.getHibernateTemplate().getSessionFactory().getCurrentSession();
         Query query = session.createQuery("from Article");
-        query.setCacheable(true);
+//        query.setCacheable(true);
         List<Article> list1 = query.list();
         System.out.println(list1.size());
         List<Article> list2 = query.list();

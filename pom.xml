@@ -24,6 +24,7 @@
     <module>shiro</module>
     <module>mybatis</module>
     <module>junerchat</module>
+    <module>marine-esleep</module>
   </modules>
   <dependencies>
     <!--   junit -->

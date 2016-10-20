@@ -4,10 +4,9 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.ocean</groupId>
-    <artifactId>marineProj</artifactId>
+    <artifactId>marine</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-
   <artifactId>marine-common</artifactId>
   <packaging>jar</packaging>
   <name>common</name>

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.ocean.blog.entity.Article;
 import com.ocean.blog.service.ArticleService;
@@ -45,5 +46,12 @@ public class ArticleController {
         return "";
     }
     
+    @RequestMapping("toArticleList")
+    public ModelAndView toArticleList(Article article){
+
+        ModelAndView mode = new ModelAndView();
+        mode.setViewName("manager/articleList");
+        return mode;
+    }
     
 }

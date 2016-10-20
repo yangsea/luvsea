@@ -1,5 +1,7 @@
 function changeTarget(urlStr){
-	$("#articleFrameId").attr("src","articleList.html");
+	//获取绝对路径
+	var urlFinal = getRootPath()+urlStr;
+	$("#frameId").attr("src",urlFinal);
 }
 	
 jQuery(function($) {

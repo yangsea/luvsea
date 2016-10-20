@@ -66,11 +66,4 @@ public class ManagerAction {
         return "manager/main";
     }
     
-    @RequestMapping("articleList")
-    public String toArticleList(){
-      
-        return "manager/articleList";
-    }
-    
-    
 }
