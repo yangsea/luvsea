@@ -6,7 +6,7 @@ public abstract class AbstractEntity {
 
     private Integer id;
     private Short status;
-    private Timestamp creatTime;
+    private Timestamp createTime;
     private Timestamp updateTime;
     private Boolean invlaid;
     public Integer getId() {
@@ -21,11 +21,12 @@ public abstract class AbstractEntity {
     public void setStatus(Short status) {
         this.status = status;
     }
-    public Timestamp getCreatTime() {
-        return creatTime;
+    
+    public Timestamp getCreateTime() {
+        return createTime;
     }
-    public void setCreatTime(Timestamp creatTime) {
-        this.creatTime = creatTime;
+    public void setCreateTime(Timestamp createTime) {
+        this.createTime = createTime;
     }
     public Timestamp getUpdateTime() {
         return updateTime;

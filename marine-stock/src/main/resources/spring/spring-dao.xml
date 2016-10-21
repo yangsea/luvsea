@@ -25,10 +25,7 @@
 	<!-- <bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean"> -->
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
-		<!-- org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean -->
-
 		<property name="dataSource" ref="dataSource" />
-
 		<!-- hibernate配置 -->
 		<!-- <property name="annotatedClasses"> -->
 		<property name="packagesToScan">
@@ -37,7 +34,6 @@
 				<value>com.ocean.frame.main.entity</value>
 			</list>
 		</property>
-
 		<property name="mappingDirectoryLocations">
 			<!-- <property name="mappingResources"> -->
 			<list>

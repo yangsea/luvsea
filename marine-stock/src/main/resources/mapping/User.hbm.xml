@@ -29,9 +29,6 @@
         <property name="status" type="integer">
             <column name="status" length="1" />
         </property>
-        <property name="type" type="integer">
-            <column name="type" length="1" />
-        </property>
          <property name="headImg" type="string">
             <column name="head_img" length="100" />
         </property>

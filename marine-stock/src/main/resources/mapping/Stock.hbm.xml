@@ -9,12 +9,6 @@
             <column name="id" precision="5" scale="0" />
             <generator class="assigned" />
         </id>
-        <property name="title" type="string">
-            <column name="title" length="20" />
-        </property>
-        <property name="content" type="string">
-            <column name="content" length="20" />
-        </property>
         <property name="status" type="integer">
             <column name="status" length="1" />
         </property>
