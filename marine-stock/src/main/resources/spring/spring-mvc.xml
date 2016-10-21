@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xmlns:mvc="http://www.springframework.org/schema/mvc"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:tx="http://www.springframework.org/schema/tx"
+ xsi:schemaLocation="http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+       http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/tx 
+       http://www.springframework.org/schema/tx/spring-tx-4.0.xsd 
+       http://www.springframework.org/schema/aop 
+       http://www.springframework.org/schema/aop/spring-aop-4.0.xsd 
+       http://www.springframework.org/schema/context 
+       http://www.springframework.org/schema/context/spring-context-4.0.xsd 
+       http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring 
+       http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring/ehcache-spring-1.1.xsd">
+
+        <!-- 开启注解配置 ，下面有了componet-scan后不再需要这个  -->
+<!--     <context:annotation-config /> -->
+
+     <!-- 启动注解驱动的Spring MVC功能，注册请求url和注解POJO类方法的映射，主要负责controlle的url的操作-->
+     <mvc:annotation-driven  />
+     
+     <!-- 事务管理器，分为接口代理，非接口代理，切面代理 -->
+     <tx:annotation-driven transaction-manager="transactionManager"  />
+     <!--    <tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true" mode="aspectj"/> -->
+     
+     <!-- 启动包扫描功能，以便注册带有@Controller、@Service、@repository、@Component等注解的类成为spring的bean -->
+     <context:component-scan base-package="com.ocean.*" />
+
+     <!-- 启动Spring MVC的注解功能，完成请求和注解POJO的映射 -->
+    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
+
+     <!-- 对模型视图名称的解析，在请求时模型视图名称添加前后缀 -->
+     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" p:prefix="/pages/" p:suffix=".html" />
+
+    <!-- 静态资源访问 -->
+   <mvc:default-servlet-handler/>
+   
+<!--    拦截器 -->
+<!--     <mvc:interceptors> -->
+<!--         <mvc:interceptor> -->
+<!--           <mvc:mapping path="/**"/>  -->
+<!--           <mvc:exclude-mapping path="/login.htm"/> -->
+<!--             <bean class="com.ocean.blog.common.interceptor.GlobalInterceptor"> -->
+<!--                 <property name="excludedUrls"> -->
+<!--                     <list> -->
+<!--                         <value>/userwx/authWx</value> -->
+<!--                     </list> -->
+<!--                 </property> -->
+<!--             </bean> -->
+<!--         </mvc:interceptor> -->
+<!--     </mvc:interceptors> -->
+
+</beans>

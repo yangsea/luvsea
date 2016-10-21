@@ -16,15 +16,16 @@
   </properties>
 
   <modules>
-  	<module>servletProj</module>
-  	<module>blog</module>
-    <module>sso</module>
-    <module>common</module>
-    <module>struts</module>
-    <module>shiro</module>
-    <module>mybatis</module>
-    <module>junerchat</module>
+  	<module>marine-servlet</module>
+  	<module>marine-blog</module>
+    <module>marine-sso</module>
+    <module>marine-common</module>
+    <module>marine-struts</module>
+    <module>marine-shiro</module>
+    <module>marine-mybatis</module>
+    <module>marine-wechat</module>
     <module>marine-esleep</module>
+    <module>marine-stock</module>
   </modules>
   <dependencies>
     <!--   junit -->

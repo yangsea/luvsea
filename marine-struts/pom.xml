@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.ocean</groupId>
-    <artifactId>marineProj</artifactId>
+    <artifactId>marine</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 <!--   <groupId>struts</groupId> -->
   <artifactId>marine-struts</artifactId>
   <packaging>war</packaging>
-  <name>struts</name>
+  <name>marine-struts</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
@@ -22,6 +22,6 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>struts</finalName>
+    <finalName>marine-struts</finalName>
   </build>
 </project>

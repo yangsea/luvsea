@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.ocean</groupId>
-    <artifactId>marineProj</artifactId>
+    <artifactId>marine</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 <!--   <groupId>com.ocean</groupId> -->
   <artifactId>marine-sso</artifactId>
   <packaging>war</packaging>
-  <name>sso</name>
+  <name>marine-sso</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
@@ -21,6 +21,6 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>sso</finalName>
+    <finalName>marine-sso</finalName>
   </build>
 </project>

@@ -9,7 +9,7 @@
   </parent>
   <artifactId>marine-common</artifactId>
   <packaging>jar</packaging>
-  <name>common</name>
+  <name>marine-common</name>
   <url>http://maven.apache.org</url>
 <!--   此处的引用会让主目录下的4.0版本失效 -->
 <!--   <dependencies> -->
@@ -21,6 +21,6 @@
 <!--     </dependency> -->
 <!--   </dependencies> -->
   <build>
-    <finalName>common</finalName>
+    <finalName>marine-common</finalName>
   </build>
 </project>

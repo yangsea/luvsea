@@ -4,12 +4,12 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.ocean</groupId>
-    <artifactId>marineProj</artifactId>
+    <artifactId>marine</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>marine-shiro</artifactId>
   <packaging>war</packaging>
-  <name>shiro</name>
+  <name>marine-shiro</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
@@ -20,12 +20,12 @@
     </dependency>
     <dependency>
       <groupId>com.ocean</groupId>
-      <artifactId>common</artifactId>
+      <artifactId>marine-common</artifactId>
       <version>0.0.1-SNAPSHOT</version>
     </dependency>
   </dependencies>
   <build>
-    <finalName>shiro</finalName>
+    <finalName>marine-shiro</finalName>
      <plugins>
 <!--             <plugin> -->
 <!--                 <groupId>org.apache.maven.plugins</groupId> -->

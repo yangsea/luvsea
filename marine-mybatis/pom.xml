@@ -9,7 +9,7 @@
   </parent>
   <artifactId>marine-mybatis</artifactId>
   <packaging>war</packaging>
-  <name>mybatis</name>
+  <name>marine-mybatis</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
@@ -20,6 +20,6 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>mybatis</finalName>
+    <finalName>marine-mybatis</finalName>
   </build>
 </project>

@@ -4,14 +4,14 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.ocean</groupId>
-    <artifactId>marineProj</artifactId>
+    <artifactId>marine</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <groupId>com.ocean.servlet</groupId><!--这个可以直接去掉 ，或者是直接 com.ocean 效果是一样的 -->
+<!--   <groupId>com.ocean.servlet</groupId>这个可以直接去掉 ，或者是直接 com.ocean 效果是一样的,会导致生成一个sevlet下面再生成artifactid -->
   <artifactId>marine-servlet</artifactId>
   <version>0.0.1.1-SNAPSHOT</version>
   <packaging>war</packaging>
-  <name>servlet</name>
+  <name>marine-servlet</name>
   <url>http://maven.apache.org</url>
   <dependencies>    
     <!-- vaddin -->
@@ -71,7 +71,7 @@
   </dependencies>
   
   <build>
-    <finalName>servletProj</finalName>
+    <finalName>marine-servlet</finalName>
             <plugins>
           <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

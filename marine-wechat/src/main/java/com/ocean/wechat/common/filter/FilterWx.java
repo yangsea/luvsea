@@ -6,6 +6,7 @@ import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -15,6 +16,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import com.ocean.common.encrypt.UtilSha14Wx;
 import com.ocean.common.entity.wx.InputMessage;
 import com.ocean.common.enumeration.EnumWx;
@@ -23,6 +25,7 @@ import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 public class FilterWx implements Filter {
 
+//    private static String Token = "yang123123123";
     @Override
     public void destroy() {
         System.out.println("何小君小坏蛋，哈哈哈哈！！！嘿嘿~");

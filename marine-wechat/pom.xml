@@ -9,15 +9,15 @@
   </parent>
   <artifactId>marine-wechat</artifactId>
   <packaging>jar</packaging>
-  <name>wechat</name>
+  <name>marine-wechat</name>
   <dependencies>
     <dependency>
         <groupId>com.ocean</groupId>
-        <artifactId>common</artifactId>
+        <artifactId>marine-common</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </dependency>
   </dependencies>
   <build>
-    <finalName>wechat</finalName>
+    <finalName>marine-wechat</finalName>
   </build>
 </project>

@@ -1,0 +1,143 @@
+<!Doctype html>
+<html>
+<head>
+<title>写笔记</title>
+<!--页面编码格式-->
+<meta charset="utf-8">
+<!--页面设置-->
+<meta name="author" content="" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<!--IOS相关设置-->
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<!--不被其他浏览器转码-->
+<meta http-equiv="Cache-Control" content="no-transform"/>
+<!--定义无缓存
+<meta http-equiv="Cache-Control" content="no-cache"/>
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="Expires" content="0" />
+-->
+<!--页面缓存-->
+<meta http-equiv="Cache-Control" content="public"/>
+<!--页面电话号码无样式-->
+<meta name="format-detection" content="telephone=no,email=no">
+<!--页面输出模式-->
+<meta name="layoutmode" content="standard">
+<!--页面字体模式-->
+<meta name="wap-font-scale" content="no">
+<!--页面大小设置-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,minimum-scale=1,user-scalable=0">
+<!--老版本兼容声明-->
+<meta name="renderer" content="webkit">
+<!-- uc强制竖屏 -->
+<meta name="screen-orientation" content="portrait">
+<!-- QQ强制竖屏 -->
+<meta name="x5-orientation" content="portrait">
+<!-- QQ强制全屏 -->
+<meta name="x5-fullscreen" content="true">
+<!-- UC强制全屏 -->
+<meta name="full-screen" content="yes">
+<!-- QQ应用模式 -->
+<meta name="x5-page-mode" content="app">
+<!-- UC应用模式 -->
+<meta name="browsermode" content="application">
+<link href="../public/css/common.css" rel="stylesheet" type="text/css" />
+<link href="css/mobiscroll.core-2.5.2.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../public/js/jquery.js"></script>
+<script type="text/javascript" src="../public/js/common.js"></script>
+<script type="text/javascript" src="js/mobiscroll.core-2.5.2.js"></script>
+<script type="text/javascript" src="js/write.js"></script>
+</head>
+<body>
+<div class="write">
+        <div class="title flex">
+		        股票名称代码<span>1000023456</span><img src="images/red_arrow.png" />
+		</div>
+		<div class="float_clear"></div>
+		<div class="Kline">
+		        <img src="images/write_kline.jpg" class="kimg"/>
+		</div>
+		<div class="float_clear"></div>
+		<div class="Wul">
+		        <li>
+				    <dl>
+					    <dt>投资类型：</dt>
+						<dd class="d1">
+						    <b class="flex"><i></i><span>短线</span></b>
+							<b class="flex"><i></i><span>中线</span></b>
+							<b class="flex"><i></i><span>长线</span></b>
+						</dd>
+					</dl>
+				</li>
+				<li>
+				    <dl>
+					    <dt>期限：</dt>
+						<dd class="d2">
+							<input id="start" name="start" type="text" value="" />
+							<i>至</i>
+							<input id="end" name="end" type="text" value="" />
+						</dd>
+					</dl>
+				</li>
+				<li>
+				    <dl>
+					    <dt>平均收益率：</dt>
+						<dd class="d3">
+							<input id="rate" name="rate" type="tel" value="" /><i class="red">%</i>
+						</dd>
+					</dl>
+				</li>
+				<li>
+				    <dl>
+					    <dt>标题：</dt>
+						<dd class="d4">
+							<input id="title" name="title" type="text" value="" />
+						</dd>
+					</dl>
+				</li>
+				<li class="li5">
+				    <dl>
+					    <dt>逻辑：</dt>
+						<dd class="d5">
+							<textarea class="logic" name="logic" id="logic" /></textarea>
+						</dd>
+					</dl>
+				</li>
+				<li class="li6">
+				    <dl>
+					    <dt>定价：</dt>
+						<dd class="d6">
+							<input id="price" name="price" type="tel" value="0" /><i class="red">元</i>
+							<span class="float_right red">(如何提升定价)</span>
+						</dd>
+					</dl>
+				</li>
+				<center>
+				        <i class="float_left flex">发布</i>
+						<i class="float_right flex">取消</i>
+				</center>
+		</div>
+		<div class="float_clear"></div>
+</div>
+<div class="float_clear" id="fixfooter"></div>
+<footer>
+        <ul>
+			<li>
+				<a class="flex" href="javascript:void(0);"><img src="../public/images/niu.png" />找牛股</a>
+			</li>
+			<li>
+				<a class="flex" href="javascript:void(0);"><img src="../public/images/biji.png" />写笔记</a>
+			</li>
+			<li>
+				<a class="flex" href="javascript:void(0);"><img src="../public/images/wo.png" />我</a>
+			</li>
+        </ul>
+</footer>
+<div id="chioce"></div>
+<div class="float_clear"></div>
+</body>
+</html>
