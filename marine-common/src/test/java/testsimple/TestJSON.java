@@ -2,12 +2,16 @@ package testsimple;
 
 import java.io.File;
 
+import org.junit.Test;
+
 import com.alibaba.fastjson.JSONObject;
+import com.ocean.common.basic.UtilString;
 import com.ocean.common.entity.wx.User;
 
 
 public class TestJSON {
 
+    
     public static void main(String[] args) {
 //        
 //        User user = new User();
@@ -28,8 +32,16 @@ public class TestJSON {
         
         
        JSONObject jsonO = new JSONObject();
-       jsonO.put("test", "");
+       jsonO.put("test", "dddd");
+       System.out.println(UtilString.isNull(jsonO));
        
-       
+    }
+    
+    @Test
+    public void test(){
+        
+        JSONObject jsonO = new JSONObject();
+        jsonO.put("test", jsonO);
+        System.out.println(UtilString.isNull(jsonO.get("test")));
     }
 }
