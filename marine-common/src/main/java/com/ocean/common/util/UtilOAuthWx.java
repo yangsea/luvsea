@@ -21,7 +21,7 @@ import com.ocean.common.basic.UtilString;
 import com.ocean.common.encrypt.UtilSha14Wx;
 import com.ocean.common.enumeration.EnumHost;
 import com.ocean.common.enumeration.EnumWx;
-import com.ocean.common.http.UtilHttpClient;
+import com.ocean.common.http.OLDUtilHttpClient;
 import com.ocean.common.returnobject.ReturnObject;
 
 public class UtilOAuthWx {
@@ -124,7 +124,7 @@ public class UtilOAuthWx {
             jo.put("code", code);
             jo.put("grant_type", "authorization_code");
             String params  = JSON.toJSONString(jo);
-            String response  = UtilHttpClient.getGetResponse(params, apiUrl);
+            String response  = OLDUtilHttpClient.getGetResponse(params, apiUrl);
             return JSON.parseObject(response);
         }
 
@@ -138,7 +138,7 @@ public class UtilOAuthWx {
             jo.put("code", code);
             jo.put("lang", "zh_CN");
             String params  = JSON.toJSONString(jo);
-            String response  = UtilHttpClient.getGetResponse(params, host);
+            String response  = OLDUtilHttpClient.getGetResponse(params, host);
             return JSON.parseObject(response);
         }
 
@@ -156,7 +156,7 @@ public class UtilOAuthWx {
             jo.put("grant_type","client_credential");
             jo.put("appid",EnumWx.appId.getValues());
             jo.put("secret", EnumWx.secret);
-            String response = UtilHttpClient.getGetResponse(JSON.toJSONString(jo), EnumHost.accessTokenHost.getValue());
+            String response = OLDUtilHttpClient.getGetResponse(JSON.toJSONString(jo), EnumHost.accessTokenHost.getValue());
             JSONObject reJo = JSON.parseObject(response);
             //获取access_token
             String accessToken = String.valueOf(reJo.get("access_token"));
@@ -176,7 +176,7 @@ public class UtilOAuthWx {
             
             JSONObject jo = new JSONObject();
             jo.put("access_token", getAccessToken());
-            String response = UtilHttpClient.getGetResponse(JSON.toJSONString(jo), EnumHost.ticketHost.getValue());
+            String response = OLDUtilHttpClient.getGetResponse(JSON.toJSONString(jo), EnumHost.ticketHost.getValue());
             JSONObject retJo = JSONObject.parseObject(response);
             String ticket  = String.valueOf(retJo.get("ticket"));
             return ticket;

@@ -1,6 +1,10 @@
 package com.ocean.blog.action;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -52,6 +56,18 @@ public class ArticleController {
         ModelAndView mode = new ModelAndView();
         mode.setViewName("manager/articleList");
         return mode;
+    }
+    
+    @RequestMapping("getEggs")
+    @ResponseBody
+    public void getEggs(HttpServletResponse hsr,Integer eggs){
+        
+        try {
+            PrintWriter pw = hsr.getWriter();
+            pw.print("i'm chou "+(eggs==1?"baby dan":"xiao jia huo er")+" ,heihei");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     
 }

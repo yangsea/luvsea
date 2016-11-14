@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:mvc="http://www.springframework.org/schema/mvc" 
+    xmlns:util="http://www.springframework.org/schema/util"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+                        http://www.springframework.org/schema/beans/spring-beans-3.2.xsd  
+                        http://www.springframework.org/schema/context  
+                        http://www.springframework.org/schema/context/spring-context-3.2.xsd  
+                        http://www.springframework.org/schema/mvc  
+                        http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+                        http://www.springframework.org/schema/util
+                        http://www.springframework.org/schema/util/spring-util.xsd">
+    <!-- 自动扫描 -->
+    <!-- <context:component-scan base-package="gdzy.shop.*" /> -->
+    <bean  class="com.youchang.common.util.spring.SpringContextHolder"  />
+    <!-- 引入配置文件 -->
+    <bean id="configProperties"
+        class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="locations">
+            <list>
+                <value>classpath:db.properties</value>
+                <value>classpath:wx.properties</value>
+            </list>
+        </property>
+    </bean>
+    <bean id="propertyConfigurer"
+        class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
+        <property name="properties" ref="configProperties" />
+    </bean>
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+        destroy-method="close">
+        <property name="driverClassName" value="${jdbc.driver}" />
+        <property name="url" value="${jdbc.url}" />
+        <property name="username" value="${jdbc.username}" />
+        <property name="password" value="${jdbc.password}" />
+        <!-- 初始化连接大小 -->
+        <property name="initialSize" value="${jdbc.initialSize}"></property>
+        <!-- 连接池最大数量 -->
+        <property name="maxActive" value="${jdbc.maxActive}"></property>
+        <!-- 连接池最大空闲 -->
+        <property name="maxIdle" value="${jdbc.maxIdle}"></property>
+        <!-- 连接池最小空闲 -->
+        <property name="minIdle" value="${jdbc.minIdle}"></property>
+        <!-- 获取连接最大等待时间 -->
+        <property name="maxWait" value="${jdbc.maxWait}"></property>
+    </bean>
+
+    <!-- spring和MyBatis完美整合，不需要mybatis的配置映射文件 -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="configLocation" value="classpath:mybatis_config.xml" />
+        <!-- 自动扫描mapping.xml文件 -->
+        <property name="mapperLocations" value="classpath*:mapping/**/*.xml"></property>
+    </bean>
+
+    <!-- DAO接口所在包名，Spring会自动查找其下的类 -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="gdzy.shop.dao;com.youchang.dao" />
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
+    </bean>
+
+    <!-- (事务管理)transaction manager, use JtaTransactionManager for global tx -->
+    <bean id="transactionManager"
+        class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    <bean
+        class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+        <property name="messageConverters">
+            <list>
+                <bean
+                    class="org.springframework.http.converter.StringHttpMessageConverter">
+                    <property name="supportedMediaTypes">
+                        <list>
+                            <bean class="org.springframework.http.MediaType">
+                                <constructor-arg index="0" value="text" />
+                                <constructor-arg index="1" value="plain" />
+                                <constructor-arg index="2" value="UTF-8" />
+                            </bean>
+                        </list>
+                    </property>
+                </bean>
+            </list>
+        </property>
+    </bean>
+    <!-- redis spring -->
+     <bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">  
+        <property name="maxIdle" value="${redis.maxIdle}" />  
+<!--         <property name="maxActive" value="${redis.maxActive}" />   -->
+<!--         <property name="maxWait" value="${redis.maxWait}" />   -->
+<!--         <property name="testOnBorrow" value="${redis.testOnBorrow}" />   -->
+    </bean>  
+    <bean
+        class="org.springframework.session.data.redis.config.annotation.web.http.RedisHttpSessionConfiguration" />
+<!--    <bean id="jedisConnectionFactory" -->
+<!--        class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"> -->
+<!--        <property name="hostName" value="${redis.hostName}" /> -->
+<!--        <property name="password" value="${redis.password}" /> -->
+<!--        <property name="port" value="${redis.port}" /> -->
+<!--        <property name="database" value="${redis.database}" /> -->
+<!--        <property name="poolConfig" ref="poolConfig"/> -->
+<!--    </bean> -->
+<!--     redis的连接池pool，不是必选项：timeout/password  -->
+      <bean id = "jedisPool" class="redis.clients.jedis.JedisPool">
+          <constructor-arg index="0" ref="poolConfig"/>
+          <constructor-arg index="1" value="${redis.hostName}"/>
+          <constructor-arg index="2" value="${redis.port}" type="int"/>
+          <constructor-arg index="3" value="${redis.timeout}" type="int"/>
+          <constructor-arg index="4" value="${redis.password}"/>
+      </bean>
+<!--    <bean id="connectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"   -->
+<!--         p:host-name="${redis.host}" p:port="${redis.port}" p:password="${redis.pass}"  p:pool-config-ref="poolConfig"/>   -->
+    <!-- 让Spring Session不再执行config命令 -->
+    <util:constant static-field="org.springframework.session.data.redis.config.ConfigureRedisAction.NO_OP" />
+    
+</beans>

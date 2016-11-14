@@ -25,7 +25,6 @@ import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 public class FilterWx implements Filter {
 
-//    private static String Token = "yang123123123";
     @Override
     public void destroy() {
         System.out.println("何小君小坏蛋，哈哈哈哈！！！嘿嘿~");

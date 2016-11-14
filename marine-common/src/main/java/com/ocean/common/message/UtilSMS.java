@@ -9,7 +9,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.ocean.common.enumeration.EnumHost;
 import com.ocean.common.enumeration.EnumSmsTemplate;
-import com.ocean.common.http.UtilHttpClient;
+import com.ocean.common.http.OLDUtilHttpClient;
 
 public class UtilSMS {
 
@@ -38,7 +38,7 @@ public class UtilSMS {
             }
             if(!isHaveTem) return "result=28&description=发送内容与模板不符";
 //            jsonObject.put("SerialNumber", "12345678912345678912");
-            String response = UtilHttpClient.getPostResponse(JSON.toJSONString(jsonObject), EnumHost.smsHost.getValue());
+            String response = OLDUtilHttpClient.getPostResponse(JSON.toJSONString(jsonObject), EnumHost.smsHost.getValue());
 //            System.out.println(response);
             return response; 
     }
