@@ -10,6 +10,7 @@ public class ReturnObject<T> {
     
     private T result;
 
+    private String msg;
     public boolean getSuccess(){
         return success;
     }
@@ -38,9 +39,12 @@ public class ReturnObject<T> {
         
         return JSON.toJSONString(this);
     }
-    
-    
-    
-    
 
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 }
