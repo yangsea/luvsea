@@ -50,4 +50,13 @@
 <!--         <filter-name>sessionFilter</filter-name> -->
 <!--         <url-pattern>*.html</url-pattern> -->
 <!--     </filter-mapping> -->
+	  <filter>
+	    <description>微信消息接入接口</description>
+	    <filter-name>WeixinUrlFilter</filter-name>
+	    <filter-class>com.ocean.wechat.common.filter.FilterWx</filter-class>
+	  </filter>
+	  <filter-mapping>
+	    <filter-name>WeixinUrlFilter</filter-name>
+	    <url-pattern>/wxs</url-pattern>
+	  </filter-mapping>
 </web-app>

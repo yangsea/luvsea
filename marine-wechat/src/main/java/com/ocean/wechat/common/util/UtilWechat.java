@@ -15,7 +15,9 @@ import com.alibaba.fastjson.JSONObject;
 import com.ocean.common.basic.UtilString;
 import com.ocean.common.http.UtilHttpClient;
 import com.ocean.common.returnobject.ReturnObject;
+import com.ocean.common.util.UtilProperties;
 
+//总服务器做收权动作
 public class UtilWechat {
     
     /**
@@ -48,7 +50,7 @@ public class UtilWechat {
              oauth_url.append("&state="+redirectUrlCustom+"#wechat_redirect");
              try {
                  response.sendRedirect(oauth_url.toString());
-                 //或者直接在这里用httpclient进行请求
+                 //或者直接在这里用httpclient进行请求(这种办法不可取)
              } catch (IOException e) {
                  e.printStackTrace();
              }
@@ -87,64 +89,36 @@ public class UtilWechat {
          return JSON.parseObject(response);
      }
 
-     public static String getOpenId(String params) {
-
-         //get openid by code
-         boolean isValidCode = true;
-         // first , to auth
-         String response = UtilHttpClient.getPostResponse(params,"xxx/auth/toAuth");
-         JSONObject jsonObject = JSONObject.parseObject(response);
-         String code = jsonObject.getString("code");
-//         String code = request.getParameter("code");
-       //检查是否已验证或者验证是否通过
-         if (code == null || code.equals("authdeny")) {
-             isValidCode = false;
-         }
+     //通过code获取openid
+     //重定向到第三方提供的地址
+     /** 授权回调地址*/
+     public static void auth(HttpServletRequest request,HttpServletResponse response) {
+        
        //如果用户同意授权并且，用户session不存在，通过OAUTH接口调用获取用户信息
          try {
+             //get openid by code
+             boolean isValidCode = true;
+             // first , to auth
+             //大概是获取openid必须是独立redirect授权，然后根据code再换区，redirect似乎不能运行与httpclient来获取想要的json数据
+             String redirectURLHTML = request.getParameter("redirectURLHTML");
+             String code = request.getParameter("code");
+           //检查是否已验证或者验证是否通过
+             if (code == null || code.equals("authdeny")) {
+                 isValidCode = false;
+             }
              if (isValidCode) {
-                 JSONObject jo4AT = JSONObject.parseObject(params);
-                 String appId = jo4AT.getString("appId");
-                 String secret = jo4AT.getString("secret");
+                 String appId = UtilProperties.getProWxByKey("wx.appId");
+                 String secret = UtilProperties.getProWxByKey("wx.secret");
                   JSONObject obj = getAccessToken(appId,secret, code);
                  String openid = obj.getString("openid");
-                 return openid;
+               //重定向到第三方接口并返回openid
+                 redirectURLHTML+=(redirectURLHTML.indexOf("?")>0?"&":"?")+"openid="+openid;
+                 response.sendRedirect(redirectURLHTML);
              }
+           
          } catch (IOException | URISyntaxException e) {
                  e.printStackTrace();
           }
-         return null;
      }
      
-     public static ReturnObject<String> auth(HttpServletRequest request,HttpServletResponse response){
-         
-         ReturnObject<String> ret = new ReturnObject<>();
-         try {
-             String redirectAuthURL = request.getParameter("redirectAuthURL");        
-             if(UtilString.isEmpty(redirectAuthURL)){
-                 ret.setMsg("redirectAuthURL不能为空！");
-                 ret.setSuccess(false);
-             }else{
-               //开始认证
-                //解码url
-//                 String deURL = URLDecoder.decode(redirectAuthURL,"utf-8");
-                 String appId = String.valueOf(request.getAttribute("appId"));
-                 //.......
-                 JSONObject jo4para = new JSONObject();
-                 jo4para.put("appId", "");
-                 jo4para.put("secret", "");
-                 //...........
-                 String openId = getOpenId(jo4para.toJSONString());
-                 if(UtilString.isEmpty(openId)){
-                     ret.setMsg("服务器异常！");
-                     ret.setSuccess(false);
-                 }
-                 redirectAuthURL+=(redirectAuthURL.indexOf("?")>0?"&":"?")+"openid="+openId;
-                 response.sendRedirect(redirectAuthURL);
-             }
-         } catch (IOException e) {
-             e.printStackTrace();
-         }
-         return ret;
-     }
 }

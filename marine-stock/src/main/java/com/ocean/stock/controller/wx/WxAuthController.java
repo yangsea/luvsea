@@ -1,6 +1,5 @@
 package com.ocean.stock.controller.wx;
 
-import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 
 import javax.servlet.http.HttpServletRequest;
@@ -10,9 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.alibaba.fastjson.JSONObject;
-import com.ocean.common.basic.UtilString;
 import com.ocean.common.returnobject.ReturnObject;
+import com.ocean.common.util.UtilProperties;
 import com.ocean.wechat.common.util.UtilWechat;
 
 @Controller
@@ -20,28 +18,32 @@ import com.ocean.wechat.common.util.UtilWechat;
 public class WxAuthController {
     
     /**
-     * 获得openid,每个系统的唯一接口，不提供页面调用，用于重定向
+     * 获得openid,每个系统的唯一接口，不提供页面调用，用于重定向 （入口1）
      */
     @RequestMapping("getAuth")
     @ResponseBody
-    public ReturnObject<String> auth(HttpServletRequest request,HttpServletResponse response){
+    public void auth(HttpServletRequest request,HttpServletResponse response){
         
-        ReturnObject<String> ret = new ReturnObject<>();
-        ret = UtilWechat.auth(request, response);
-        return ret;
+        try {
+            // use test
+            String redirectURLAUTH = request.getParameter("redirectURLAUTH");
+            String appId = UtilProperties.getProWxByKey("wx.appId");
+            String secret = UtilProperties.getProWxByKey("wx.secret");
+            //request包含所需要跳转的url
+            UtilWechat.authRedirect(response,appId,secret,redirectURLAUTH);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
     
-    //授权
+    /** 
+     * 授权后回调（入口2）
+     */
     @RequestMapping("toAuth")
     @ResponseBody
     public void toAuth(HttpServletResponse response,HttpServletRequest request){
         
-        try {
-//            String appId; 
-            UtilWechat.authRedirect(response, "", "", "");
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
+        UtilWechat.auth(request,response);
     }
 
 }
