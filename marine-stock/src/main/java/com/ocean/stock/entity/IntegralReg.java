@@ -3,14 +3,14 @@ package com.ocean.stock.entity;
 import java.io.Serializable;
 import java.util.Date;
 
-public class User implements Serializable {
+public class IntegralReg implements Serializable {
     private Long id;
 
-    private String openid;
+    private String number;
 
     private String name;
 
-    private String nickName;
+    private Integer integral;
 
     private Date createTime;
 
@@ -19,8 +19,6 @@ public class User implements Serializable {
     private Short status;
 
     private Boolean invalid;
-
-    private Short type;
 
     private static final long serialVersionUID = 1L;
 
@@ -32,12 +30,12 @@ public class User implements Serializable {
         this.id = id;
     }
 
-    public String getOpenid() {
-        return openid;
+    public String getNumber() {
+        return number;
     }
 
-    public void setOpenid(String openid) {
-        this.openid = openid == null ? null : openid.trim();
+    public void setNumber(String number) {
+        this.number = number == null ? null : number.trim();
     }
 
     public String getName() {
@@ -48,12 +46,12 @@ public class User implements Serializable {
         this.name = name == null ? null : name.trim();
     }
 
-    public String getNickName() {
-        return nickName;
+    public Integer getIntegral() {
+        return integral;
     }
 
-    public void setNickName(String nickName) {
-        this.nickName = nickName == null ? null : nickName.trim();
+    public void setIntegral(Integer integral) {
+        this.integral = integral;
     }
 
     public Date getCreateTime() {
@@ -88,14 +86,6 @@ public class User implements Serializable {
         this.invalid = invalid;
     }
 
-    public Short getType() {
-        return type;
-    }
-
-    public void setType(Short type) {
-        this.type = type;
-    }
-
     @Override
     public boolean equals(Object that) {
         if (this == that) {
@@ -107,16 +97,15 @@ public class User implements Serializable {
         if (getClass() != that.getClass()) {
             return false;
         }
-        User other = (User) that;
+        IntegralReg other = (IntegralReg) that;
         return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
-            && (this.getOpenid() == null ? other.getOpenid() == null : this.getOpenid().equals(other.getOpenid()))
+            && (this.getNumber() == null ? other.getNumber() == null : this.getNumber().equals(other.getNumber()))
             && (this.getName() == null ? other.getName() == null : this.getName().equals(other.getName()))
-            && (this.getNickName() == null ? other.getNickName() == null : this.getNickName().equals(other.getNickName()))
+            && (this.getIntegral() == null ? other.getIntegral() == null : this.getIntegral().equals(other.getIntegral()))
             && (this.getCreateTime() == null ? other.getCreateTime() == null : this.getCreateTime().equals(other.getCreateTime()))
             && (this.getUpdateTime() == null ? other.getUpdateTime() == null : this.getUpdateTime().equals(other.getUpdateTime()))
             && (this.getStatus() == null ? other.getStatus() == null : this.getStatus().equals(other.getStatus()))
-            && (this.getInvalid() == null ? other.getInvalid() == null : this.getInvalid().equals(other.getInvalid()))
-            && (this.getType() == null ? other.getType() == null : this.getType().equals(other.getType()));
+            && (this.getInvalid() == null ? other.getInvalid() == null : this.getInvalid().equals(other.getInvalid()));
     }
 
     @Override
@@ -124,14 +113,13 @@ public class User implements Serializable {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
-        result = prime * result + ((getOpenid() == null) ? 0 : getOpenid().hashCode());
+        result = prime * result + ((getNumber() == null) ? 0 : getNumber().hashCode());
         result = prime * result + ((getName() == null) ? 0 : getName().hashCode());
-        result = prime * result + ((getNickName() == null) ? 0 : getNickName().hashCode());
+        result = prime * result + ((getIntegral() == null) ? 0 : getIntegral().hashCode());
         result = prime * result + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
         result = prime * result + ((getUpdateTime() == null) ? 0 : getUpdateTime().hashCode());
         result = prime * result + ((getStatus() == null) ? 0 : getStatus().hashCode());
         result = prime * result + ((getInvalid() == null) ? 0 : getInvalid().hashCode());
-        result = prime * result + ((getType() == null) ? 0 : getType().hashCode());
         return result;
     }
 
@@ -142,14 +130,13 @@ public class User implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
-        sb.append(", openid=").append(openid);
+        sb.append(", number=").append(number);
         sb.append(", name=").append(name);
-        sb.append(", nickName=").append(nickName);
+        sb.append(", integral=").append(integral);
         sb.append(", createTime=").append(createTime);
         sb.append(", updateTime=").append(updateTime);
         sb.append(", status=").append(status);
         sb.append(", invalid=").append(invalid);
-        sb.append(", type=").append(type);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

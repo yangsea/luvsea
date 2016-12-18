@@ -3,14 +3,18 @@ package com.ocean.stock.entity;
 import java.io.Serializable;
 import java.util.Date;
 
-public class User implements Serializable {
+public class IncomeDetail implements Serializable {
     private Long id;
 
-    private String openid;
+    private Float money;
 
-    private String name;
+    private Long noteNumber;
 
-    private String nickName;
+    private Long payUser;
+
+    private Long paidUser;
+
+    private Short payType;
 
     private Date createTime;
 
@@ -19,8 +23,6 @@ public class User implements Serializable {
     private Short status;
 
     private Boolean invalid;
-
-    private Short type;
 
     private static final long serialVersionUID = 1L;
 
@@ -32,28 +34,44 @@ public class User implements Serializable {
         this.id = id;
     }
 
-    public String getOpenid() {
-        return openid;
+    public Float getMoney() {
+        return money;
     }
 
-    public void setOpenid(String openid) {
-        this.openid = openid == null ? null : openid.trim();
+    public void setMoney(Float money) {
+        this.money = money;
     }
 
-    public String getName() {
-        return name;
+    public Long getNoteNumber() {
+        return noteNumber;
     }
 
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
+    public void setNoteNumber(Long noteNumber) {
+        this.noteNumber = noteNumber;
     }
 
-    public String getNickName() {
-        return nickName;
+    public Long getPayUser() {
+        return payUser;
     }
 
-    public void setNickName(String nickName) {
-        this.nickName = nickName == null ? null : nickName.trim();
+    public void setPayUser(Long payUser) {
+        this.payUser = payUser;
+    }
+
+    public Long getPaidUser() {
+        return paidUser;
+    }
+
+    public void setPaidUser(Long paidUser) {
+        this.paidUser = paidUser;
+    }
+
+    public Short getPayType() {
+        return payType;
+    }
+
+    public void setPayType(Short payType) {
+        this.payType = payType;
     }
 
     public Date getCreateTime() {
@@ -88,14 +106,6 @@ public class User implements Serializable {
         this.invalid = invalid;
     }
 
-    public Short getType() {
-        return type;
-    }
-
-    public void setType(Short type) {
-        this.type = type;
-    }
-
     @Override
     public boolean equals(Object that) {
         if (this == that) {
@@ -107,16 +117,17 @@ public class User implements Serializable {
         if (getClass() != that.getClass()) {
             return false;
         }
-        User other = (User) that;
+        IncomeDetail other = (IncomeDetail) that;
         return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
-            && (this.getOpenid() == null ? other.getOpenid() == null : this.getOpenid().equals(other.getOpenid()))
-            && (this.getName() == null ? other.getName() == null : this.getName().equals(other.getName()))
-            && (this.getNickName() == null ? other.getNickName() == null : this.getNickName().equals(other.getNickName()))
+            && (this.getMoney() == null ? other.getMoney() == null : this.getMoney().equals(other.getMoney()))
+            && (this.getNoteNumber() == null ? other.getNoteNumber() == null : this.getNoteNumber().equals(other.getNoteNumber()))
+            && (this.getPayUser() == null ? other.getPayUser() == null : this.getPayUser().equals(other.getPayUser()))
+            && (this.getPaidUser() == null ? other.getPaidUser() == null : this.getPaidUser().equals(other.getPaidUser()))
+            && (this.getPayType() == null ? other.getPayType() == null : this.getPayType().equals(other.getPayType()))
             && (this.getCreateTime() == null ? other.getCreateTime() == null : this.getCreateTime().equals(other.getCreateTime()))
             && (this.getUpdateTime() == null ? other.getUpdateTime() == null : this.getUpdateTime().equals(other.getUpdateTime()))
             && (this.getStatus() == null ? other.getStatus() == null : this.getStatus().equals(other.getStatus()))
-            && (this.getInvalid() == null ? other.getInvalid() == null : this.getInvalid().equals(other.getInvalid()))
-            && (this.getType() == null ? other.getType() == null : this.getType().equals(other.getType()));
+            && (this.getInvalid() == null ? other.getInvalid() == null : this.getInvalid().equals(other.getInvalid()));
     }
 
     @Override
@@ -124,14 +135,15 @@ public class User implements Serializable {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
-        result = prime * result + ((getOpenid() == null) ? 0 : getOpenid().hashCode());
-        result = prime * result + ((getName() == null) ? 0 : getName().hashCode());
-        result = prime * result + ((getNickName() == null) ? 0 : getNickName().hashCode());
+        result = prime * result + ((getMoney() == null) ? 0 : getMoney().hashCode());
+        result = prime * result + ((getNoteNumber() == null) ? 0 : getNoteNumber().hashCode());
+        result = prime * result + ((getPayUser() == null) ? 0 : getPayUser().hashCode());
+        result = prime * result + ((getPaidUser() == null) ? 0 : getPaidUser().hashCode());
+        result = prime * result + ((getPayType() == null) ? 0 : getPayType().hashCode());
         result = prime * result + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
         result = prime * result + ((getUpdateTime() == null) ? 0 : getUpdateTime().hashCode());
         result = prime * result + ((getStatus() == null) ? 0 : getStatus().hashCode());
         result = prime * result + ((getInvalid() == null) ? 0 : getInvalid().hashCode());
-        result = prime * result + ((getType() == null) ? 0 : getType().hashCode());
         return result;
     }
 
@@ -142,14 +154,15 @@ public class User implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
-        sb.append(", openid=").append(openid);
-        sb.append(", name=").append(name);
-        sb.append(", nickName=").append(nickName);
+        sb.append(", money=").append(money);
+        sb.append(", noteNumber=").append(noteNumber);
+        sb.append(", payUser=").append(payUser);
+        sb.append(", paidUser=").append(paidUser);
+        sb.append(", payType=").append(payType);
         sb.append(", createTime=").append(createTime);
         sb.append(", updateTime=").append(updateTime);
         sb.append(", status=").append(status);
         sb.append(", invalid=").append(invalid);
-        sb.append(", type=").append(type);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

@@ -3,14 +3,16 @@ package com.ocean.stock.entity;
 import java.io.Serializable;
 import java.util.Date;
 
-public class User implements Serializable {
+public class PricedReg implements Serializable {
     private Long id;
 
-    private String openid;
+    private Integer integralStart;
 
-    private String name;
+    private Integer integralEnd;
 
-    private String nickName;
+    private Float money;
+
+    private Float ratioEarn;
 
     private Date createTime;
 
@@ -19,8 +21,6 @@ public class User implements Serializable {
     private Short status;
 
     private Boolean invalid;
-
-    private Short type;
 
     private static final long serialVersionUID = 1L;
 
@@ -32,28 +32,36 @@ public class User implements Serializable {
         this.id = id;
     }
 
-    public String getOpenid() {
-        return openid;
+    public Integer getIntegralStart() {
+        return integralStart;
     }
 
-    public void setOpenid(String openid) {
-        this.openid = openid == null ? null : openid.trim();
+    public void setIntegralStart(Integer integralStart) {
+        this.integralStart = integralStart;
     }
 
-    public String getName() {
-        return name;
+    public Integer getIntegralEnd() {
+        return integralEnd;
     }
 
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
+    public void setIntegralEnd(Integer integralEnd) {
+        this.integralEnd = integralEnd;
     }
 
-    public String getNickName() {
-        return nickName;
+    public Float getMoney() {
+        return money;
     }
 
-    public void setNickName(String nickName) {
-        this.nickName = nickName == null ? null : nickName.trim();
+    public void setMoney(Float money) {
+        this.money = money;
+    }
+
+    public Float getRatioEarn() {
+        return ratioEarn;
+    }
+
+    public void setRatioEarn(Float ratioEarn) {
+        this.ratioEarn = ratioEarn;
     }
 
     public Date getCreateTime() {
@@ -88,14 +96,6 @@ public class User implements Serializable {
         this.invalid = invalid;
     }
 
-    public Short getType() {
-        return type;
-    }
-
-    public void setType(Short type) {
-        this.type = type;
-    }
-
     @Override
     public boolean equals(Object that) {
         if (this == that) {
@@ -107,16 +107,16 @@ public class User implements Serializable {
         if (getClass() != that.getClass()) {
             return false;
         }
-        User other = (User) that;
+        PricedReg other = (PricedReg) that;
         return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
-            && (this.getOpenid() == null ? other.getOpenid() == null : this.getOpenid().equals(other.getOpenid()))
-            && (this.getName() == null ? other.getName() == null : this.getName().equals(other.getName()))
-            && (this.getNickName() == null ? other.getNickName() == null : this.getNickName().equals(other.getNickName()))
+            && (this.getIntegralStart() == null ? other.getIntegralStart() == null : this.getIntegralStart().equals(other.getIntegralStart()))
+            && (this.getIntegralEnd() == null ? other.getIntegralEnd() == null : this.getIntegralEnd().equals(other.getIntegralEnd()))
+            && (this.getMoney() == null ? other.getMoney() == null : this.getMoney().equals(other.getMoney()))
+            && (this.getRatioEarn() == null ? other.getRatioEarn() == null : this.getRatioEarn().equals(other.getRatioEarn()))
             && (this.getCreateTime() == null ? other.getCreateTime() == null : this.getCreateTime().equals(other.getCreateTime()))
             && (this.getUpdateTime() == null ? other.getUpdateTime() == null : this.getUpdateTime().equals(other.getUpdateTime()))
             && (this.getStatus() == null ? other.getStatus() == null : this.getStatus().equals(other.getStatus()))
-            && (this.getInvalid() == null ? other.getInvalid() == null : this.getInvalid().equals(other.getInvalid()))
-            && (this.getType() == null ? other.getType() == null : this.getType().equals(other.getType()));
+            && (this.getInvalid() == null ? other.getInvalid() == null : this.getInvalid().equals(other.getInvalid()));
     }
 
     @Override
@@ -124,14 +124,14 @@ public class User implements Serializable {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
-        result = prime * result + ((getOpenid() == null) ? 0 : getOpenid().hashCode());
-        result = prime * result + ((getName() == null) ? 0 : getName().hashCode());
-        result = prime * result + ((getNickName() == null) ? 0 : getNickName().hashCode());
+        result = prime * result + ((getIntegralStart() == null) ? 0 : getIntegralStart().hashCode());
+        result = prime * result + ((getIntegralEnd() == null) ? 0 : getIntegralEnd().hashCode());
+        result = prime * result + ((getMoney() == null) ? 0 : getMoney().hashCode());
+        result = prime * result + ((getRatioEarn() == null) ? 0 : getRatioEarn().hashCode());
         result = prime * result + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
         result = prime * result + ((getUpdateTime() == null) ? 0 : getUpdateTime().hashCode());
         result = prime * result + ((getStatus() == null) ? 0 : getStatus().hashCode());
         result = prime * result + ((getInvalid() == null) ? 0 : getInvalid().hashCode());
-        result = prime * result + ((getType() == null) ? 0 : getType().hashCode());
         return result;
     }
 
@@ -142,14 +142,14 @@ public class User implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
-        sb.append(", openid=").append(openid);
-        sb.append(", name=").append(name);
-        sb.append(", nickName=").append(nickName);
+        sb.append(", integralStart=").append(integralStart);
+        sb.append(", integralEnd=").append(integralEnd);
+        sb.append(", money=").append(money);
+        sb.append(", ratioEarn=").append(ratioEarn);
         sb.append(", createTime=").append(createTime);
         sb.append(", updateTime=").append(updateTime);
         sb.append(", status=").append(status);
         sb.append(", invalid=").append(invalid);
-        sb.append(", type=").append(type);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

@@ -1,0 +1,898 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ocean.stock.dao.IncomeDetailMapper">
+  <resultMap id="BaseResultMap" type="com.ocean.stock.entity.IncomeDetail">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="money" jdbcType="REAL" property="money" />
+    <result column="note_number" jdbcType="BIGINT" property="noteNumber" />
+    <result column="pay_user" jdbcType="BIGINT" property="payUser" />
+    <result column="paid_user" jdbcType="BIGINT" property="paidUser" />
+    <result column="pay_type" jdbcType="SMALLINT" property="payType" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="status" jdbcType="SMALLINT" property="status" />
+    <result column="invalid" jdbcType="BIT" property="invalid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, money, note_number, pay_user, paid_user, pay_type, create_time, update_time, 
+    status, invalid
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_stock_income_detail
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_stock_income_detail
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.ocean.stock.entity.IncomeDetail">
+    insert into t_stock_income_detail (id, money, note_number, 
+      pay_user, paid_user, pay_type, 
+      create_time, update_time, status, 
+      invalid)
+    values (#{id,jdbcType=BIGINT}, #{money,jdbcType=REAL}, #{noteNumber,jdbcType=BIGINT}, 
+      #{payUser,jdbcType=BIGINT}, #{paidUser,jdbcType=BIGINT}, #{payType,jdbcType=SMALLINT}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{status,jdbcType=SMALLINT}, 
+      #{invalid,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ocean.stock.entity.IncomeDetail">
+    insert into t_stock_income_detail
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="money != null">
+        money,
+      </if>
+      <if test="noteNumber != null">
+        note_number,
+      </if>
+      <if test="payUser != null">
+        pay_user,
+      </if>
+      <if test="paidUser != null">
+        paid_user,
+      </if>
+      <if test="payType != null">
+        pay_type,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="invalid != null">
+        invalid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="money != null">
+        #{money,jdbcType=REAL},
+      </if>
+      <if test="noteNumber != null">
+        #{noteNumber,jdbcType=BIGINT},
+      </if>
+      <if test="payUser != null">
+        #{payUser,jdbcType=BIGINT},
+      </if>
+      <if test="paidUser != null">
+        #{paidUser,jdbcType=BIGINT},
+      </if>
+      <if test="payType != null">
+        #{payType,jdbcType=SMALLINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=SMALLINT},
+      </if>
+      <if test="invalid != null">
+        #{invalid,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ocean.stock.entity.IncomeDetail">
+    update t_stock_income_detail
+    <set>
+      <if test="money != null">
+        money = #{money,jdbcType=REAL},
+      </if>
+      <if test="noteNumber != null">
+        note_number = #{noteNumber,jdbcType=BIGINT},
+      </if>
+      <if test="payUser != null">
+        pay_user = #{payUser,jdbcType=BIGINT},
+      </if>
+      <if test="paidUser != null">
+        paid_user = #{paidUser,jdbcType=BIGINT},
+      </if>
+      <if test="payType != null">
+        pay_type = #{payType,jdbcType=SMALLINT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=SMALLINT},
+      </if>
+      <if test="invalid != null">
+        invalid = #{invalid,jdbcType=BIT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ocean.stock.entity.IncomeDetail">
+    update t_stock_income_detail
+    set money = #{money,jdbcType=REAL},
+      note_number = #{noteNumber,jdbcType=BIGINT},
+      pay_user = #{payUser,jdbcType=BIGINT},
+      paid_user = #{paidUser,jdbcType=BIGINT},
+      pay_type = #{payType,jdbcType=SMALLINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      status = #{status,jdbcType=SMALLINT},
+      invalid = #{invalid,jdbcType=BIT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.ocean.stock.entity.IncomeDetail">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="money" jdbcType="REAL" property="money" />
+    <result column="note_number" jdbcType="BIGINT" property="noteNumber" />
+    <result column="pay_user" jdbcType="BIGINT" property="payUser" />
+    <result column="paid_user" jdbcType="BIGINT" property="paidUser" />
+    <result column="pay_type" jdbcType="SMALLINT" property="payType" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="status" jdbcType="SMALLINT" property="status" />
+    <result column="invalid" jdbcType="BIT" property="invalid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, money, note_number, pay_user, paid_user, pay_type, create_time, update_time, 
+    status, invalid
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_stock_income_detail
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_stock_income_detail
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.ocean.stock.entity.IncomeDetail">
+    insert into t_stock_income_detail (id, money, note_number, 
+      pay_user, paid_user, pay_type, 
+      create_time, update_time, status, 
+      invalid)
+    values (#{id,jdbcType=BIGINT}, #{money,jdbcType=REAL}, #{noteNumber,jdbcType=BIGINT}, 
+      #{payUser,jdbcType=BIGINT}, #{paidUser,jdbcType=BIGINT}, #{payType,jdbcType=SMALLINT}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{status,jdbcType=SMALLINT}, 
+      #{invalid,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ocean.stock.entity.IncomeDetail">
+    insert into t_stock_income_detail
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="money != null">
+        money,
+      </if>
+      <if test="noteNumber != null">
+        note_number,
+      </if>
+      <if test="payUser != null">
+        pay_user,
+      </if>
+      <if test="paidUser != null">
+        paid_user,
+      </if>
+      <if test="payType != null">
+        pay_type,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="invalid != null">
+        invalid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="money != null">
+        #{money,jdbcType=REAL},
+      </if>
+      <if test="noteNumber != null">
+        #{noteNumber,jdbcType=BIGINT},
+      </if>
+      <if test="payUser != null">
+        #{payUser,jdbcType=BIGINT},
+      </if>
+      <if test="paidUser != null">
+        #{paidUser,jdbcType=BIGINT},
+      </if>
+      <if test="payType != null">
+        #{payType,jdbcType=SMALLINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=SMALLINT},
+      </if>
+      <if test="invalid != null">
+        #{invalid,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ocean.stock.entity.IncomeDetail">
+    update t_stock_income_detail
+    <set>
+      <if test="money != null">
+        money = #{money,jdbcType=REAL},
+      </if>
+      <if test="noteNumber != null">
+        note_number = #{noteNumber,jdbcType=BIGINT},
+      </if>
+      <if test="payUser != null">
+        pay_user = #{payUser,jdbcType=BIGINT},
+      </if>
+      <if test="paidUser != null">
+        paid_user = #{paidUser,jdbcType=BIGINT},
+      </if>
+      <if test="payType != null">
+        pay_type = #{payType,jdbcType=SMALLINT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=SMALLINT},
+      </if>
+      <if test="invalid != null">
+        invalid = #{invalid,jdbcType=BIT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ocean.stock.entity.IncomeDetail">
+    update t_stock_income_detail
+    set money = #{money,jdbcType=REAL},
+      note_number = #{noteNumber,jdbcType=BIGINT},
+      pay_user = #{payUser,jdbcType=BIGINT},
+      paid_user = #{paidUser,jdbcType=BIGINT},
+      pay_type = #{payType,jdbcType=SMALLINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      status = #{status,jdbcType=SMALLINT},
+      invalid = #{invalid,jdbcType=BIT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.ocean.stock.entity.IncomeDetail">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="money" jdbcType="REAL" property="money" />
+    <result column="note_number" jdbcType="BIGINT" property="noteNumber" />
+    <result column="pay_user" jdbcType="BIGINT" property="payUser" />
+    <result column="paid_user" jdbcType="BIGINT" property="paidUser" />
+    <result column="pay_type" jdbcType="SMALLINT" property="payType" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="status" jdbcType="SMALLINT" property="status" />
+    <result column="invalid" jdbcType="BIT" property="invalid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, money, note_number, pay_user, paid_user, pay_type, create_time, update_time, 
+    status, invalid
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_stock_income_detail
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_stock_income_detail
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.ocean.stock.entity.IncomeDetail">
+    insert into t_stock_income_detail (id, money, note_number, 
+      pay_user, paid_user, pay_type, 
+      create_time, update_time, status, 
+      invalid)
+    values (#{id,jdbcType=BIGINT}, #{money,jdbcType=REAL}, #{noteNumber,jdbcType=BIGINT}, 
+      #{payUser,jdbcType=BIGINT}, #{paidUser,jdbcType=BIGINT}, #{payType,jdbcType=SMALLINT}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{status,jdbcType=SMALLINT}, 
+      #{invalid,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ocean.stock.entity.IncomeDetail">
+    insert into t_stock_income_detail
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="money != null">
+        money,
+      </if>
+      <if test="noteNumber != null">
+        note_number,
+      </if>
+      <if test="payUser != null">
+        pay_user,
+      </if>
+      <if test="paidUser != null">
+        paid_user,
+      </if>
+      <if test="payType != null">
+        pay_type,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="invalid != null">
+        invalid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="money != null">
+        #{money,jdbcType=REAL},
+      </if>
+      <if test="noteNumber != null">
+        #{noteNumber,jdbcType=BIGINT},
+      </if>
+      <if test="payUser != null">
+        #{payUser,jdbcType=BIGINT},
+      </if>
+      <if test="paidUser != null">
+        #{paidUser,jdbcType=BIGINT},
+      </if>
+      <if test="payType != null">
+        #{payType,jdbcType=SMALLINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=SMALLINT},
+      </if>
+      <if test="invalid != null">
+        #{invalid,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ocean.stock.entity.IncomeDetail">
+    update t_stock_income_detail
+    <set>
+      <if test="money != null">
+        money = #{money,jdbcType=REAL},
+      </if>
+      <if test="noteNumber != null">
+        note_number = #{noteNumber,jdbcType=BIGINT},
+      </if>
+      <if test="payUser != null">
+        pay_user = #{payUser,jdbcType=BIGINT},
+      </if>
+      <if test="paidUser != null">
+        paid_user = #{paidUser,jdbcType=BIGINT},
+      </if>
+      <if test="payType != null">
+        pay_type = #{payType,jdbcType=SMALLINT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=SMALLINT},
+      </if>
+      <if test="invalid != null">
+        invalid = #{invalid,jdbcType=BIT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ocean.stock.entity.IncomeDetail">
+    update t_stock_income_detail
+    set money = #{money,jdbcType=REAL},
+      note_number = #{noteNumber,jdbcType=BIGINT},
+      pay_user = #{payUser,jdbcType=BIGINT},
+      paid_user = #{paidUser,jdbcType=BIGINT},
+      pay_type = #{payType,jdbcType=SMALLINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      status = #{status,jdbcType=SMALLINT},
+      invalid = #{invalid,jdbcType=BIT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.ocean.stock.entity.IncomeDetail">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="money" jdbcType="REAL" property="money" />
+    <result column="note_number" jdbcType="BIGINT" property="noteNumber" />
+    <result column="pay_user" jdbcType="BIGINT" property="payUser" />
+    <result column="paid_user" jdbcType="BIGINT" property="paidUser" />
+    <result column="pay_type" jdbcType="SMALLINT" property="payType" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="status" jdbcType="SMALLINT" property="status" />
+    <result column="invalid" jdbcType="BIT" property="invalid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, money, note_number, pay_user, paid_user, pay_type, create_time, update_time, 
+    status, invalid
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_stock_income_detail
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_stock_income_detail
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.ocean.stock.entity.IncomeDetail">
+    insert into t_stock_income_detail (id, money, note_number, 
+      pay_user, paid_user, pay_type, 
+      create_time, update_time, status, 
+      invalid)
+    values (#{id,jdbcType=BIGINT}, #{money,jdbcType=REAL}, #{noteNumber,jdbcType=BIGINT}, 
+      #{payUser,jdbcType=BIGINT}, #{paidUser,jdbcType=BIGINT}, #{payType,jdbcType=SMALLINT}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{status,jdbcType=SMALLINT}, 
+      #{invalid,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ocean.stock.entity.IncomeDetail">
+    insert into t_stock_income_detail
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="money != null">
+        money,
+      </if>
+      <if test="noteNumber != null">
+        note_number,
+      </if>
+      <if test="payUser != null">
+        pay_user,
+      </if>
+      <if test="paidUser != null">
+        paid_user,
+      </if>
+      <if test="payType != null">
+        pay_type,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="invalid != null">
+        invalid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="money != null">
+        #{money,jdbcType=REAL},
+      </if>
+      <if test="noteNumber != null">
+        #{noteNumber,jdbcType=BIGINT},
+      </if>
+      <if test="payUser != null">
+        #{payUser,jdbcType=BIGINT},
+      </if>
+      <if test="paidUser != null">
+        #{paidUser,jdbcType=BIGINT},
+      </if>
+      <if test="payType != null">
+        #{payType,jdbcType=SMALLINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=SMALLINT},
+      </if>
+      <if test="invalid != null">
+        #{invalid,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ocean.stock.entity.IncomeDetail">
+    update t_stock_income_detail
+    <set>
+      <if test="money != null">
+        money = #{money,jdbcType=REAL},
+      </if>
+      <if test="noteNumber != null">
+        note_number = #{noteNumber,jdbcType=BIGINT},
+      </if>
+      <if test="payUser != null">
+        pay_user = #{payUser,jdbcType=BIGINT},
+      </if>
+      <if test="paidUser != null">
+        paid_user = #{paidUser,jdbcType=BIGINT},
+      </if>
+      <if test="payType != null">
+        pay_type = #{payType,jdbcType=SMALLINT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=SMALLINT},
+      </if>
+      <if test="invalid != null">
+        invalid = #{invalid,jdbcType=BIT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ocean.stock.entity.IncomeDetail">
+    update t_stock_income_detail
+    set money = #{money,jdbcType=REAL},
+      note_number = #{noteNumber,jdbcType=BIGINT},
+      pay_user = #{payUser,jdbcType=BIGINT},
+      paid_user = #{paidUser,jdbcType=BIGINT},
+      pay_type = #{payType,jdbcType=SMALLINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      status = #{status,jdbcType=SMALLINT},
+      invalid = #{invalid,jdbcType=BIT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.ocean.stock.entity.IncomeDetail">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="money" jdbcType="REAL" property="money" />
+    <result column="note_number" jdbcType="BIGINT" property="noteNumber" />
+    <result column="pay_user" jdbcType="BIGINT" property="payUser" />
+    <result column="paid_user" jdbcType="BIGINT" property="paidUser" />
+    <result column="pay_type" jdbcType="SMALLINT" property="payType" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="status" jdbcType="SMALLINT" property="status" />
+    <result column="invalid" jdbcType="BIT" property="invalid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, money, note_number, pay_user, paid_user, pay_type, create_time, update_time, 
+    status, invalid
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_stock_income_detail
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_stock_income_detail
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.ocean.stock.entity.IncomeDetail">
+    insert into t_stock_income_detail (id, money, note_number, 
+      pay_user, paid_user, pay_type, 
+      create_time, update_time, status, 
+      invalid)
+    values (#{id,jdbcType=BIGINT}, #{money,jdbcType=REAL}, #{noteNumber,jdbcType=BIGINT}, 
+      #{payUser,jdbcType=BIGINT}, #{paidUser,jdbcType=BIGINT}, #{payType,jdbcType=SMALLINT}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{status,jdbcType=SMALLINT}, 
+      #{invalid,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ocean.stock.entity.IncomeDetail">
+    insert into t_stock_income_detail
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="money != null">
+        money,
+      </if>
+      <if test="noteNumber != null">
+        note_number,
+      </if>
+      <if test="payUser != null">
+        pay_user,
+      </if>
+      <if test="paidUser != null">
+        paid_user,
+      </if>
+      <if test="payType != null">
+        pay_type,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="invalid != null">
+        invalid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="money != null">
+        #{money,jdbcType=REAL},
+      </if>
+      <if test="noteNumber != null">
+        #{noteNumber,jdbcType=BIGINT},
+      </if>
+      <if test="payUser != null">
+        #{payUser,jdbcType=BIGINT},
+      </if>
+      <if test="paidUser != null">
+        #{paidUser,jdbcType=BIGINT},
+      </if>
+      <if test="payType != null">
+        #{payType,jdbcType=SMALLINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=SMALLINT},
+      </if>
+      <if test="invalid != null">
+        #{invalid,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ocean.stock.entity.IncomeDetail">
+    update t_stock_income_detail
+    <set>
+      <if test="money != null">
+        money = #{money,jdbcType=REAL},
+      </if>
+      <if test="noteNumber != null">
+        note_number = #{noteNumber,jdbcType=BIGINT},
+      </if>
+      <if test="payUser != null">
+        pay_user = #{payUser,jdbcType=BIGINT},
+      </if>
+      <if test="paidUser != null">
+        paid_user = #{paidUser,jdbcType=BIGINT},
+      </if>
+      <if test="payType != null">
+        pay_type = #{payType,jdbcType=SMALLINT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=SMALLINT},
+      </if>
+      <if test="invalid != null">
+        invalid = #{invalid,jdbcType=BIT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ocean.stock.entity.IncomeDetail">
+    update t_stock_income_detail
+    set money = #{money,jdbcType=REAL},
+      note_number = #{noteNumber,jdbcType=BIGINT},
+      pay_user = #{payUser,jdbcType=BIGINT},
+      paid_user = #{paidUser,jdbcType=BIGINT},
+      pay_type = #{payType,jdbcType=SMALLINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      status = #{status,jdbcType=SMALLINT},
+      invalid = #{invalid,jdbcType=BIT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.ocean.stock.entity.IncomeDetail">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="money" jdbcType="REAL" property="money" />
+    <result column="note_number" jdbcType="BIGINT" property="noteNumber" />
+    <result column="pay_user" jdbcType="BIGINT" property="payUser" />
+    <result column="paid_user" jdbcType="BIGINT" property="paidUser" />
+    <result column="pay_type" jdbcType="SMALLINT" property="payType" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="status" jdbcType="SMALLINT" property="status" />
+    <result column="invalid" jdbcType="BIT" property="invalid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, money, note_number, pay_user, paid_user, pay_type, create_time, update_time, 
+    status, invalid
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_stock_income_detail
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_stock_income_detail
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.ocean.stock.entity.IncomeDetail">
+    insert into t_stock_income_detail (id, money, note_number, 
+      pay_user, paid_user, pay_type, 
+      create_time, update_time, status, 
+      invalid)
+    values (#{id,jdbcType=BIGINT}, #{money,jdbcType=REAL}, #{noteNumber,jdbcType=BIGINT}, 
+      #{payUser,jdbcType=BIGINT}, #{paidUser,jdbcType=BIGINT}, #{payType,jdbcType=SMALLINT}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{status,jdbcType=SMALLINT}, 
+      #{invalid,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ocean.stock.entity.IncomeDetail">
+    insert into t_stock_income_detail
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="money != null">
+        money,
+      </if>
+      <if test="noteNumber != null">
+        note_number,
+      </if>
+      <if test="payUser != null">
+        pay_user,
+      </if>
+      <if test="paidUser != null">
+        paid_user,
+      </if>
+      <if test="payType != null">
+        pay_type,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="invalid != null">
+        invalid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="money != null">
+        #{money,jdbcType=REAL},
+      </if>
+      <if test="noteNumber != null">
+        #{noteNumber,jdbcType=BIGINT},
+      </if>
+      <if test="payUser != null">
+        #{payUser,jdbcType=BIGINT},
+      </if>
+      <if test="paidUser != null">
+        #{paidUser,jdbcType=BIGINT},
+      </if>
+      <if test="payType != null">
+        #{payType,jdbcType=SMALLINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=SMALLINT},
+      </if>
+      <if test="invalid != null">
+        #{invalid,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ocean.stock.entity.IncomeDetail">
+    update t_stock_income_detail
+    <set>
+      <if test="money != null">
+        money = #{money,jdbcType=REAL},
+      </if>
+      <if test="noteNumber != null">
+        note_number = #{noteNumber,jdbcType=BIGINT},
+      </if>
+      <if test="payUser != null">
+        pay_user = #{payUser,jdbcType=BIGINT},
+      </if>
+      <if test="paidUser != null">
+        paid_user = #{paidUser,jdbcType=BIGINT},
+      </if>
+      <if test="payType != null">
+        pay_type = #{payType,jdbcType=SMALLINT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=SMALLINT},
+      </if>
+      <if test="invalid != null">
+        invalid = #{invalid,jdbcType=BIT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ocean.stock.entity.IncomeDetail">
+    update t_stock_income_detail
+    set money = #{money,jdbcType=REAL},
+      note_number = #{noteNumber,jdbcType=BIGINT},
+      pay_user = #{payUser,jdbcType=BIGINT},
+      paid_user = #{paidUser,jdbcType=BIGINT},
+      pay_type = #{payType,jdbcType=SMALLINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      status = #{status,jdbcType=SMALLINT},
+      invalid = #{invalid,jdbcType=BIT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

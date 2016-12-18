@@ -1,4 +1,4 @@
-package com.ocean.esleep.controller.user;
+package com.ocean.tooth.controller.user;
 
 import org.springframework.stereotype.Controller;
 

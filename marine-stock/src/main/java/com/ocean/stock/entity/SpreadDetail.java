@@ -3,14 +3,14 @@ package com.ocean.stock.entity;
 import java.io.Serializable;
 import java.util.Date;
 
-public class User implements Serializable {
+public class SpreadDetail implements Serializable {
     private Long id;
 
-    private String openid;
+    private Long spreadUser;
 
-    private String name;
+    private Long spreadedUser;
 
-    private String nickName;
+    private String sourceUrl;
 
     private Date createTime;
 
@@ -19,8 +19,6 @@ public class User implements Serializable {
     private Short status;
 
     private Boolean invalid;
-
-    private Short type;
 
     private static final long serialVersionUID = 1L;
 
@@ -32,28 +30,28 @@ public class User implements Serializable {
         this.id = id;
     }
 
-    public String getOpenid() {
-        return openid;
+    public Long getSpreadUser() {
+        return spreadUser;
     }
 
-    public void setOpenid(String openid) {
-        this.openid = openid == null ? null : openid.trim();
+    public void setSpreadUser(Long spreadUser) {
+        this.spreadUser = spreadUser;
     }
 
-    public String getName() {
-        return name;
+    public Long getSpreadedUser() {
+        return spreadedUser;
     }
 
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
+    public void setSpreadedUser(Long spreadedUser) {
+        this.spreadedUser = spreadedUser;
     }
 
-    public String getNickName() {
-        return nickName;
+    public String getSourceUrl() {
+        return sourceUrl;
     }
 
-    public void setNickName(String nickName) {
-        this.nickName = nickName == null ? null : nickName.trim();
+    public void setSourceUrl(String sourceUrl) {
+        this.sourceUrl = sourceUrl == null ? null : sourceUrl.trim();
     }
 
     public Date getCreateTime() {
@@ -88,14 +86,6 @@ public class User implements Serializable {
         this.invalid = invalid;
     }
 
-    public Short getType() {
-        return type;
-    }
-
-    public void setType(Short type) {
-        this.type = type;
-    }
-
     @Override
     public boolean equals(Object that) {
         if (this == that) {
@@ -107,16 +97,15 @@ public class User implements Serializable {
         if (getClass() != that.getClass()) {
             return false;
         }
-        User other = (User) that;
+        SpreadDetail other = (SpreadDetail) that;
         return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
-            && (this.getOpenid() == null ? other.getOpenid() == null : this.getOpenid().equals(other.getOpenid()))
-            && (this.getName() == null ? other.getName() == null : this.getName().equals(other.getName()))
-            && (this.getNickName() == null ? other.getNickName() == null : this.getNickName().equals(other.getNickName()))
+            && (this.getSpreadUser() == null ? other.getSpreadUser() == null : this.getSpreadUser().equals(other.getSpreadUser()))
+            && (this.getSpreadedUser() == null ? other.getSpreadedUser() == null : this.getSpreadedUser().equals(other.getSpreadedUser()))
+            && (this.getSourceUrl() == null ? other.getSourceUrl() == null : this.getSourceUrl().equals(other.getSourceUrl()))
             && (this.getCreateTime() == null ? other.getCreateTime() == null : this.getCreateTime().equals(other.getCreateTime()))
             && (this.getUpdateTime() == null ? other.getUpdateTime() == null : this.getUpdateTime().equals(other.getUpdateTime()))
             && (this.getStatus() == null ? other.getStatus() == null : this.getStatus().equals(other.getStatus()))
-            && (this.getInvalid() == null ? other.getInvalid() == null : this.getInvalid().equals(other.getInvalid()))
-            && (this.getType() == null ? other.getType() == null : this.getType().equals(other.getType()));
+            && (this.getInvalid() == null ? other.getInvalid() == null : this.getInvalid().equals(other.getInvalid()));
     }
 
     @Override
@@ -124,14 +113,13 @@ public class User implements Serializable {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
-        result = prime * result + ((getOpenid() == null) ? 0 : getOpenid().hashCode());
-        result = prime * result + ((getName() == null) ? 0 : getName().hashCode());
-        result = prime * result + ((getNickName() == null) ? 0 : getNickName().hashCode());
+        result = prime * result + ((getSpreadUser() == null) ? 0 : getSpreadUser().hashCode());
+        result = prime * result + ((getSpreadedUser() == null) ? 0 : getSpreadedUser().hashCode());
+        result = prime * result + ((getSourceUrl() == null) ? 0 : getSourceUrl().hashCode());
         result = prime * result + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
         result = prime * result + ((getUpdateTime() == null) ? 0 : getUpdateTime().hashCode());
         result = prime * result + ((getStatus() == null) ? 0 : getStatus().hashCode());
         result = prime * result + ((getInvalid() == null) ? 0 : getInvalid().hashCode());
-        result = prime * result + ((getType() == null) ? 0 : getType().hashCode());
         return result;
     }
 
@@ -142,14 +130,13 @@ public class User implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
-        sb.append(", openid=").append(openid);
-        sb.append(", name=").append(name);
-        sb.append(", nickName=").append(nickName);
+        sb.append(", spreadUser=").append(spreadUser);
+        sb.append(", spreadedUser=").append(spreadedUser);
+        sb.append(", sourceUrl=").append(sourceUrl);
         sb.append(", createTime=").append(createTime);
         sb.append(", updateTime=").append(updateTime);
         sb.append(", status=").append(status);
         sb.append(", invalid=").append(invalid);
-        sb.append(", type=").append(type);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

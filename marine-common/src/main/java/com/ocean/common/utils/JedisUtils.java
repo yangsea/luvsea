@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
-import com.ocean.common.config.Global;
+//import com.ocean.common.config.Global;
 
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
@@ -31,7 +31,7 @@ public class JedisUtils {
     private static Logger logger = LoggerFactory.getLogger(JedisUtils.class);
 	private static JedisPool jedisPool = SpringContextHolder.getBean(JedisPool.class);
 
-	public static final String KEY_PREFIX = Global.getConfig("redis.keyPrefix");
+//	public static final String KEY_PREFIX = Global.getConfig("redis.keyPrefix");
 	
 	/**
 	 * 获取缓存

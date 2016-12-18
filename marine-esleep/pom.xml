@@ -5,6 +5,9 @@
     <artifactId>marine</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>marine-esleep</artifactId>
+  <artifactId>marine-tooth</artifactId>
   <packaging>war</packaging>
+    <build>
+        <finalName>marine-wechat</finalName>
+    </build>
 </project>
