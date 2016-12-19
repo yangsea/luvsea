@@ -1,5 +1,7 @@
 package com.ocean.stock.dao;
 
+import java.util.List;
+
 import com.ocean.stock.entity.Note;
 
 public interface NoteMapper {
@@ -14,4 +16,7 @@ public interface NoteMapper {
     int updateByPrimaryKeySelective(Note record);
 
     int updateByPrimaryKey(Note record);
+    
+    List<Note> getNotes(Note note);
+    
 }

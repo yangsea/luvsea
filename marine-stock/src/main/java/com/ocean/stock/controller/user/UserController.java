@@ -92,5 +92,16 @@ public class UserController {
         
     }
     
+    /**
+     * 用户注册
+     */
+    @RequestMapping("addUser")
+    @ResponseBody
+    public ReturnObject<String> addUser(){
+        
+        
+        return new ReturnObject<String>();
+    }
+    
 
 }

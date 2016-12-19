@@ -20,7 +20,7 @@ public class User implements Serializable {
 
     private Boolean invalid;
 
-    private Short type;
+    private Short type; //user type
 
     private static final long serialVersionUID = 1L;
 

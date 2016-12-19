@@ -144,7 +144,7 @@
     <executions>
         <execution>
 <!--                 放开注释表示不自动生成dao代码，但是如果显示执行general命令将仍然执行代码生成 -->
-<!--         <phase>none</phase> -->
+        <phase>none</phase>
             <id>Generate MyBatis Artifacts</id>
             <goals>
                 <goal>generate</goal>
