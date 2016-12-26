@@ -166,6 +166,13 @@
 			<artifactId>spring-web</artifactId>
 			<version>${springframework.version}</version>
 		</dependency>
+		
+		      <!-- bean validate -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>${validator.version}</version>
+        </dependency>
 		<!-- SpringFramework end -->
 		<dependency>
 			<groupId>org.apache.directory.studio</groupId>
@@ -639,6 +646,7 @@
 					<artifactId>commons-logging</artifactId>
 				</exclusion>
 			</exclusions>
+		</dependency>
 			<!-- poi office -->
 			<!-- <dependency> -->
 			<!-- <groupId>org.apache.poi</groupId> -->
@@ -657,12 +665,12 @@
 			<!-- </dependency> -->
 
 			<!-- image util -->
-<!-- 			<dependency> -->
-<!-- 				<groupId>com.drewnoakes</groupId> -->
-<!-- 				<artifactId>metadata-extractor</artifactId> -->
-<!-- 				<version>2.6.2</version> -->
-<!-- 			</dependency> -->
-		</dependency>
+			<dependency>
+				<groupId>com.drewnoakes</groupId>
+				<artifactId>metadata-extractor</artifactId>
+				<version>2.6.2</version>
+			</dependency>
+		
 		<!-- GENERAL UTILS end -->
 
 		<!-- CKFinder begin -->
