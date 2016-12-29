@@ -40,8 +40,15 @@ public class TestJSON {
     @Test
     public void test(){
         
-        JSONObject jsonO = new JSONObject();
+//        JSONObject jsonO = new JSONObject();
+        net.sf.json.JSONObject jsonO = new net.sf.json.JSONObject();
         jsonO.put("test", jsonO);
+//        jsonO.put("aaaaa", "");
+        String a = String.valueOf(jsonO.get("aaaaa"));
+        System.out.println("f"+jsonO.get("aaaaa"));
+        if("null".equals(a))
+            System.out.println("a is null");
+        System.out.println(a);
         System.out.println(UtilString.isNull(jsonO.get("test")));
     }
 }

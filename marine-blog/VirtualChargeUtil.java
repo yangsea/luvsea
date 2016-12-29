@@ -1,4 +1,4 @@
-package com.ct.bms.virtual.util;
+﻿package com.ct.bms.virtual.util;
 
 import java.security.MessageDigest;
 import java.util.Arrays;
@@ -597,7 +597,7 @@ public class VirtualChargeUtil {
 
 		String url = ConfigInfo.getString("taihe_url");// URL
 		String sysCode = ConfigInfo.getString("taihe_sysCode");// 系统编号
-		String salt = ConfigInfo.getString("taihe_saltJyk");// 盐值
+		String salt = ConfigInfo.getString("taihe_salt");// 盐值
 		long currentTime = System.currentTimeMillis();
 
 		String keyParm = sysCode + currentTime + salt;
