@@ -1,23 +1,24 @@
 <?xml version="1.0"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>com.ocean</groupId>
-    <artifactId>marine</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-  </parent>
-  <artifactId>marine-wechat</artifactId>
-  <packaging>jar</packaging>
-  <name>marine-wechat</name>
-  <dependencies>
-    <dependency>
-        <groupId>com.ocean</groupId>
-        <artifactId>marine-common</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
-    </dependency>
-  </dependencies>
-  <build>
-    <finalName>marine-wechat</finalName>
-  </build>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.ocean</groupId>
+		<artifactId>marine</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>marine-wechat</artifactId>
+	<packaging>war</packaging>
+	<name>marine-wechat</name>
+	<dependencies>
+		<dependency>
+			<groupId>com.ocean</groupId>
+			<artifactId>marine-common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>marine-wechat</finalName>
+	</build>
 </project>

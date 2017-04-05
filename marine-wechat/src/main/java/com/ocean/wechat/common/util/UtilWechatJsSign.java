@@ -1,20 +1,22 @@
-package com.ocean.common.encrypt;
-import java.util.UUID;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.Formatter;
+package com.ocean.wechat.common.util;
+
+import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.io.UnsupportedEncodingException;  
+import java.util.Formatter;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
 
-class Sign {
+public class UtilWechatJsSign {
+
     public static void main(String[] args) {
         String jsapi_ticket = "jsapi_ticket";
 
         // 注意 URL 一定要动态获取，不能 hardcode
         String url = "http://example.com";
         Map<String, String> ret = sign(jsapi_ticket, url);
-        for (Map.Entry entry : ret.entrySet()) {
+        for (@SuppressWarnings("rawtypes") Map.Entry entry : ret.entrySet()) {
             System.out.println(entry.getKey() + ", " + entry.getValue());
         }
     };
@@ -48,13 +50,11 @@ class Sign {
         {
             e.printStackTrace();
         }
-
         ret.put("url", url);
         ret.put("jsapi_ticket", jsapi_ticket);
         ret.put("nonceStr", nonce_str);
         ret.put("timestamp", timestamp);
         ret.put("signature", signature);
-
         return ret;
     }
 

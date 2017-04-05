@@ -7,7 +7,7 @@ public class UserWx {
     
     private Integer id;
     
-    private Integer openid;
+    private String openid;
     
     private String nickname;
     
@@ -37,11 +37,11 @@ public class UserWx {
         this.id = id;
     }
 
-    public Integer getOpenid() {
+    public String getOpenid() {
         return openid;
     }
 
-    public void setOpenid(Integer openid) {
+    public void setOpenid(String openid) {
         this.openid = openid;
     }
 

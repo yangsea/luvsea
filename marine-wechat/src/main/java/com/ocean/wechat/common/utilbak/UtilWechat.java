@@ -1,4 +1,4 @@
-package com.ocean.wechat.common.util;
+package com.ocean.wechat.common.utilbak;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -12,7 +12,10 @@ import org.apache.http.client.ClientProtocolException;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.ocean.common.basic.UtilString;
 import com.ocean.common.http.UtilHttpClient;
+import com.ocean.common.returnobject.ReturnObject;
+import com.ocean.common.util.UtilProperties;
 
 //总服务器做收权动作
 public class UtilWechat {
@@ -76,7 +79,7 @@ public class UtilWechat {
      public static JSONObject getUserInfo(String accessToken, String openid) 
              throws ClientProtocolException, IOException, URISyntaxException {
 
-         String host = "https://api.weixin.qq.com/sns/userinfo";
+         String host = "https://api.weixin.qq.com/sns/userinfo?";
          JSONObject jo = new JSONObject();
          jo.put("access_token", accessToken);
          jo.put("openid", openid);
@@ -108,14 +111,6 @@ public class UtilWechat {
                  String secret = UtilProperties.getProWxByKey("wx.secret");
                   JSONObject obj = getAccessToken(appId,secret, code);
                  String openid = obj.getString("openid");
-                 String accessToken = obj.getString("access_token"); //这里的accesstoken不同于其它地方
-                 //------------放入用户信息开始-----------------
-                 JSONObject userJson = getUserInfo(accessToken, openid);
-                 //放入session ，session生命周期需要伴随整个过程，或者是使用application
-                 request.getSession().setAttribute("userwx", userJson);
-                 request.getSession().setAttribute("accessTokenUser", accessToken);
-                 //或者是，只放入accesstoken到session里，然后通过accesstoken与openid来实时获取，只不过，需要通过refresh来刷新
-                 //------------放入用户信息结束-----------------
                //重定向到第三方接口并返回openid
                  redirectURLHTML+=(redirectURLHTML.indexOf("?")>0?"&":"?")+"openid="+openid;
                  response.sendRedirect(redirectURLHTML);
@@ -125,23 +120,5 @@ public class UtilWechat {
                  e.printStackTrace();
           }
      }
-     
-     public static void main(String[] args) {
-        
-         String at = "x2m7g8SwG_VU_af_QHxvwfqSlLyc_f-6uWdRo46bgtyokz-Wa555vbZWmwbgNM1-YxQxHcm6UMBdwwatsIW1haWf8jG2dJ1W8oYXBs5_O_c";
-         String od = "obfuxwm7omygnMI_BjDuPQVfv5Wo";
-         try {
-            getUserInfo(at, od);
-        } catch (ClientProtocolException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        } catch (URISyntaxException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-    }
      
 }
