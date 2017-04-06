@@ -1,11 +1,8 @@
-/**
- * 中控服务器接口
- */
 package com.ocean.wechat.common.token.server;
 
 
 /**
- * 
+ * 中控服务器接口
  * @author ChengNing
  * @date   2015年1月7日
  */

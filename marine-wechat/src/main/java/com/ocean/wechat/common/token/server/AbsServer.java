@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.ocean.wechat.common.token.server;
 
 import org.apache.commons.lang3.StringUtils;
@@ -17,6 +14,7 @@ public abstract class AbsServer implements IServer{
 	protected String customerServerClass;
 	
 	public AbsServer(){
+	    //通过AccessTokenServer 中重写赋值，如果为空则使用默认的服务器
 		this.customerServerClass = getCustomerServerClass();
 	}
 	
@@ -24,6 +22,7 @@ public abstract class AbsServer implements IServer{
 	public String token(){
 		return server().token();
 	}
+	
 	/**
 	 * 得到系统可用的中控服务器
 	 * @return 正在使用的中控服务器

@@ -1,13 +1,10 @@
-/**
- * 
- */
 package com.ocean.wechat.common.token.server;
 
 import com.ocean.wechat.common.token.AccessToken;
 
 
 /**
- * 内存中控服务器
+ * 内存中控服务器，使用单例模式，把token存在内存中提供静态访问！
  * access_token 中控服务器
  * access_token保存在内存中,过期则自动刷新
  * 此中控服务器采用单例模式，提供单一的访问点，并且持有全局唯一的accessToken对象
@@ -27,7 +24,7 @@ public class AccessTokenMemServer implements IServer{
 	private int requestTimes = 1;//token请求失败后重新请求的次数
 	
 	/**
-	 * 私有构造
+	 * 私有构造，提供单例访问
 	 */
 	private AccessTokenMemServer(){
 		//获取新的token

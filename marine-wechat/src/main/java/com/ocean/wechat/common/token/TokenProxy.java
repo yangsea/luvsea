@@ -29,8 +29,5 @@ public class TokenProxy {
 		TicketServer ticketServer = new JsApiTicketServer();
 		return ticketServer.ticket();
 	}
-	
 
-	
-	
 }
