@@ -27,9 +27,8 @@ public class AccessTokenTimer extends TimerTask{
 	@Override
 	public void run() {
 		logger.info("accessToken 定时任务启动，获取新的accessToken");
-		//得到新的access token
 		AccessToken accessToken = new AccessToken();
-		//获取成功之后持久化accessToken
+		//得到新的access token 获取成功之后持久化accessToken
 		if(accessToken.request()){
 			AccessTokenServer accessTokenServer = new AccessTokenServer();
 			CustomerServer customerServer = (CustomerServer)accessTokenServer.customerServer();

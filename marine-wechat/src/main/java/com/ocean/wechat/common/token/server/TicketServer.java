@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.ocean.wechat.common.token.server;
 
 /**

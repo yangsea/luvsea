@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.ocean.wechat.common.token;
 
 import org.apache.log4j.Logger;
@@ -27,9 +24,6 @@ public class Ticket extends Token {
 		this.type = ticketType.name();
 	}
 
-	/* (non-Javadoc)
-	 * @see org.sword.wechat4j.token.Token#accessTokenUrl()
-	 */
 	@Override
 	protected String accessTokenUrl() {
 		String access_token = TokenProxy.accessToken();
@@ -37,18 +31,12 @@ public class Ticket extends Token {
 		logger.info("获取ticket,ticket类型" + this.type);
 		return url;
 	}
-
-	/* (non-Javadoc)
-	 * @see org.sword.wechat4j.token.Token#tokenName()
-	 */
+	
 	@Override
 	protected String tokenName() {
 		return TICKET_NAME;
 	}
 
-	/* (non-Javadoc)
-	 * @see org.sword.wechat4j.token.Token#expiresInName()
-	 */
 	@Override
 	protected String expiresInName() {
 		return EXPIRESIN_NAME;

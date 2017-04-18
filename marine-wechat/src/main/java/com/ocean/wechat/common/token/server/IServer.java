@@ -12,5 +12,4 @@ public interface IServer {
 	
 //	public IServer server();
 //	public IServer customerServer();
-	
 }

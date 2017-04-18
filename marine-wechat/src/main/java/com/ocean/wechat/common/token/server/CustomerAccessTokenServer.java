@@ -25,6 +25,7 @@ public boolean save(Token accessToken) {
 //      String sql = "update cfg set cfg.cfgValue=" + accessToken.getToken() + 
 //              " where cfg.cfgKey= 'access_token'";
 //      DBUtil.execute(sql);
+    //在这里自定义存入文件、redis、数据库等存储便于分布式
     return true;
 }
 }

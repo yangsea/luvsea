@@ -110,15 +110,30 @@ public abstract class Token {
 	 * accessToken 是否有效
 	 * @return true:有效，false: 无效
 	 */
-	public boolean isValid(){
+	public boolean  isValid(){
 		//黑名单判定法
-		if(StringUtils.isBlank(this.token))
-			return false;
-		if(this.expires <= 0)
-			return false;
+		if(StringUtils.isBlank(this.token)){
+		    synchronized (this) {
+		        if(StringUtils.isBlank(this.token)){
+		            return false;
+		        }
+		    }
+		}
+		if(this.expires <= 0){
+		    synchronized (this) {
+		        if(this.expires <= 0){
+		            return false;
+		        }
+            }
+		}
 		//过期
-		if(isExpire())
-			return false;
+		if(isExpire()){
+		    synchronized (this) {
+                if(isExpire()){
+                    return false;
+                }
+            }
+		}
 		return true;
 	}
 	

@@ -1,9 +1,4 @@
-/**
- * 
- */
 package com.ocean.wechat.common.token.server;
-
-
 
 /**
  * accessToken中控服务器
