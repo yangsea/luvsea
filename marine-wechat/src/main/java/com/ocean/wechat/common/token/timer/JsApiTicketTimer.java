@@ -27,10 +27,10 @@ public class JsApiTicketTimer extends TimerTask {
 		Ticket jsapiTicket = new Ticket(TicketType.jsapi);
 		// 手动获取成功之后持久化accessToken
 		if (jsapiTicket.request()) {
-			JsApiTicketServer jsapiTicketServer = new JsApiTicketServer();
-			CustomerServer customerServer = (CustomerServer) jsapiTicketServer
-					.customerServer();
-			customerServer.save(jsapiTicket);
+//			JsApiTicketServer jsapiTicketServer = new JsApiTicketServer();
+//			CustomerServer customerServer = (CustomerServer) jsapiTicketServer
+//					.customerServer();
+//			customerServer.save(jsapiTicket);
 		}
 	}
 

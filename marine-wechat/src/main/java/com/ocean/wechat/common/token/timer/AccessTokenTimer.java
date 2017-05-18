@@ -30,9 +30,9 @@ public class AccessTokenTimer extends TimerTask{
 		AccessToken accessToken = new AccessToken();
 		//得到新的access token 获取成功之后持久化accessToken
 		if(accessToken.request()){
-			AccessTokenServer accessTokenServer = new AccessTokenServer();
-			CustomerServer customerServer = (CustomerServer)accessTokenServer.customerServer();
-			customerServer.save(accessToken);
+//			AccessTokenServer accessTokenServer = new AccessTokenServer();
+//			CustomerServer customerServer = (CustomerServer)accessTokenServer.customerServer();
+//			customerServer.save(accessToken);
 		}
 	}
 

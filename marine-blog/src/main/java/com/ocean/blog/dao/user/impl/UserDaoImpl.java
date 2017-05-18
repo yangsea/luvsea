@@ -51,11 +51,10 @@ public class UserDaoImpl extends BaseHibernateTemplate  implements UserDao  {
     public List<HashMap<Object, Object>> findListByProtocal(){
         
         List<HashMap<Object, Object>> userList = new  ArrayList<HashMap<Object, Object>>();
-        userList = this.getHibernateTemplate().execute(new HibernateCallback() {
+        userList = (List<HashMap<Object, Object>>) this.getHibernateTemplate().execute(new HibernateCallback() {
 
         public Object doInHibernate(org.hibernate.Session session)
                 throws HibernateException, SQLException {
-            // TODO Auto-generated method stub
             SQLQuery query = session.createSQLQuery("select * from menuRole");
             query.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
             return query.list();
@@ -75,7 +74,6 @@ public class UserDaoImpl extends BaseHibernateTemplate  implements UserDao  {
 //        int flag = this.getHibernateTemplate().execute(new HibernateCallback() {
 //            public Object doInHibernate(org.hibernate.Session session)
 //                      throws HibernateException, SQLException {
-//                  // TODO Auto-generated method stub
 //                  Query query = session.createSQLQuery("update test set name = '很烦2' where id = '63'");
 ////                          createQuery("insert into test(name) values ('测试事务333')");
 //                  int flag = query.executeUpdate();
@@ -94,10 +92,9 @@ public class UserDaoImpl extends BaseHibernateTemplate  implements UserDao  {
     @SuppressWarnings("unchecked")
     public int addMenuRole(){
         
-      int flag = this.getHibernateTemplate().execute(new HibernateCallback() {
+      int flag = (int) this.getHibernateTemplate().execute(new HibernateCallback() {
           public Object doInHibernate(org.hibernate.Session session)
                     throws HibernateException, SQLException {
-                // TODO Auto-generated method stub
                 Query query = session.createQuery("insert into menu(menuName) values('测试事务')");
                 int flag = query.executeUpdate();
                 return flag;
