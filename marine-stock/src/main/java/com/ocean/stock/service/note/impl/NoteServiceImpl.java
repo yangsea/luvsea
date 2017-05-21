@@ -1,4 +1,4 @@
-package com.ocean.stock.service.note.impl;
+package com.luvsea.stock.service.note.impl;
 
 import java.util.List;
 
@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.ocean.stock.dao.NoteMapper;
-import com.ocean.stock.entity.Note;
-import com.ocean.stock.service.note.NoteService;
+import com.luvsea.stock.dao.NoteMapper;
+import com.luvsea.stock.entity.Note;
+import com.luvsea.stock.service.note.NoteService;
 
 
 @Service

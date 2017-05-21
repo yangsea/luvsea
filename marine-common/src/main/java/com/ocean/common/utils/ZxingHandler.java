@@ -1,4 +1,4 @@
-//package com.ocean.common.utils;
+//package com.luvsea.common.utils;
 //
 //import java.awt.image.BufferedImage;
 //import java.io.File;

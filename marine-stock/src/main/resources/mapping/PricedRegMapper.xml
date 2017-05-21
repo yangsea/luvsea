@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ocean.stock.dao.PricedRegMapper">
-  <resultMap id="BaseResultMap" type="com.ocean.stock.entity.PricedReg">
+<mapper namespace="com.luvsea.stock.dao.PricedRegMapper">
+  <resultMap id="BaseResultMap" type="com.luvsea.stock.entity.PricedReg">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="integral_start" jdbcType="INTEGER" property="integralStart" />
     <result column="integral_end" jdbcType="INTEGER" property="integralEnd" />
@@ -26,7 +26,7 @@
     delete from t_stock_priced_reg
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.ocean.stock.entity.PricedReg">
+  <insert id="insert" parameterType="com.luvsea.stock.entity.PricedReg">
     insert into t_stock_priced_reg (id, integral_start, integral_end, 
       money, ratio_earn, create_time, 
       update_time, status, invalid
@@ -36,7 +36,7 @@
       #{updateTime,jdbcType=TIMESTAMP}, #{status,jdbcType=SMALLINT}, #{invalid,jdbcType=BIT}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.ocean.stock.entity.PricedReg">
+  <insert id="insertSelective" parameterType="com.luvsea.stock.entity.PricedReg">
     insert into t_stock_priced_reg
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -97,7 +97,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.ocean.stock.entity.PricedReg">
+  <update id="updateByPrimaryKeySelective" parameterType="com.luvsea.stock.entity.PricedReg">
     update t_stock_priced_reg
     <set>
       <if test="integralStart != null">
@@ -127,7 +127,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.ocean.stock.entity.PricedReg">
+  <update id="updateByPrimaryKey" parameterType="com.luvsea.stock.entity.PricedReg">
     update t_stock_priced_reg
     set integral_start = #{integralStart,jdbcType=INTEGER},
       integral_end = #{integralEnd,jdbcType=INTEGER},
@@ -139,7 +139,7 @@
       invalid = #{invalid,jdbcType=BIT}
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <resultMap id="BaseResultMap" type="com.ocean.stock.entity.PricedReg">
+  <resultMap id="BaseResultMap" type="com.luvsea.stock.entity.PricedReg">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="integral_start" jdbcType="INTEGER" property="integralStart" />
     <result column="integral_end" jdbcType="INTEGER" property="integralEnd" />
@@ -164,7 +164,7 @@
     delete from t_stock_priced_reg
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.ocean.stock.entity.PricedReg">
+  <insert id="insert" parameterType="com.luvsea.stock.entity.PricedReg">
     insert into t_stock_priced_reg (id, integral_start, integral_end, 
       money, ratio_earn, create_time, 
       update_time, status, invalid
@@ -174,7 +174,7 @@
       #{updateTime,jdbcType=TIMESTAMP}, #{status,jdbcType=SMALLINT}, #{invalid,jdbcType=BIT}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.ocean.stock.entity.PricedReg">
+  <insert id="insertSelective" parameterType="com.luvsea.stock.entity.PricedReg">
     insert into t_stock_priced_reg
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -235,7 +235,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.ocean.stock.entity.PricedReg">
+  <update id="updateByPrimaryKeySelective" parameterType="com.luvsea.stock.entity.PricedReg">
     update t_stock_priced_reg
     <set>
       <if test="integralStart != null">
@@ -265,7 +265,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.ocean.stock.entity.PricedReg">
+  <update id="updateByPrimaryKey" parameterType="com.luvsea.stock.entity.PricedReg">
     update t_stock_priced_reg
     set integral_start = #{integralStart,jdbcType=INTEGER},
       integral_end = #{integralEnd,jdbcType=INTEGER},
@@ -277,7 +277,7 @@
       invalid = #{invalid,jdbcType=BIT}
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <resultMap id="BaseResultMap" type="com.ocean.stock.entity.PricedReg">
+  <resultMap id="BaseResultMap" type="com.luvsea.stock.entity.PricedReg">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="integral_start" jdbcType="INTEGER" property="integralStart" />
     <result column="integral_end" jdbcType="INTEGER" property="integralEnd" />
@@ -302,7 +302,7 @@
     delete from t_stock_priced_reg
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.ocean.stock.entity.PricedReg">
+  <insert id="insert" parameterType="com.luvsea.stock.entity.PricedReg">
     insert into t_stock_priced_reg (id, integral_start, integral_end, 
       money, ratio_earn, create_time, 
       update_time, status, invalid
@@ -312,7 +312,7 @@
       #{updateTime,jdbcType=TIMESTAMP}, #{status,jdbcType=SMALLINT}, #{invalid,jdbcType=BIT}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.ocean.stock.entity.PricedReg">
+  <insert id="insertSelective" parameterType="com.luvsea.stock.entity.PricedReg">
     insert into t_stock_priced_reg
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -373,7 +373,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.ocean.stock.entity.PricedReg">
+  <update id="updateByPrimaryKeySelective" parameterType="com.luvsea.stock.entity.PricedReg">
     update t_stock_priced_reg
     <set>
       <if test="integralStart != null">
@@ -403,7 +403,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.ocean.stock.entity.PricedReg">
+  <update id="updateByPrimaryKey" parameterType="com.luvsea.stock.entity.PricedReg">
     update t_stock_priced_reg
     set integral_start = #{integralStart,jdbcType=INTEGER},
       integral_end = #{integralEnd,jdbcType=INTEGER},
@@ -415,7 +415,7 @@
       invalid = #{invalid,jdbcType=BIT}
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <resultMap id="BaseResultMap" type="com.ocean.stock.entity.PricedReg">
+  <resultMap id="BaseResultMap" type="com.luvsea.stock.entity.PricedReg">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="integral_start" jdbcType="INTEGER" property="integralStart" />
     <result column="integral_end" jdbcType="INTEGER" property="integralEnd" />
@@ -440,7 +440,7 @@
     delete from t_stock_priced_reg
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.ocean.stock.entity.PricedReg">
+  <insert id="insert" parameterType="com.luvsea.stock.entity.PricedReg">
     insert into t_stock_priced_reg (id, integral_start, integral_end, 
       money, ratio_earn, create_time, 
       update_time, status, invalid
@@ -450,7 +450,7 @@
       #{updateTime,jdbcType=TIMESTAMP}, #{status,jdbcType=SMALLINT}, #{invalid,jdbcType=BIT}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.ocean.stock.entity.PricedReg">
+  <insert id="insertSelective" parameterType="com.luvsea.stock.entity.PricedReg">
     insert into t_stock_priced_reg
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -511,7 +511,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.ocean.stock.entity.PricedReg">
+  <update id="updateByPrimaryKeySelective" parameterType="com.luvsea.stock.entity.PricedReg">
     update t_stock_priced_reg
     <set>
       <if test="integralStart != null">
@@ -541,7 +541,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.ocean.stock.entity.PricedReg">
+  <update id="updateByPrimaryKey" parameterType="com.luvsea.stock.entity.PricedReg">
     update t_stock_priced_reg
     set integral_start = #{integralStart,jdbcType=INTEGER},
       integral_end = #{integralEnd,jdbcType=INTEGER},
@@ -553,7 +553,7 @@
       invalid = #{invalid,jdbcType=BIT}
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <resultMap id="BaseResultMap" type="com.ocean.stock.entity.PricedReg">
+  <resultMap id="BaseResultMap" type="com.luvsea.stock.entity.PricedReg">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="integral_start" jdbcType="INTEGER" property="integralStart" />
     <result column="integral_end" jdbcType="INTEGER" property="integralEnd" />
@@ -578,7 +578,7 @@
     delete from t_stock_priced_reg
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.ocean.stock.entity.PricedReg">
+  <insert id="insert" parameterType="com.luvsea.stock.entity.PricedReg">
     insert into t_stock_priced_reg (id, integral_start, integral_end, 
       money, ratio_earn, create_time, 
       update_time, status, invalid
@@ -588,7 +588,7 @@
       #{updateTime,jdbcType=TIMESTAMP}, #{status,jdbcType=SMALLINT}, #{invalid,jdbcType=BIT}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.ocean.stock.entity.PricedReg">
+  <insert id="insertSelective" parameterType="com.luvsea.stock.entity.PricedReg">
     insert into t_stock_priced_reg
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -649,7 +649,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.ocean.stock.entity.PricedReg">
+  <update id="updateByPrimaryKeySelective" parameterType="com.luvsea.stock.entity.PricedReg">
     update t_stock_priced_reg
     <set>
       <if test="integralStart != null">
@@ -679,7 +679,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.ocean.stock.entity.PricedReg">
+  <update id="updateByPrimaryKey" parameterType="com.luvsea.stock.entity.PricedReg">
     update t_stock_priced_reg
     set integral_start = #{integralStart,jdbcType=INTEGER},
       integral_end = #{integralEnd,jdbcType=INTEGER},
@@ -691,7 +691,7 @@
       invalid = #{invalid,jdbcType=BIT}
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <resultMap id="BaseResultMap" type="com.ocean.stock.entity.PricedReg">
+  <resultMap id="BaseResultMap" type="com.luvsea.stock.entity.PricedReg">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="integral_start" jdbcType="INTEGER" property="integralStart" />
     <result column="integral_end" jdbcType="INTEGER" property="integralEnd" />
@@ -716,7 +716,7 @@
     delete from t_stock_priced_reg
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.ocean.stock.entity.PricedReg">
+  <insert id="insert" parameterType="com.luvsea.stock.entity.PricedReg">
     insert into t_stock_priced_reg (id, integral_start, integral_end, 
       money, ratio_earn, create_time, 
       update_time, status, invalid
@@ -726,7 +726,7 @@
       #{updateTime,jdbcType=TIMESTAMP}, #{status,jdbcType=SMALLINT}, #{invalid,jdbcType=BIT}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.ocean.stock.entity.PricedReg">
+  <insert id="insertSelective" parameterType="com.luvsea.stock.entity.PricedReg">
     insert into t_stock_priced_reg
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -787,7 +787,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.ocean.stock.entity.PricedReg">
+  <update id="updateByPrimaryKeySelective" parameterType="com.luvsea.stock.entity.PricedReg">
     update t_stock_priced_reg
     <set>
       <if test="integralStart != null">
@@ -817,7 +817,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.ocean.stock.entity.PricedReg">
+  <update id="updateByPrimaryKey" parameterType="com.luvsea.stock.entity.PricedReg">
     update t_stock_priced_reg
     set integral_start = #{integralStart,jdbcType=INTEGER},
       integral_end = #{integralEnd,jdbcType=INTEGER},

@@ -1,8 +1,8 @@
-package com.ocean.stock.controller.note;
+package com.luvsea.stock.controller.note;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.ocean.common.returnobject.ReturnObject;
+import com.luvsea.common.returnobject.ReturnObject;
 
 /** 笔记控制器*/
 @RequestMapping(value="note")

@@ -3,7 +3,7 @@
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  */
-package com.ocean.common.web;
+package com.luvsea.common.web;
 
 import java.io.UnsupportedEncodingException;
 import java.security.Principal;
@@ -23,9 +23,9 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import com.google.common.net.HttpHeaders;
-import com.ocean.common.config.Global;
-import com.ocean.common.utils.Encodes;
-import com.ocean.common.utils.StringUtils;
+import com.luvsea.common.config.Global;
+import com.luvsea.common.utils.Encodes;
+import com.luvsea.common.utils.StringUtils;
 
 /**
  * Http与Servlet工具类.

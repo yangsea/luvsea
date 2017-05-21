@@ -1,4 +1,4 @@
-package com.ocean.common.util.redis;
+package com.luvsea.common.util.redis;
 ///*
 // * Copyright 2011-2016 the original author or authors.
 // * 

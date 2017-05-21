@@ -1,6 +1,6 @@
-package com.ocean.stock.dao;
+package com.luvsea.stock.dao;
 
-import com.ocean.stock.entity.Integral;
+import com.luvsea.stock.entity.Integral;
 
 public interface IntegralMapper {
     int deleteByPrimaryKey(Long id);

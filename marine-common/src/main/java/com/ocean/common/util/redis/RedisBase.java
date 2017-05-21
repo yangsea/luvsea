@@ -1,4 +1,4 @@
-package com.ocean.common.util.redis;
+package com.luvsea.common.util.redis;
 //package com.youchang.common.util.redis;
 //
 //    /// <summary>

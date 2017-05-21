@@ -1,6 +1,6 @@
-package com.ocean.stock.dao;
+package com.luvsea.stock.dao;
 
-import com.ocean.stock.entity.User;
+import com.luvsea.stock.entity.User;
 
 public interface UserMapper {
     int deleteByPrimaryKey(Long id);

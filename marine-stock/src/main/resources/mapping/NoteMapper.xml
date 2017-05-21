@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ocean.stock.dao.NoteMapper">
-  <resultMap id="BaseResultMap" type="com.ocean.stock.entity.Note">
+<mapper namespace="com.luvsea.stock.dao.NoteMapper">
+  <resultMap id="BaseResultMap" type="com.luvsea.stock.entity.Note">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="openid" jdbcType="VARCHAR" property="openid" />
     <result column="title" jdbcType="VARCHAR" property="title" />
@@ -30,7 +30,7 @@
     delete from t_stock_note
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.ocean.stock.entity.Note">
+  <insert id="insert" parameterType="com.luvsea.stock.entity.Note">
     insert into t_stock_note (id, openid, title, 
       stock_code, invest_type, invest_term, 
       income_rate_arg, remark, priced, 
@@ -42,7 +42,7 @@
       #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{status,jdbcType=SMALLINT}, 
       #{invalid,jdbcType=BIT})
   </insert>
-  <insert id="insertSelective" parameterType="com.ocean.stock.entity.Note">
+  <insert id="insertSelective" parameterType="com.luvsea.stock.entity.Note">
     insert into t_stock_note
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -127,7 +127,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.ocean.stock.entity.Note">
+  <update id="updateByPrimaryKeySelective" parameterType="com.luvsea.stock.entity.Note">
     update t_stock_note
     <set>
       <if test="openid != null">
@@ -169,7 +169,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.ocean.stock.entity.Note">
+  <update id="updateByPrimaryKey" parameterType="com.luvsea.stock.entity.Note">
     update t_stock_note
     set openid = #{openid,jdbcType=VARCHAR},
       title = #{title,jdbcType=VARCHAR},
@@ -185,7 +185,7 @@
       invalid = #{invalid,jdbcType=BIT}
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <resultMap id="BaseResultMap" type="com.ocean.stock.entity.Note">
+  <resultMap id="BaseResultMap" type="com.luvsea.stock.entity.Note">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="openid" jdbcType="VARCHAR" property="openid" />
     <result column="title" jdbcType="VARCHAR" property="title" />
@@ -214,7 +214,7 @@
     delete from t_stock_note
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.ocean.stock.entity.Note">
+  <insert id="insert" parameterType="com.luvsea.stock.entity.Note">
     insert into t_stock_note (id, openid, title, 
       stock_code, invest_type, invest_term, 
       income_rate_arg, remark, priced, 
@@ -226,7 +226,7 @@
       #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{status,jdbcType=SMALLINT}, 
       #{invalid,jdbcType=BIT})
   </insert>
-  <insert id="insertSelective" parameterType="com.ocean.stock.entity.Note">
+  <insert id="insertSelective" parameterType="com.luvsea.stock.entity.Note">
     insert into t_stock_note
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -311,7 +311,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.ocean.stock.entity.Note">
+  <update id="updateByPrimaryKeySelective" parameterType="com.luvsea.stock.entity.Note">
     update t_stock_note
     <set>
       <if test="openid != null">
@@ -353,7 +353,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.ocean.stock.entity.Note">
+  <update id="updateByPrimaryKey" parameterType="com.luvsea.stock.entity.Note">
     update t_stock_note
     set openid = #{openid,jdbcType=VARCHAR},
       title = #{title,jdbcType=VARCHAR},
@@ -369,7 +369,7 @@
       invalid = #{invalid,jdbcType=BIT}
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <resultMap id="BaseResultMap" type="com.ocean.stock.entity.Note">
+  <resultMap id="BaseResultMap" type="com.luvsea.stock.entity.Note">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="openid" jdbcType="VARCHAR" property="openid" />
     <result column="title" jdbcType="VARCHAR" property="title" />
@@ -398,7 +398,7 @@
     delete from t_stock_note
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.ocean.stock.entity.Note">
+  <insert id="insert" parameterType="com.luvsea.stock.entity.Note">
     insert into t_stock_note (id, openid, title, 
       stock_code, invest_type, invest_term, 
       income_rate_arg, remark, priced, 
@@ -410,7 +410,7 @@
       #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{status,jdbcType=SMALLINT}, 
       #{invalid,jdbcType=BIT})
   </insert>
-  <insert id="insertSelective" parameterType="com.ocean.stock.entity.Note">
+  <insert id="insertSelective" parameterType="com.luvsea.stock.entity.Note">
     insert into t_stock_note
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -495,7 +495,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.ocean.stock.entity.Note">
+  <update id="updateByPrimaryKeySelective" parameterType="com.luvsea.stock.entity.Note">
     update t_stock_note
     <set>
       <if test="openid != null">
@@ -537,7 +537,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.ocean.stock.entity.Note">
+  <update id="updateByPrimaryKey" parameterType="com.luvsea.stock.entity.Note">
     update t_stock_note
     set openid = #{openid,jdbcType=VARCHAR},
       title = #{title,jdbcType=VARCHAR},
@@ -553,7 +553,7 @@
       invalid = #{invalid,jdbcType=BIT}
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <resultMap id="BaseResultMap" type="com.ocean.stock.entity.Note">
+  <resultMap id="BaseResultMap" type="com.luvsea.stock.entity.Note">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="openid" jdbcType="VARCHAR" property="openid" />
     <result column="title" jdbcType="VARCHAR" property="title" />
@@ -582,7 +582,7 @@
     delete from t_stock_note
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.ocean.stock.entity.Note">
+  <insert id="insert" parameterType="com.luvsea.stock.entity.Note">
     insert into t_stock_note (id, openid, title, 
       stock_code, invest_type, invest_term, 
       income_rate_arg, remark, priced, 
@@ -594,7 +594,7 @@
       #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{status,jdbcType=SMALLINT}, 
       #{invalid,jdbcType=BIT})
   </insert>
-  <insert id="insertSelective" parameterType="com.ocean.stock.entity.Note">
+  <insert id="insertSelective" parameterType="com.luvsea.stock.entity.Note">
     insert into t_stock_note
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -679,7 +679,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.ocean.stock.entity.Note">
+  <update id="updateByPrimaryKeySelective" parameterType="com.luvsea.stock.entity.Note">
     update t_stock_note
     <set>
       <if test="openid != null">
@@ -721,7 +721,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.ocean.stock.entity.Note">
+  <update id="updateByPrimaryKey" parameterType="com.luvsea.stock.entity.Note">
     update t_stock_note
     set openid = #{openid,jdbcType=VARCHAR},
       title = #{title,jdbcType=VARCHAR},
@@ -737,7 +737,7 @@
       invalid = #{invalid,jdbcType=BIT}
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <resultMap id="BaseResultMap" type="com.ocean.stock.entity.Note">
+  <resultMap id="BaseResultMap" type="com.luvsea.stock.entity.Note">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="openid" jdbcType="VARCHAR" property="openid" />
     <result column="title" jdbcType="VARCHAR" property="title" />
@@ -766,7 +766,7 @@
     delete from t_stock_note
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.ocean.stock.entity.Note">
+  <insert id="insert" parameterType="com.luvsea.stock.entity.Note">
     insert into t_stock_note (id, openid, title, 
       stock_code, invest_type, invest_term, 
       income_rate_arg, remark, priced, 
@@ -778,7 +778,7 @@
       #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{status,jdbcType=SMALLINT}, 
       #{invalid,jdbcType=BIT})
   </insert>
-  <insert id="insertSelective" parameterType="com.ocean.stock.entity.Note">
+  <insert id="insertSelective" parameterType="com.luvsea.stock.entity.Note">
     insert into t_stock_note
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -863,7 +863,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.ocean.stock.entity.Note">
+  <update id="updateByPrimaryKeySelective" parameterType="com.luvsea.stock.entity.Note">
     update t_stock_note
     <set>
       <if test="openid != null">
@@ -905,7 +905,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.ocean.stock.entity.Note">
+  <update id="updateByPrimaryKey" parameterType="com.luvsea.stock.entity.Note">
     update t_stock_note
     set openid = #{openid,jdbcType=VARCHAR},
       title = #{title,jdbcType=VARCHAR},
@@ -921,7 +921,7 @@
       invalid = #{invalid,jdbcType=BIT}
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <resultMap id="BaseResultMap" type="com.ocean.stock.entity.Note">
+  <resultMap id="BaseResultMap" type="com.luvsea.stock.entity.Note">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="openid" jdbcType="VARCHAR" property="openid" />
     <result column="title" jdbcType="VARCHAR" property="title" />
@@ -950,7 +950,7 @@
     delete from t_stock_note
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.ocean.stock.entity.Note">
+  <insert id="insert" parameterType="com.luvsea.stock.entity.Note">
     insert into t_stock_note (id, openid, title, 
       stock_code, invest_type, invest_term, 
       income_rate_arg, remark, priced, 
@@ -962,7 +962,7 @@
       #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{status,jdbcType=SMALLINT}, 
       #{invalid,jdbcType=BIT})
   </insert>
-  <insert id="insertSelective" parameterType="com.ocean.stock.entity.Note">
+  <insert id="insertSelective" parameterType="com.luvsea.stock.entity.Note">
     insert into t_stock_note
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -1047,7 +1047,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.ocean.stock.entity.Note">
+  <update id="updateByPrimaryKeySelective" parameterType="com.luvsea.stock.entity.Note">
     update t_stock_note
     <set>
       <if test="openid != null">
@@ -1089,7 +1089,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.ocean.stock.entity.Note">
+  <update id="updateByPrimaryKey" parameterType="com.luvsea.stock.entity.Note">
     update t_stock_note
     set openid = #{openid,jdbcType=VARCHAR},
       title = #{title,jdbcType=VARCHAR},
@@ -1106,7 +1106,7 @@
     where id = #{id,jdbcType=BIGINT}
   </update>
   
-    <select id="selectBySelective" parameterType="com.ocean.stock.entity.Note" resultMap="BaseResultMap">
+    <select id="selectBySelective" parameterType="com.luvsea.stock.entity.Note" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from t_stock_note

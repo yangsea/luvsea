@@ -1,4 +1,4 @@
-package com.ocean.wechat.common.util;
+package com.luvsea.wechat.common.util;
 
 public class UtilWechatJs {
     

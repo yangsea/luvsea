@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ocean.stock.dao.IncomeDetailMapper">
-  <resultMap id="BaseResultMap" type="com.ocean.stock.entity.IncomeDetail">
+<mapper namespace="com.luvsea.stock.dao.IncomeDetailMapper">
+  <resultMap id="BaseResultMap" type="com.luvsea.stock.entity.IncomeDetail">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="money" jdbcType="REAL" property="money" />
     <result column="note_number" jdbcType="BIGINT" property="noteNumber" />
@@ -27,7 +27,7 @@
     delete from t_stock_income_detail
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.ocean.stock.entity.IncomeDetail">
+  <insert id="insert" parameterType="com.luvsea.stock.entity.IncomeDetail">
     insert into t_stock_income_detail (id, money, note_number, 
       pay_user, paid_user, pay_type, 
       create_time, update_time, status, 
@@ -37,7 +37,7 @@
       #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{status,jdbcType=SMALLINT}, 
       #{invalid,jdbcType=BIT})
   </insert>
-  <insert id="insertSelective" parameterType="com.ocean.stock.entity.IncomeDetail">
+  <insert id="insertSelective" parameterType="com.luvsea.stock.entity.IncomeDetail">
     insert into t_stock_income_detail
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -104,7 +104,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.ocean.stock.entity.IncomeDetail">
+  <update id="updateByPrimaryKeySelective" parameterType="com.luvsea.stock.entity.IncomeDetail">
     update t_stock_income_detail
     <set>
       <if test="money != null">
@@ -137,7 +137,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.ocean.stock.entity.IncomeDetail">
+  <update id="updateByPrimaryKey" parameterType="com.luvsea.stock.entity.IncomeDetail">
     update t_stock_income_detail
     set money = #{money,jdbcType=REAL},
       note_number = #{noteNumber,jdbcType=BIGINT},
@@ -150,7 +150,7 @@
       invalid = #{invalid,jdbcType=BIT}
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <resultMap id="BaseResultMap" type="com.ocean.stock.entity.IncomeDetail">
+  <resultMap id="BaseResultMap" type="com.luvsea.stock.entity.IncomeDetail">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="money" jdbcType="REAL" property="money" />
     <result column="note_number" jdbcType="BIGINT" property="noteNumber" />
@@ -176,7 +176,7 @@
     delete from t_stock_income_detail
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.ocean.stock.entity.IncomeDetail">
+  <insert id="insert" parameterType="com.luvsea.stock.entity.IncomeDetail">
     insert into t_stock_income_detail (id, money, note_number, 
       pay_user, paid_user, pay_type, 
       create_time, update_time, status, 
@@ -186,7 +186,7 @@
       #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{status,jdbcType=SMALLINT}, 
       #{invalid,jdbcType=BIT})
   </insert>
-  <insert id="insertSelective" parameterType="com.ocean.stock.entity.IncomeDetail">
+  <insert id="insertSelective" parameterType="com.luvsea.stock.entity.IncomeDetail">
     insert into t_stock_income_detail
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -253,7 +253,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.ocean.stock.entity.IncomeDetail">
+  <update id="updateByPrimaryKeySelective" parameterType="com.luvsea.stock.entity.IncomeDetail">
     update t_stock_income_detail
     <set>
       <if test="money != null">
@@ -286,7 +286,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.ocean.stock.entity.IncomeDetail">
+  <update id="updateByPrimaryKey" parameterType="com.luvsea.stock.entity.IncomeDetail">
     update t_stock_income_detail
     set money = #{money,jdbcType=REAL},
       note_number = #{noteNumber,jdbcType=BIGINT},
@@ -299,7 +299,7 @@
       invalid = #{invalid,jdbcType=BIT}
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <resultMap id="BaseResultMap" type="com.ocean.stock.entity.IncomeDetail">
+  <resultMap id="BaseResultMap" type="com.luvsea.stock.entity.IncomeDetail">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="money" jdbcType="REAL" property="money" />
     <result column="note_number" jdbcType="BIGINT" property="noteNumber" />
@@ -325,7 +325,7 @@
     delete from t_stock_income_detail
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.ocean.stock.entity.IncomeDetail">
+  <insert id="insert" parameterType="com.luvsea.stock.entity.IncomeDetail">
     insert into t_stock_income_detail (id, money, note_number, 
       pay_user, paid_user, pay_type, 
       create_time, update_time, status, 
@@ -335,7 +335,7 @@
       #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{status,jdbcType=SMALLINT}, 
       #{invalid,jdbcType=BIT})
   </insert>
-  <insert id="insertSelective" parameterType="com.ocean.stock.entity.IncomeDetail">
+  <insert id="insertSelective" parameterType="com.luvsea.stock.entity.IncomeDetail">
     insert into t_stock_income_detail
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -402,7 +402,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.ocean.stock.entity.IncomeDetail">
+  <update id="updateByPrimaryKeySelective" parameterType="com.luvsea.stock.entity.IncomeDetail">
     update t_stock_income_detail
     <set>
       <if test="money != null">
@@ -435,7 +435,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.ocean.stock.entity.IncomeDetail">
+  <update id="updateByPrimaryKey" parameterType="com.luvsea.stock.entity.IncomeDetail">
     update t_stock_income_detail
     set money = #{money,jdbcType=REAL},
       note_number = #{noteNumber,jdbcType=BIGINT},
@@ -448,7 +448,7 @@
       invalid = #{invalid,jdbcType=BIT}
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <resultMap id="BaseResultMap" type="com.ocean.stock.entity.IncomeDetail">
+  <resultMap id="BaseResultMap" type="com.luvsea.stock.entity.IncomeDetail">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="money" jdbcType="REAL" property="money" />
     <result column="note_number" jdbcType="BIGINT" property="noteNumber" />
@@ -474,7 +474,7 @@
     delete from t_stock_income_detail
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.ocean.stock.entity.IncomeDetail">
+  <insert id="insert" parameterType="com.luvsea.stock.entity.IncomeDetail">
     insert into t_stock_income_detail (id, money, note_number, 
       pay_user, paid_user, pay_type, 
       create_time, update_time, status, 
@@ -484,7 +484,7 @@
       #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{status,jdbcType=SMALLINT}, 
       #{invalid,jdbcType=BIT})
   </insert>
-  <insert id="insertSelective" parameterType="com.ocean.stock.entity.IncomeDetail">
+  <insert id="insertSelective" parameterType="com.luvsea.stock.entity.IncomeDetail">
     insert into t_stock_income_detail
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -551,7 +551,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.ocean.stock.entity.IncomeDetail">
+  <update id="updateByPrimaryKeySelective" parameterType="com.luvsea.stock.entity.IncomeDetail">
     update t_stock_income_detail
     <set>
       <if test="money != null">
@@ -584,7 +584,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.ocean.stock.entity.IncomeDetail">
+  <update id="updateByPrimaryKey" parameterType="com.luvsea.stock.entity.IncomeDetail">
     update t_stock_income_detail
     set money = #{money,jdbcType=REAL},
       note_number = #{noteNumber,jdbcType=BIGINT},
@@ -597,7 +597,7 @@
       invalid = #{invalid,jdbcType=BIT}
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <resultMap id="BaseResultMap" type="com.ocean.stock.entity.IncomeDetail">
+  <resultMap id="BaseResultMap" type="com.luvsea.stock.entity.IncomeDetail">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="money" jdbcType="REAL" property="money" />
     <result column="note_number" jdbcType="BIGINT" property="noteNumber" />
@@ -623,7 +623,7 @@
     delete from t_stock_income_detail
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.ocean.stock.entity.IncomeDetail">
+  <insert id="insert" parameterType="com.luvsea.stock.entity.IncomeDetail">
     insert into t_stock_income_detail (id, money, note_number, 
       pay_user, paid_user, pay_type, 
       create_time, update_time, status, 
@@ -633,7 +633,7 @@
       #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{status,jdbcType=SMALLINT}, 
       #{invalid,jdbcType=BIT})
   </insert>
-  <insert id="insertSelective" parameterType="com.ocean.stock.entity.IncomeDetail">
+  <insert id="insertSelective" parameterType="com.luvsea.stock.entity.IncomeDetail">
     insert into t_stock_income_detail
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -700,7 +700,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.ocean.stock.entity.IncomeDetail">
+  <update id="updateByPrimaryKeySelective" parameterType="com.luvsea.stock.entity.IncomeDetail">
     update t_stock_income_detail
     <set>
       <if test="money != null">
@@ -733,7 +733,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.ocean.stock.entity.IncomeDetail">
+  <update id="updateByPrimaryKey" parameterType="com.luvsea.stock.entity.IncomeDetail">
     update t_stock_income_detail
     set money = #{money,jdbcType=REAL},
       note_number = #{noteNumber,jdbcType=BIGINT},
@@ -746,7 +746,7 @@
       invalid = #{invalid,jdbcType=BIT}
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <resultMap id="BaseResultMap" type="com.ocean.stock.entity.IncomeDetail">
+  <resultMap id="BaseResultMap" type="com.luvsea.stock.entity.IncomeDetail">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="money" jdbcType="REAL" property="money" />
     <result column="note_number" jdbcType="BIGINT" property="noteNumber" />
@@ -772,7 +772,7 @@
     delete from t_stock_income_detail
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.ocean.stock.entity.IncomeDetail">
+  <insert id="insert" parameterType="com.luvsea.stock.entity.IncomeDetail">
     insert into t_stock_income_detail (id, money, note_number, 
       pay_user, paid_user, pay_type, 
       create_time, update_time, status, 
@@ -782,7 +782,7 @@
       #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{status,jdbcType=SMALLINT}, 
       #{invalid,jdbcType=BIT})
   </insert>
-  <insert id="insertSelective" parameterType="com.ocean.stock.entity.IncomeDetail">
+  <insert id="insertSelective" parameterType="com.luvsea.stock.entity.IncomeDetail">
     insert into t_stock_income_detail
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -849,7 +849,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.ocean.stock.entity.IncomeDetail">
+  <update id="updateByPrimaryKeySelective" parameterType="com.luvsea.stock.entity.IncomeDetail">
     update t_stock_income_detail
     <set>
       <if test="money != null">
@@ -882,7 +882,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.ocean.stock.entity.IncomeDetail">
+  <update id="updateByPrimaryKey" parameterType="com.luvsea.stock.entity.IncomeDetail">
     update t_stock_income_detail
     set money = #{money,jdbcType=REAL},
       note_number = #{noteNumber,jdbcType=BIGINT},

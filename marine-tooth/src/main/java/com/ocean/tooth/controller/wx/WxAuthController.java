@@ -1,4 +1,4 @@
-package com.ocean.tooth.controller.wx;
+package com.luvsea.tooth.controller.wx;
 
 import java.io.UnsupportedEncodingException;
 
@@ -9,8 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.ocean.common.util.UtilProperties;
-import com.ocean.wechat.common.util.UtilWechat;
+import com.luvsea.common.util.UtilProperties;
+import com.luvsea.wechat.common.util.UtilWechat;
 
 @Controller
 @RequestMapping("auth")

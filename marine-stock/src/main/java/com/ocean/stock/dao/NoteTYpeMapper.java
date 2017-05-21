@@ -1,6 +1,6 @@
-package com.ocean.stock.dao;
+package com.luvsea.stock.dao;
 
-import com.ocean.stock.entity.NoteTYpe;
+import com.luvsea.stock.entity.NoteTYpe;
 
 public interface NoteTYpeMapper {
     int deleteByPrimaryKey(Long id);

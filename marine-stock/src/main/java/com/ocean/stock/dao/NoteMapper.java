@@ -1,8 +1,8 @@
-package com.ocean.stock.dao;
+package com.luvsea.stock.dao;
 
 import java.util.List;
 
-import com.ocean.stock.entity.Note;
+import com.luvsea.stock.entity.Note;
 
 public interface NoteMapper {
     int deleteByPrimaryKey(Long id);

@@ -1,6 +1,6 @@
-package com.ocean.stock.dao;
+package com.luvsea.stock.dao;
 
-import com.ocean.stock.entity.IncomeDetail;
+import com.luvsea.stock.entity.IncomeDetail;
 
 public interface IncomeDetailMapper {
     int deleteByPrimaryKey(Long id);

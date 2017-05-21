@@ -1,6 +1,6 @@
-package com.ocean.stock.dao;
+package com.luvsea.stock.dao;
 
-import com.ocean.stock.entity.SpreadText;
+import com.luvsea.stock.entity.SpreadText;
 
 public interface SpreadTextMapper {
     int deleteByPrimaryKey(Long id);

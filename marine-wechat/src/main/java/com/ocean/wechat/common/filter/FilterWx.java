@@ -1,4 +1,4 @@
-package com.ocean.wechat.common.filter;
+package com.luvsea.wechat.common.filter;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -17,10 +17,10 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.ocean.common.encrypt.UtilSha14Wx;
-import com.ocean.common.entity.wx.InputMessage;
-import com.ocean.common.enumeration.EnumWx;
-import com.ocean.common.enumeration.MsgType;
+import com.luvsea.common.encrypt.UtilSha14Wx;
+import com.luvsea.common.entity.wx.InputMessage;
+import com.luvsea.common.enumeration.EnumWx;
+import com.luvsea.common.enumeration.MsgType;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 public class FilterWx implements Filter {

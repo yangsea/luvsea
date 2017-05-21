@@ -1,4 +1,4 @@
-package com.ocean.common.utils;
+package com.luvsea.common.utils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

@@ -1,16 +1,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>com.ocean</groupId>
-    <artifactId>marine</artifactId>
+    <groupId>com.luvsea</groupId>
+    <artifactId>luvsea</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>marine-stock</artifactId>
+  <artifactId>luvsea-stock</artifactId>
   <packaging>war</packaging>
     <dependencies>
     <dependency>
-        <groupId>com.ocean</groupId>
-        <artifactId>marine-wechat</artifactId>
+        <groupId>com.luvsea</groupId>
+        <artifactId>luvsea-wechat</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </dependency>
   </dependencies>
@@ -41,7 +41,7 @@
         </profile>
   </profiles>
   <build>
-    <finalName>marine-stock</finalName>
+    <finalName>luvsea-stock</finalName>
       <filters><!--获得过滤使用的源文件  即有实际数据的地反-->
           <filter>src/main/resources/properties/jdbc/${env}.properties</filter>
           <filter>src/main/resources/properties/wx/${env}.properties</filter>

@@ -3,15 +3,15 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>com.ocean</groupId>
-    <artifactId>marine</artifactId>
+    <groupId>com.luvsea</groupId>
+    <artifactId>luvsea</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-<!--   <groupId>com.ocean.servlet</groupId>这个可以直接去掉 ，或者是直接 com.ocean 效果是一样的,会导致生成一个sevlet下面再生成artifactid -->
-  <artifactId>marine-servlet</artifactId>
+<!--   <groupId>com.luvsea.servlet</groupId>这个可以直接去掉 ，或者是直接 com.luvsea 效果是一样的,会导致生成一个sevlet下面再生成artifactid -->
+  <artifactId>luvsea-servlet</artifactId>
   <version>0.0.1.1-SNAPSHOT</version>
   <packaging>war</packaging>
-  <name>marine-servlet</name>
+  <name>luvsea-servlet</name>
   <url>http://maven.apache.org</url>
   <dependencies>    
     <!-- vaddin -->
@@ -71,7 +71,7 @@
   </dependencies>
   
   <build>
-    <finalName>marine-servlet</finalName>
+    <finalName>luvsea-servlet</finalName>
             <plugins>
           <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

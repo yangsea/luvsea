@@ -1,4 +1,4 @@
-package com.ocean.common.http;
+package com.luvsea.common.http;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -149,7 +149,7 @@ public static String getGetResponse(String params,String host){
         int number = random.nextInt(base.length());   
         char a = base.charAt(number);
           String params = "{\"eggs\":"+a+"}";
-      String jsonStr = UtilHttpClient.getPostResponse(params, "http://ocean.iask.in/blog/article/getEggs");
+      String jsonStr = UtilHttpClient.getPostResponse(params, "http://luvsea.iask.in/blog/article/getEggs");
         System.out.println(jsonStr);
     }
 

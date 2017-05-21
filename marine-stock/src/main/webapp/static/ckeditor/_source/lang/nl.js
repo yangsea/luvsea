@@ -645,7 +645,7 @@ CKEDITOR.lang['nl'] =
 		'8B4513' : 'Chocoladebruin',
 		'2F4F4F' : 'Donkerleigrijs',
 		'008080' : 'Blauwgroen',
-		'000080' : 'Marine',
+		'000080' : 'luvsea',
 		'4B0082' : 'Indigo',
 		'696969' : 'Donkergrijs',
 		'B22222' : 'Baksteen',

@@ -1,4 +1,4 @@
-package com.ocean.common.util;
+package com.luvsea.common.util;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -17,12 +17,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.ocean.common.basic.UtilString;
-import com.ocean.common.encrypt.UtilSha14Wx;
-import com.ocean.common.enumeration.EnumHost;
-import com.ocean.common.enumeration.EnumWx;
-import com.ocean.common.http.OLDUtilHttpClient;
-import com.ocean.common.returnobject.ReturnObject;
+import com.luvsea.common.basic.UtilString;
+import com.luvsea.common.encrypt.UtilSha14Wx;
+import com.luvsea.common.enumeration.EnumHost;
+import com.luvsea.common.enumeration.EnumWx;
+import com.luvsea.common.http.OLDUtilHttpClient;
+import com.luvsea.common.returnobject.ReturnObject;
 
 public class UtilOAuthWx {
         

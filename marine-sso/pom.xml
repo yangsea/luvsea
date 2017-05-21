@@ -3,14 +3,14 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>com.ocean</groupId>
-    <artifactId>marine</artifactId>
+    <groupId>com.luvsea</groupId>
+    <artifactId>luvsea</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-<!--   <groupId>com.ocean</groupId> -->
-  <artifactId>marine-sso</artifactId>
+<!--   <groupId>com.luvsea</groupId> -->
+  <artifactId>luvsea-sso</artifactId>
   <packaging>war</packaging>
-  <name>marine-sso</name>
+  <name>luvsea-sso</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
@@ -21,6 +21,6 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>marine-sso</finalName>
+    <finalName>luvsea-sso</finalName>
   </build>
 </project>

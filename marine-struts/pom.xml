@@ -3,14 +3,14 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>com.ocean</groupId>
-    <artifactId>marine</artifactId>
+    <groupId>com.luvsea</groupId>
+    <artifactId>luvsea</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 <!--   <groupId>struts</groupId> -->
-  <artifactId>marine-struts</artifactId>
+  <artifactId>luvsea-struts</artifactId>
   <packaging>war</packaging>
-  <name>marine-struts</name>
+  <name>luvsea-struts</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
@@ -22,6 +22,6 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>marine-struts</finalName>
+    <finalName>luvsea-struts</finalName>
   </build>
 </project>

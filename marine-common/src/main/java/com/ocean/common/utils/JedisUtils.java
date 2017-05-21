@@ -1,7 +1,7 @@
 /**
  * Copyright &copy; 2012-2016 <a href="https://github.com/thinkgem/jeesite">JeeSite</a> All rights reserved.
  */
-package com.ocean.common.utils;
+package com.luvsea.common.utils;
 
 import java.util.List;
 import java.util.Map;
@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
-//import com.ocean.common.config.Global;
+//import com.luvsea.common.config.Global;
 
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;

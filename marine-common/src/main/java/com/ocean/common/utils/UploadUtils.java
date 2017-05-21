@@ -1,4 +1,4 @@
-package com.ocean.common.utils;
+package com.luvsea.common.utils;
 
 import java.io.File;
 import java.io.IOException;

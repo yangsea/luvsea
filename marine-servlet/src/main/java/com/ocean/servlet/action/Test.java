@@ -1,4 +1,4 @@
-package com.ocean.servlet.action;
+package com.luvsea.servlet.action;
 
 
 public class Test {

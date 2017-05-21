@@ -1,7 +1,7 @@
 /**
  * Copyright &copy; 2012-2016 <a href="https://github.com/thinkgem/jeesite">JeeSite</a> All rights reserved.
  */
-package com.ocean.common.config;
+package com.luvsea.common.config;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,8 +11,8 @@ import org.springframework.core.io.DefaultResourceLoader;
 
 import com.ckfinder.connector.ServletContextFactory;
 import com.google.common.collect.Maps;
-import com.ocean.common.utils.PropertiesLoader;
-import com.ocean.common.utils.StringUtils;
+import com.luvsea.common.utils.PropertiesLoader;
+import com.luvsea.common.utils.StringUtils;
 
 /**
  * 全局配置类

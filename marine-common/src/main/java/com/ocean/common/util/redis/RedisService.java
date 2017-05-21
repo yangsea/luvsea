@@ -1,4 +1,4 @@
-//package com.ocean.common.util.redis;
+//package com.luvsea.common.util.redis;
 //
 //import java.util.Set;
 //

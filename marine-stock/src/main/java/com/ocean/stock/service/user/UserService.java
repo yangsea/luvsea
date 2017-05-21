@@ -1,4 +1,4 @@
-package com.ocean.stock.service.user;
+package com.luvsea.stock.service.user;
 
 public interface UserService {
 

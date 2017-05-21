@@ -645,7 +645,7 @@ CKEDITOR.lang['fr'] =
 		'8B4513' : 'Brun moyen',
 		'2F4F4F' : 'Vert sombre',
 		'008080' : 'Canard',
-		'000080' : 'Bleu marine',
+		'000080' : 'Bleu luvsea',
 		'4B0082' : 'Indigo',
 		'696969' : 'Gris foncé',
 		'B22222' : 'Rouge brique',

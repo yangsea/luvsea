@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 2013-10-22 15:28:34 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-    <class name="com.ocean.main.entity.Article" table="article" schema="dooriya">
+    <class name="com.luvsea.main.entity.Article" table="article" schema="dooriya">
     	<cache usage="read-write" include="all"/>
         <id name="id" type="long">
             <column name="id" precision="5" scale="0" />
@@ -24,6 +24,6 @@
          <property name="updateTime" type="timestamp">
             <column name="updateTime" length="32" />
         </property>
-        <one-to-one name="author" class="com.ocean.main.entity.Author" property-ref="article"/>
+        <one-to-one name="author" class="com.luvsea.main.entity.Author" property-ref="article"/>
     </class>
 </hibernate-mapping>

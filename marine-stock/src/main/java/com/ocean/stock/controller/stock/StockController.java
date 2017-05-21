@@ -1,8 +1,8 @@
-package com.ocean.stock.controller.stock;
+package com.luvsea.stock.controller.stock;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.ocean.stock.controller.base.BaseController;
+import com.luvsea.stock.controller.base.BaseController;
 
 @RequestMapping(value="stock")
 public class StockController extends BaseController{

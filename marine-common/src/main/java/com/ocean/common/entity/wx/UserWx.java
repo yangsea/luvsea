@@ -1,4 +1,4 @@
-package com.ocean.common.entity.wx;
+package com.luvsea.common.entity.wx;
 
 import java.sql.Timestamp;
 

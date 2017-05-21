@@ -1,4 +1,4 @@
-package com.ocean.common.message;
+package com.luvsea.common.message;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -7,9 +7,9 @@ import org.apache.http.client.ClientProtocolException;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.ocean.common.enumeration.EnumHost;
-import com.ocean.common.enumeration.EnumSmsTemplate;
-import com.ocean.common.http.OLDUtilHttpClient;
+import com.luvsea.common.enumeration.EnumHost;
+import com.luvsea.common.enumeration.EnumSmsTemplate;
+import com.luvsea.common.http.OLDUtilHttpClient;
 
 public class UtilSMS {
 
