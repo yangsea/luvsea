@@ -15,7 +15,11 @@ public class TestBase {
 //        long currentTime = currentDate.getTime();
 //        System.out.println(currentTime);
         
-        StringBuffer sb = new StringBuffer();
-        System.out.println(sb.length());
+//        StringBuffer sb = new StringBuffer();
+//        System.out.println(sb.length());
+        Integer b = null;
+        int a = b;
+        System.out.println(a);
+//        System.out.println((int)((Math.random()*9+1)*10));
     }
 }
