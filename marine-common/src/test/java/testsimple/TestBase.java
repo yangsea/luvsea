@@ -17,9 +17,11 @@ public class TestBase {
         
 //        StringBuffer sb = new StringBuffer();
 //        System.out.println(sb.length());
-        Integer b = null;
-        int a = b;
-        System.out.println(a);
+//        Integer b = null;
+//        int a = b;
+//        System.out.println(a);
 //        System.out.println((int)((Math.random()*9+1)*10));
+        String a = null;
+        a.indexOf("a");
     }
 }
