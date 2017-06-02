@@ -1,4 +1,4 @@
-package com.ocean.common.encrypt;
+package com.luvsea.common.encrypt;
 
 import java.security.MessageDigest;
 

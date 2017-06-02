@@ -1,4 +1,4 @@
-package com.ocean.common.interceptor;
+package com.luvsea.common.interceptor;
 
 import java.util.Enumeration;
 
@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.ocean.common.basic.UtilString;
+import com.luvsea.common.basic.UtilString;
 
 public class ApiInterceptor implements HandlerInterceptor{
 

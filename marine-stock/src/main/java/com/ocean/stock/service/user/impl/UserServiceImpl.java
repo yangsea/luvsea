@@ -1,11 +1,11 @@
-package com.ocean.stock.service.user.impl;
+package com.luvsea.stock.service.user.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ocean.stock.dao.UserMapper;
-import com.ocean.stock.entity.User;
-import com.ocean.stock.service.user.UserService;
+import com.luvsea.stock.dao.UserMapper;
+import com.luvsea.stock.entity.User;
+import com.luvsea.stock.service.user.UserService;
 
 @Service
 public class UserServiceImpl implements UserService {

@@ -1,4 +1,4 @@
-package com.ocean.stock.common;
+package com.luvsea.stock.common;
 
 public class Test {
 

@@ -1,4 +1,4 @@
-package com.ocean.servlet.service;
+package com.luvsea.servlet.service;
 
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.ui.Button;

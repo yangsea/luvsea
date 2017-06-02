@@ -3,13 +3,13 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>com.ocean</groupId>
-    <artifactId>marine</artifactId>
+    <groupId>com.luvsea</groupId>
+    <artifactId>luvsea</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>marine-common</artifactId>
+  <artifactId>luvsea-common</artifactId>
   <packaging>jar</packaging>
-  <name>marine-common</name>
+  <name>luvsea-common</name>
   <url>http://maven.apache.org</url>
 <!--   此处的引用会让主目录下的4.0版本失效 -->
   <dependencies>
@@ -60,6 +60,6 @@
   </dependencies>
 
   <build>
-    <finalName>marine-common</finalName>
+    <finalName>luvsea-common</finalName>
   </build>
 </project>

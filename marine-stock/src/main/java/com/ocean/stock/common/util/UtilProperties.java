@@ -1,4 +1,4 @@
-package com.ocean.stock.common.util;
+package com.luvsea.stock.common.util;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;

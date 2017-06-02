@@ -1,4 +1,4 @@
-package com.ocean.tooth.controller.user;
+package com.luvsea.tooth.controller.user;
 
 import org.springframework.stereotype.Controller;
 

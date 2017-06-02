@@ -1,4 +1,4 @@
-package com.ocean.servlet.entity;
+package com.luvsea.servlet.entity;
 
 import java.util.Date;
 

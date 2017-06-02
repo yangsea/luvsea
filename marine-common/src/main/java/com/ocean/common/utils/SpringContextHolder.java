@@ -1,7 +1,7 @@
 /**
  * Copyright &copy; 2012-2016 <a href="https://github.com/thinkgem/jeesite">JeeSite</a> All rights reserved.
  */
-package com.ocean.common.utils;
+package com.luvsea.common.utils;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -16,7 +16,7 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
-//import com.ocean.common.config.Global;
+//import com.luvsea.common.config.Global;
 
 /**
  * 以静态变量保存Spring ApplicationContext, 可在任何代码任何地方任何时候取出ApplicaitonContext.

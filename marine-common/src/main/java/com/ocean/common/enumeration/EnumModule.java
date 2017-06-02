@@ -1,4 +1,4 @@
-package com.ocean.common.enumeration;
+package com.luvsea.common.enumeration;
 
 public enum EnumModule {
     

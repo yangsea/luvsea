@@ -5,8 +5,8 @@ import java.io.File;
 import org.junit.Test;
 
 import com.alibaba.fastjson.JSONObject;
-import com.ocean.common.basic.UtilString;
-import com.ocean.common.entity.wx.User;
+import com.luvsea.common.basic.UtilString;
+import com.luvsea.common.entity.wx.User;
 
 
 public class TestJSON {

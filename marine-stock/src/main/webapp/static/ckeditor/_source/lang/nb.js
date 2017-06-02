@@ -645,7 +645,7 @@ CKEDITOR.lang['nb'] =
 		'8B4513' : 'Salbrun',
 		'2F4F4F' : 'Grønnsvart',
 		'008080' : 'Blågrønn',
-		'000080' : 'Marineblått',
+		'000080' : 'luvseablått',
 		'4B0082' : 'Indigo',
 		'696969' : 'Mørk grå',
 		'B22222' : 'Mørkerød',

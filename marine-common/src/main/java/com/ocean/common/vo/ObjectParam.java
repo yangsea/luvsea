@@ -1,4 +1,4 @@
-package com.ocean.common.vo;
+package com.luvsea.common.vo;
 
 public class ObjectParam {
 

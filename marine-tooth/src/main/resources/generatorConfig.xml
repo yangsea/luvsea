@@ -6,7 +6,7 @@
  <!-- 引入配置文件 -->  
 <!--     <properties resource="init.properties"/>   -->
  <classPathEntry  
-        location="D:\ocean\mavenlib\mysql\mysql-connector-java\5.1.13\mysql-connector-java-5.1.13.jar" />  
+        location="D:\luvsea\mavenlib\mysql\mysql-connector-java\5.1.13\mysql-connector-java-5.1.13.jar" />  
           
 	<context id="sqlserver" targetRuntime="MyBatis3" >
 		<!-- 抑制警告 -->

@@ -1,7 +1,7 @@
 /**
  * Copyright (c) 2005-2012 springside.org.cn
  */
-package com.ocean.common.utils;
+package com.luvsea.common.utils;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;

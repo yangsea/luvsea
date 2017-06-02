@@ -3,7 +3,7 @@
     xmlns="http://java.sun.com/xml/ns/javaee"
     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
     id="WebApp_ID" version="3.0">
-    <display-name>marine-stock</display-name>
+    <display-name>luvsea-stock</display-name>
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>classpath*:spring/spring-*.xml</param-value>
@@ -44,7 +44,7 @@
     </session-config>
 <!--     <filter> -->
 <!--         <filter-name>sessionFilter</filter-name> -->
-<!--         <filter-class>com.ocean.blog.common.SessionFilter</filter-class> -->
+<!--         <filter-class>com.luvsea.blog.common.SessionFilter</filter-class> -->
 <!--     </filter> -->
 <!--     <filter-mapping> -->
 <!--         <filter-name>sessionFilter</filter-name> -->
@@ -53,7 +53,7 @@
 	  <filter>
 	    <description>微信消息接入接口</description>
 	    <filter-name>WeixinUrlFilter</filter-name>
-	    <filter-class>com.ocean.wechat.common.filter.FilterWx</filter-class>
+	    <filter-class>com.luvsea.wechat.common.filter.FilterWx</filter-class>
 	  </filter>
 	  <filter-mapping>
 	    <filter-name>WeixinUrlFilter</filter-name>

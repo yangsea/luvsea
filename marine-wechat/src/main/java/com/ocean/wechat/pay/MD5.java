@@ -1,4 +1,4 @@
-package com.ocean.wechat.pay;
+package com.luvsea.wechat.pay;
 
 import java.security.MessageDigest;
 

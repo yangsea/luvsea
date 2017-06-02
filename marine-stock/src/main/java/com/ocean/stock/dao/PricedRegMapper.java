@@ -1,6 +1,6 @@
-package com.ocean.stock.dao;
+package com.luvsea.stock.dao;
 
-import com.ocean.stock.entity.PricedReg;
+import com.luvsea.stock.entity.PricedReg;
 
 public interface PricedRegMapper {
     int deleteByPrimaryKey(Long id);

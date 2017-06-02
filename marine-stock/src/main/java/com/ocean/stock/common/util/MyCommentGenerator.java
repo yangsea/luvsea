@@ -1,4 +1,4 @@
-package com.ocean.stock.common.util;
+package com.luvsea.stock.common.util;
 
 import static org.mybatis.generator.internal.util.StringUtility.isTrue;
 

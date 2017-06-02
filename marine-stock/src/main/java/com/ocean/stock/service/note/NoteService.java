@@ -1,8 +1,8 @@
-package com.ocean.stock.service.note;
+package com.luvsea.stock.service.note;
 
 import java.util.List;
 
-import com.ocean.stock.entity.Note;
+import com.luvsea.stock.entity.Note;
 
 public interface NoteService {
     

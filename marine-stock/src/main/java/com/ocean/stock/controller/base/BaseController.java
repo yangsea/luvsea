@@ -1,4 +1,4 @@
-package com.ocean.stock.controller.base;
+package com.luvsea.stock.controller.base;
 
 public class BaseController {
 

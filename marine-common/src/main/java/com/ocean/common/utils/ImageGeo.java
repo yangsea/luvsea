@@ -1,4 +1,4 @@
-package com.ocean.common.utils;
+package com.luvsea.common.utils;
 
 import com.drew.metadata.*;
 import com.drew.metadata.exif.*;

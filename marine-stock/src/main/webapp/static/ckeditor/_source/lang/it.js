@@ -645,7 +645,7 @@ CKEDITOR.lang['it'] =
 		'8B4513' : 'Marrone Cuoio',
 		'2F4F4F' : 'Grigio Fumo di Londra',
 		'008080' : 'Acquamarina',
-		'000080' : 'Blu Oceano',
+		'000080' : 'Blu luvseao',
 		'4B0082' : 'Indigo',
 		'696969' : 'Grigio Scuro',
 		'B22222' : 'Giallo Fiamma',

@@ -1,4 +1,4 @@
-package com.ocean.common.http;
+package com.luvsea.common.http;
 
 import java.security.NoSuchAlgorithmException;
 

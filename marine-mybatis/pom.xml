@@ -3,13 +3,13 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>com.ocean</groupId>
-    <artifactId>marine</artifactId>
+    <groupId>com.luvsea</groupId>
+    <artifactId>luvsea</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>marine-mybatis</artifactId>
+  <artifactId>luvsea-mybatis</artifactId>
   <packaging>war</packaging>
-  <name>marine-mybatis</name>
+  <name>luvsea-mybatis</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
@@ -20,6 +20,6 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>marine-mybatis</finalName>
+    <finalName>luvsea-mybatis</finalName>
   </build>
 </project>

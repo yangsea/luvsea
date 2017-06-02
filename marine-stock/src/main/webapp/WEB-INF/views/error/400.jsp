@@ -1,4 +1,4 @@
-<%@page import="com.ocean.common.utils.Exceptions"%>
+<%@page import="com.luvsea.common.utils.Exceptions"%>
 <%
 response.setStatus(400);
 

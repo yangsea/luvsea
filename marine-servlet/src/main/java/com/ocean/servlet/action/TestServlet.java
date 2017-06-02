@@ -1,4 +1,4 @@
-package com.ocean.servlet.action;
+package com.luvsea.servlet.action;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -99,7 +99,7 @@ public class TestServlet extends HttpServlet{
  // List of entities from any Java backend (EJB/JPA/Spring/etc)
 //    List<Person> personList = new ArrayList<Person>();
 //    Person person = new Person();
-//    person.setFirstName("ocean");
+//    person.setFirstName("luvsea");
 //    personList.add(person);
 //
 //    // Create a Grid and bind the Person objects to it

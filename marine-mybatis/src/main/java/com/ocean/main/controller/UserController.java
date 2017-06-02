@@ -1,4 +1,4 @@
-package com.ocean.main.controller;
+package com.luvsea.main.controller;
 
 import java.sql.Timestamp;
 

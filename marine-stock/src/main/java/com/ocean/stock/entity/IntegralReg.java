@@ -1,4 +1,4 @@
-package com.ocean.stock.entity;
+package com.luvsea.stock.entity;
 
 import java.io.Serializable;
 import java.util.Date;

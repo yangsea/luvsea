@@ -1,4 +1,4 @@
-package com.ocean.wechat.common.util;
+package com.luvsea.wechat.common.util;
 
 import java.io.IOException;
 import java.net.URLEncoder;

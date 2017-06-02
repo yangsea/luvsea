@@ -1,5 +1,5 @@
-package com.ocean.common.util.redis;
-//package com.ocean.common.util.redis;
+package com.luvsea.common.util.redis;
+//package com.luvsea.common.util.redis;
 //
 //import java.util.List;
 //import java.util.Map;

@@ -1,4 +1,4 @@
-package com.ocean.wechat.entity;
+package com.luvsea.wechat.entity;
 
 import java.sql.Timestamp;
 

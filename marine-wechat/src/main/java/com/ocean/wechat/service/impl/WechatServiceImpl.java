@@ -1,4 +1,4 @@
-package com.ocean.wechat.service.impl;
+package com.luvsea.wechat.service.impl;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -15,10 +15,10 @@ import org.springframework.stereotype.Service;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.ocean.common.basic.UtilString;
-import com.ocean.common.http.UtilHttpClient;
-import com.ocean.wechat.entity.UserWx;
-import com.ocean.wechat.service.WechatService;
+import com.luvsea.common.basic.UtilString;
+import com.luvsea.common.http.UtilHttpClient;
+import com.luvsea.wechat.entity.UserWx;
+import com.luvsea.wechat.service.WechatService;
 
 @Service
 public class WechatServiceImpl implements WechatService {
@@ -121,7 +121,7 @@ public class WechatServiceImpl implements WechatService {
             throws UnsupportedEncodingException{
         
         //rdirecturl to...
-        //跳转后转到回调地址 exm ocean.iask.in 
+        //跳转后转到回调地址 exm luvsea.iask.in 
         //比如说这里的getopenid接口 ，获取openid后对接业务
         //记得openid要放到session中，作为已登录标识，避免拦截器后续处理麻烦，
         //可以使用authunify统一放入，然后再重定向到目标页面，使用params组织动态放入页面与参数

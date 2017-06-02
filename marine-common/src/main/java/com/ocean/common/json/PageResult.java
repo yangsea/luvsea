@@ -1,4 +1,4 @@
-package com.ocean.common.json;
+package com.luvsea.common.json;
 
 public class PageResult<T> {
     

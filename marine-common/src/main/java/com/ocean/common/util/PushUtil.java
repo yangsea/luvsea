@@ -1,4 +1,4 @@
-package com.ocean.common.util;
+package com.luvsea.common.util;
 
 import java.io.IOException;
 import java.util.List;

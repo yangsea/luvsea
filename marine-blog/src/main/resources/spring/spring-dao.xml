@@ -49,14 +49,14 @@
 		<property name="packagesToScan">
 			<!-- -->
 			<list>
-				<value>com.ocean.frame.main.entity</value>
+				<value>com.luvsea.frame.main.entity</value>
 			</list>
 		</property>
 
 		<property name="mappingDirectoryLocations">
 			<!-- <property name="mappingResources"> -->
 			<list>
-				<!-- <value>classpath:com/ocean/main/entity</value> -->
+				<!-- <value>classpath:com/luvsea/main/entity</value> -->
 				<!-- 自动装载hbm -->
 				<value>classpath:mapping/</value>
 				<!-- <value>classpath:com/saye/systemset/depart/model</value> -->
@@ -64,7 +64,7 @@
 		</property>
 
 		<!-- <property name="mappingResources"> -->
-		<!-- <value>classpath:com/ocean/main/entity/MenuRole</value> -->
+		<!-- <value>classpath:com/luvsea/main/entity/MenuRole</value> -->
 		<!-- </property> -->
 		<property name="hibernateProperties">
 			<props>

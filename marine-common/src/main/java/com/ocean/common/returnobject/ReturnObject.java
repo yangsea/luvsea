@@ -1,4 +1,4 @@
-package com.ocean.common.returnobject;
+package com.luvsea.common.returnobject;
 
 import com.alibaba.fastjson.JSON;
 

@@ -1,4 +1,4 @@
-package com.ocean.tooth.controller.user;
+package com.luvsea.tooth.controller.user;
 
 import java.io.IOException;
 import java.net.URLEncoder;
@@ -13,9 +13,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.ocean.common.basic.UtilString;
-import com.ocean.common.returnobject.ReturnObject;
-import com.ocean.common.util.UtilProperties;
+import com.luvsea.common.basic.UtilString;
+import com.luvsea.common.returnobject.ReturnObject;
+import com.luvsea.common.util.UtilProperties;
 
 @Controller
 @RequestMapping("user")

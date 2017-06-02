@@ -3,13 +3,13 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>com.ocean</groupId>
-    <artifactId>marine</artifactId>
+    <groupId>com.luvsea</groupId>
+    <artifactId>luvsea</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>marine-shiro</artifactId>
+  <artifactId>luvsea-shiro</artifactId>
   <packaging>war</packaging>
-  <name>marine-shiro</name>
+  <name>luvsea-shiro</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
@@ -19,13 +19,13 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>com.ocean</groupId>
-      <artifactId>marine-common</artifactId>
+      <groupId>com.luvsea</groupId>
+      <artifactId>luvsea-common</artifactId>
       <version>0.0.1-SNAPSHOT</version>
     </dependency>
   </dependencies>
   <build>
-    <finalName>marine-shiro</finalName>
+    <finalName>luvsea-shiro</finalName>
      <plugins>
 <!--             <plugin> -->
 <!--                 <groupId>org.apache.maven.plugins</groupId> -->

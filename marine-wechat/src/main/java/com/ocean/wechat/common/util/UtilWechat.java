@@ -1,4 +1,4 @@
-package com.ocean.wechat.common.util;
+package com.luvsea.wechat.common.util;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -12,6 +12,10 @@ import org.apache.http.client.ClientProtocolException;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.luvsea.common.basic.UtilString;
+import com.luvsea.common.http.UtilHttpClient;
+import com.luvsea.common.returnobject.ReturnObject;
+import com.luvsea.common.util.UtilProperties;
 import com.ocean.common.http.UtilHttpClient;
 
 //总服务器做收权动作
@@ -28,7 +32,7 @@ public class UtilWechat {
              throws UnsupportedEncodingException{
          
          //rdirecturl to...
-         //跳转后转到回调地址 exm ocean.iask.in 
+         //跳转后转到回调地址 exm luvsea.iask.in 
          //比如说这里的getopenid接口 ，获取openid后对接业务
          //记得openid要放到session中，作为已登录标识，避免拦截器后续处理麻烦，
          //可以使用authunify统一放入，然后再重定向到目标页面，使用params组织动态放入页面与参数

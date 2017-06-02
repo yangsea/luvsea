@@ -1,8 +1,8 @@
-package com.ocean.common.util.redis;
+package com.luvsea.common.util.redis;
 ///**
 // * Copyright &copy; 2012-2016 <a href="https://github.com/thinkgem/jeesite">JeeSite</a> All rights reserved.
 // */
-//package com.ocean.common.util.redis;
+//package com.luvsea.common.util.redis;
 //
 //import java.util.List;
 //import java.util.Map;
