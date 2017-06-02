@@ -24,7 +24,7 @@ import org.apache.http.util.EntityUtils;
 import org.slf4j.LoggerFactory;
 
 import com.alibaba.fastjson.JSONObject;
-import com.ocean.common.basic.UtilString;
+import com.luvsea.common.basic.UtilString;
 
 public class UtilHttpClient {
     

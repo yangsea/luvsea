@@ -18,9 +18,11 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.luvsea.common.basic.UtilString;
 import com.luvsea.common.encrypt.UtilSha14Wx;
+import com.luvsea.common.entity.wx.UserWx;
 import com.luvsea.common.enumeration.EnumHost;
 import com.luvsea.common.enumeration.EnumWx;
 import com.luvsea.common.http.OLDUtilHttpClient;
+import com.luvsea.common.http.UtilHttpClient;
 import com.luvsea.common.returnobject.ReturnObject;
 
 public class UtilOAuthWx {

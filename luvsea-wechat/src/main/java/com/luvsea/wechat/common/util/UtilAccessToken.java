@@ -11,7 +11,6 @@ import org.slf4j.LoggerFactory;
 import com.alibaba.fastjson.JSONObject;
 import com.luvsea.common.http.UtilHttpClient;
 import com.luvsea.common.basic.UtilString;
-import com.luvsea.common.util.redis.UtilsJedis;
 
 public class UtilAccessToken {
     
@@ -101,14 +100,14 @@ public class UtilAccessToken {
             }.start();
     }
     
-    public static String getAccessTokenByRedis(){
-        String accessToken = UtilsJedis.get("accessTokenGD");
-        if(UtilString.isEmpty(accessToken)){
-            String res = getAccessToken();
-            UtilsJedis.set("", res, 10000);
-        }
-        return "";
-    }
+//    public static String getAccessTokenByRedis(){
+//        String accessToken = UtilsJedis.get("accessTokenGD");
+//        if(UtilString.isEmpty(accessToken)){
+//            String res = getAccessToken();
+//            UtilsJedis.set("", res, 10000);
+//        }
+//        return "";
+//    }
 
     public static void main(String[] args) {
         System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
