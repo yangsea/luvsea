@@ -1,41 +1,22 @@
-package com.luvsea.common.entity.wx;
+package com.ocean.wechat.common.oauth.protocol.get_userinfo;
 
-import java.sql.Timestamp;
+import java.util.Arrays;
 
-/** 这是微信用户表，有区别于签到记录表*/
-public class UserWx {
-    
-    private Integer id;
-    
+/**
+ * 响应：拉取用户信息(需scope为 snsapi_userinfo)
+ * Created by xuwen on 2015-12-11.
+ */
+public class GetUserinfoResponse {
+
     private String openid;
-    
     private String nickname;
-    
-    private Integer sex;
-    
+    private String sex;
     private String province;
-    
     private String city;
-    
     private String country;
-    
     private String headimgurl;
-    
-    private String privilege;
-    
-    private Integer unionid;
-    
-    private Timestamp createTime;
-    
-    private Timestamp updateTime;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
+    private String[] privilege;
+    private String unionid;
 
     public String getOpenid() {
         return openid;
@@ -53,11 +34,11 @@ public class UserWx {
         this.nickname = nickname;
     }
 
-    public Integer getSex() {
+    public String getSex() {
         return sex;
     }
 
-    public void setSex(Integer sex) {
+    public void setSex(String sex) {
         this.sex = sex;
     }
 
@@ -93,36 +74,35 @@ public class UserWx {
         this.headimgurl = headimgurl;
     }
 
-    public String getPrivilege() {
+    public String[] getPrivilege() {
         return privilege;
     }
 
-    public void setPrivilege(String privilege) {
+    public void setPrivilege(String[] privilege) {
         this.privilege = privilege;
     }
 
-    public Integer getUnionid() {
+    public String getUnionid() {
         return unionid;
     }
 
-    public void setUnionid(Integer unionid) {
+    public void setUnionid(String unionid) {
         this.unionid = unionid;
     }
 
-    public Timestamp getCreateTime() {
-        return createTime;
+    @Override
+    public String toString() {
+        return "GetUserinfoResponse{" +
+                "openid='" + openid + '\'' +
+                ", nickname='" + nickname + '\'' +
+                ", sex='" + sex + '\'' +
+                ", province='" + province + '\'' +
+                ", city='" + city + '\'' +
+                ", country='" + country + '\'' +
+                ", headimgurl='" + headimgurl + '\'' +
+                ", privilege=" + Arrays.toString(privilege) +
+                ", unionid='" + unionid + '\'' +
+                '}';
     }
-
-    public void setCreateTime(Timestamp createTime) {
-        this.createTime = createTime;
-    }
-
-    public Timestamp getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(Timestamp updateTime) {
-        this.updateTime = updateTime;
-    }
-            
 }
+
