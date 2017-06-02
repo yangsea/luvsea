@@ -2,6 +2,8 @@ package com.ocean.wechat.common.oauth;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.ocean.common.basic.UtilString;
+import com.ocean.common.http.UtilHttpClient;
 import com.ocean.wechat.common.oauth.protocol.get_access_token.GetAccessTokenRequest;
 import com.ocean.wechat.common.oauth.protocol.get_access_token.GetAccessTokenResponse;
 import com.ocean.wechat.common.oauth.protocol.get_userinfo.GetUserinfoRequest;
@@ -15,7 +17,6 @@ import com.ocean.wechat.common.util.Config;
 import org.apache.http.Consts;
 import org.apache.http.HttpEntity;
 import org.apache.http.NameValuePair;
-import org.apache.http.client.methods.HttpPost;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import org.apache.log4j.Logger;
@@ -62,7 +63,7 @@ public class OAuthManager {
         url.append("&redirect_uri=").append(urlEncode(redirectURI));
         url.append("&response_type=code");
         url.append("&scope=").append(urlEncode(scope));
-        url.append("&state=").append(urlEncode(state));
+        url.append("&state=").append(UtilString.isEmpty(state)?state:urlEncode(state));
         url.append("#wechat_redirect");
         return url.toString();
     }
@@ -158,7 +159,7 @@ public class OAuthManager {
      * @return
      */
     private static String post(String url, Object data) {
-        List<NameValuePair> params = new ArrayList<NameValuePair>();
+        JSONObject jsonObject = new JSONObject();
         if (data != null) {
             Field[] fields = data.getClass().getDeclaredFields();
             for (Field field : fields) {
@@ -170,16 +171,12 @@ public class OAuthManager {
                     // never throws
                 }
                 if (value != null) {
-                    params.add(new BasicNameValuePair(field.getName(), value.toString()));
+                    jsonObject.put(field.getName(), value.toString());
                 }
             }
         }
         try {
-//            HttpEntity entity = Request.Post(url)
-//                    .bodyForm(params.toArray(new NameValuePair[params.size()]))
-//                    .execute().returnResponse().getEntity();
-            HttpEntity entity = null;
-            return entity != null ? EntityUtils.toString(entity, Consts.UTF_8) : null;
+                return UtilHttpClient.getGetResponse(jsonObject.toJSONString(), url);
         } catch (Exception e) {
             logger.error("post请求异常，" + e.getMessage() + "\n post url:" + url);
             e.printStackTrace();
@@ -193,6 +190,7 @@ public class OAuthManager {
      * @param url
      * @return
      */
+    @SuppressWarnings("unused")
     private static String post(String url) {
         return post(url, null);
     }

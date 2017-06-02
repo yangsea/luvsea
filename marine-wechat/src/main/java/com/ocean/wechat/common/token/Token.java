@@ -134,6 +134,13 @@ public abstract class Token {
                 }
             }
 		}
+		//通过第三方接口判断有效性
+        String getIpURL = "https://api.weixin.qq.com/cgi-bin/getcallbackip?access_token=";
+        String response = UtilHttpClient.getGetResponse(null, getIpURL+this.token);
+        if(response.contains("invalid")){
+            logger.error("token有效期内但是已失效");
+            return false;
+        }
 		return true;
 	}
 	
