@@ -1,0 +1,35 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+<!--  <context-param> -->
+<!--   <description>  Vaadin production mode</description> -->
+<!--   <param-name>productionMode</param-name> -->
+<!--   <param-value>false</param-value> -->
+<!--  </context-param> -->
+<!--  <servlet> -->
+<!--   <servlet-name>HelloworldApplication</servlet-name> -->
+<!--   <servlet-class>com.vaadin.terminal.gwt.server.ApplicationServlet</servlet-class> -->
+<!--   <init-param> -->
+<!--    <description> Vaadin application class to start</description> -->
+<!--    <param-name>application</param-name> -->
+<!--    <param-value>simpletest.vaddin.TestVaddinApplicationMain;</param-value> -->
+<!--   </init-param> -->
+<!--  </servlet> -->
+<!--  <servlet-mapping> -->
+<!--   <servlet-name>HelloworldApplication</servlet-name> -->
+<!--   <url-pattern>/*</url-pattern> -->
+<!--  </servlet-mapping> -->
+  <display-name>Archetype Created Web Application</display-name>
+  
+  <servlet>
+    <servlet-name>vaadinTest</servlet-name>
+    <servlet-class>com.luvsea.servlet.action.TestServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>vaadinTest</servlet-name>
+    <url-pattern>/*</url-pattern>
+  </servlet-mapping>
+  
+</web-app>

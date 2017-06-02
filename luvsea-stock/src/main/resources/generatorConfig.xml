@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE generatorConfiguration  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"  
+          "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+
+ <!-- 引入配置文件 -->  
+<!--     <properties resource="init.properties"/>   -->
+ <classPathEntry  
+        location="C:\Users\luvsea\.m2\repository\mysql\mysql-connector-java\5.1.36\mysql-connector-java-5.1.36.jar" />  
+          
+	<context id="sqlserver" targetRuntime="MyBatis3" >
+		<!-- 抑制警告 -->
+		<property name="suppressTypeWarnings" value="true" />
+
+		<!-- generate entity时，生成hashcode和equals方法 -->
+		<plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin" />
+		<!-- generate entity时，生成serialVersionUID -->
+		<plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+		<!-- 这个插件只会增加字符串字段映射到一个JDBC字符的方法 -->
+		<plugin type="org.mybatis.generator.plugins.CaseInsensitiveLikePlugin" />
+		<!-- genenat entity时,生成toString -->
+		<plugin type="org.mybatis.generator.plugins.ToStringPlugin" />
+    
+		<!-- 抑制生成代码的注释 -->
+		<commentGenerator type="com.luvsea.stock.common.util.MyCommentGenerator">
+			<property name="suppressAllComments" value="true" />
+			<property name="" value=""/>
+			 <!-- 这里的type里写的是你的实现类的类全路径 -->
+<!--         <commentGenerator  type="com.luvsea.stock.common.util.MyCommentGenerator"></commentGenerator> -->
+		</commentGenerator>
+
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/stock?useUnicode=true&amp;characterEncoding=UTF-8"
+			userId="root" password="123456">
+		</jdbcConnection>
+
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<!-- generate Model -->
+		<javaModelGenerator targetPackage="com.luvsea.stock.entity"
+			targetProject="src/main/java">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<!-- generate xml -->
+		<sqlMapGenerator targetPackage="mapping"
+			targetProject="src/main/resources">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<!--生成dao接口的配置 -->
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.luvsea.stock.dao" targetProject="src/main/java">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+		<!--  domainobjectname 是实体名称 -->
+		<table tableName="t_stock_income_detail" domainObjectName="IncomeDetail"  
+			enableCountByExample="false" enableSelectByExample="false"
+			enableDeleteByExample="false" enableUpdateByExample="false"
+			selectByExampleQueryId="false" />
+			<table tableName="t_stock_integral" domainObjectName="Integral"  
+            enableCountByExample="false" enableSelectByExample="false"
+            enableDeleteByExample="false" enableUpdateByExample="false"
+            selectByExampleQueryId="false" />
+            <table tableName="t_stock_integral_reg" domainObjectName="IntegralReg"  
+            enableCountByExample="false" enableSelectByExample="false"
+            enableDeleteByExample="false" enableUpdateByExample="false"
+            selectByExampleQueryId="false" />
+            <table tableName="t_stock_note" domainObjectName="Note"  
+            enableCountByExample="false" enableSelectByExample="false"
+            enableDeleteByExample="false" enableUpdateByExample="false"
+            selectByExampleQueryId="false" />
+            <table tableName="t_stock_note_type" domainObjectName="NoteTYpe"  
+            enableCountByExample="false" enableSelectByExample="false"
+            enableDeleteByExample="false" enableUpdateByExample="false"
+            selectByExampleQueryId="false" />
+            <table tableName="t_stock_priced_reg" domainObjectName="PricedReg"  
+            enableCountByExample="false" enableSelectByExample="false"
+            enableDeleteByExample="false" enableUpdateByExample="false"
+            selectByExampleQueryId="false" />
+            <table tableName="t_stock_spread_detail" domainObjectName="SpreadDetail"  
+            enableCountByExample="false" enableSelectByExample="false"
+            enableDeleteByExample="false" enableUpdateByExample="false"
+            selectByExampleQueryId="false" />
+            <table tableName="t_stock_spread_text" domainObjectName="SpreadText"  
+            enableCountByExample="false" enableSelectByExample="false"
+            enableDeleteByExample="false" enableUpdateByExample="false"
+            selectByExampleQueryId="false" />
+            <table tableName="t_stock_user" domainObjectName="User"  
+            enableCountByExample="false" enableSelectByExample="false"
+            enableDeleteByExample="false" enableUpdateByExample="false"
+            selectByExampleQueryId="false" />
+	</context>
+</generatorConfiguration>

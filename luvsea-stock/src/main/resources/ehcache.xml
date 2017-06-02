@@ -1,0 +1,61 @@
+<!-- <ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../config/ehcache.xsd"> -->
+
+   
+<!--     <diskStore path="java.io.tmpdir"/> -->
+
+
+<!--     <cacheManagerPeerListenerFactory -->
+<!--             class="net.sf.ehcache.distribution.RMICacheManagerPeerListenerFactory"/> -->
+  
+
+<!--     <cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory" -->
+<!--          properties="replicateAsynchronously=true, -->
+<!--          replicatePuts=true, -->
+<!--          replicateUpdates=true, -->
+<!--          replicateUpdatesViaCopy=true, -->
+<!--          replicateRemovals=true "/> -->
+
+  
+
+<!--     <bootstrapCacheLoaderFactory -->
+<!--         class="net.sf.ehcache.distribution.RMIBootstrapCacheLoaderFactory" -->
+<!--         properties="bootstrapAsynchronously=true, maximumChunkSizeBytes=5000000"/> -->
+
+  
+
+    <!--
+    Mandatory Default Cache configuration. These settings will be applied to caches
+    created programmtically using CacheManager.add(String cacheName)
+    -->
+<!--     <defaultCache -->
+<!--             maxElementsInMemory="10000" -->
+<!--             eternal="false" -->
+<!--             timeToIdleSeconds="120" -->
+<!--             timeToLiveSeconds="120" -->
+<!--             maxElementsOnDisk="10000000" -->
+<!--             diskExpiryThreadIntervalSeconds="120" -->
+<!--             memoryStoreEvictionPolicy="LRU"> -->
+<!--         <persistence strategy="localTempSwap"/> -->
+<!--     </defaultCache> -->
+      <!--给工具箱加缓存,工具箱不经常变化-->  
+<!--     <cache name="CAHCE_FOR_TOOLSBOX"   -->
+<!--            maxElementsInMemory="20000"   -->
+<!--            eternal="false"   -->
+<!--            timeToIdleSeconds="1800"   -->
+<!--            timeToLiveSeconds="1800"   -->
+<!--            overflowToDisk="true"   -->
+<!--            maxElementsOnDisk="10000000"   -->
+<!--            diskPersistent="false"   -->
+<!--            diskExpiryThreadIntervalSeconds="120"   -->
+<!--            memoryStoreEvictionPolicy="LRU"   -->
+<!--     />   -->
+
+	
+<!-- </ehcache> -->
+
+<ehcache>
+	    <diskStore path="java.io.tmpdir" />
+	    <defaultCache maxElementsInMemory="10000" eternal="false"
+	        timeToIdleSeconds="1200" timeToLiveSeconds="1200"
+	        overflowToDisk="true" />
+	</ehcache>

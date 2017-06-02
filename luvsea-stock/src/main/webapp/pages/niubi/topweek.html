@@ -1,0 +1,93 @@
+<!Doctype html>
+<html>
+<head>
+<title>关注</title>
+<!--页面编码格式-->
+<meta charset="utf-8">
+<!--页面设置-->
+<meta name="author" content="" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<!--IOS相关设置-->
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<!--不被其他浏览器转码-->
+<meta http-equiv="Cache-Control" content="no-transform"/>
+<!--定义无缓存
+<meta http-equiv="Cache-Control" content="no-cache"/>
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="Expires" content="0" />
+-->
+<!--页面缓存-->
+<meta http-equiv="Cache-Control" content="public"/>
+<!--页面电话号码无样式-->
+<meta name="format-detection" content="telephone=no,email=no">
+<!--页面输出模式-->
+<meta name="layoutmode" content="standard">
+<!--页面字体模式-->
+<meta name="wap-font-scale" content="no">
+<!--页面大小设置-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,minimum-scale=1,user-scalable=0">
+<!--老版本兼容声明-->
+<meta name="renderer" content="webkit">
+<!-- uc强制竖屏 -->
+<meta name="screen-orientation" content="portrait">
+<!-- QQ强制竖屏 -->
+<meta name="x5-orientation" content="portrait">
+<!-- QQ强制全屏 -->
+<meta name="x5-fullscreen" content="true">
+<!-- UC强制全屏 -->
+<meta name="full-screen" content="yes">
+<!-- QQ应用模式 -->
+<meta name="x5-page-mode" content="app">
+<!-- UC应用模式 -->
+<meta name="browsermode" content="application">
+<link href="../public/css/common.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../public/js/jquery.js"></script>
+<script type="text/javascript" src="../public/js/common.js"></script>
+<script type="text/javascript" src="js/topweek.js"></script>
+</head>
+<body id="topweek">
+<header>
+		<li><a href="index.html">最新</a></li>
+		<li><a href="focus.html">关注</a></li>
+		<li class="current"><a href="javascript:void(0);">周榜</a></li>
+</header>
+<div class="float_clear"></div>
+<div id="newest">
+		<div class="catalog">
+		          <li id="short" class="current">短线高手</li>
+				  <li id="middle">中线牛散</li>
+				  <li id="long">长线专家</li>
+		</div>
+		<div class="float_clear"></div>
+		<div id="ajaxlist">
+		       <h2 class="flex"><img src="images/cup.png" /><i class="yellow">实力榜</i><span class="red">(计算近7个自然日的数据)</span></h2>
+		       <ul class="short"></ul>
+			   <ul class="middle"></ul>
+			   <ul class="long"></ul>
+			   <div class="loading yellow flex" id="loading"><img src="../public/images/loading1.gif" />正在努力加载中...</div>
+               <div class="loading red flex" id="nomore">已经加载完毕！</div>
+			   <div class="float_clear"></div>
+		</div>
+		<div class="float_clear"></div>
+</div>
+<div class="float_clear" id="fixfooter"></div>
+<footer>
+        <ul>
+			<li>
+				<a class="flex" href="javascript:void(0);"><img src="../public/images/niu.png" />找牛股</a>
+			</li>
+			<li>
+				<a class="flex" href="javascript:void(0);"><img src="../public/images/biji.png" />写笔记</a>
+			</li>
+			<li>
+				<a class="flex" href="javascript:void(0);"><img src="../public/images/wo.png" />我</a>
+			</li>
+        </ul>
+</footer>
+</body>
+</html>

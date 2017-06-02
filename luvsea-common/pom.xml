@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.luvsea</groupId>
+    <artifactId>luvsea</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>luvsea-common</artifactId>
+  <packaging>jar</packaging>
+  <name>luvsea-common</name>
+  <url>http://maven.apache.org</url>
+<!--   此处的引用会让主目录下的4.0版本失效 -->
+  <dependencies>
+<!--     <dependency> -->
+<!--       <groupId>junit</groupId> -->
+<!--       <artifactId>junit</artifactId> -->
+<!--       <version>3.8.1</version> -->
+<!--       <scope>test</scope> -->
+<!--     </dependency> -->
+
+<!-- CKFinder begin -->
+       <dependency>
+           <groupId>net.coobird</groupId>
+           <artifactId>thumbnailator</artifactId>
+           <version>0.4.2</version>
+           <scope>system</scope>
+           <systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/thumbnailator-0.4.2.jar</systemPath>
+       </dependency>
+        <dependency>
+        <groupId>com.ckfinder</groupId>
+        <artifactId>apache-ant-zip</artifactId>
+        <version>2.3</version>
+        <scope>system</scope>
+        <systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/apache-ant-zip-2.3.jar</systemPath>
+        </dependency>
+        <dependency>
+        <groupId>com.ckfinder</groupId>
+        <artifactId>ckfinder</artifactId>
+        <version>2.3</version>
+        <scope>system</scope>
+        <systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/ckfinder-2.3.jar</systemPath>
+        </dependency>
+        <dependency>
+        <groupId>com.ckfinder</groupId>
+        <artifactId>ckfinderplugin-fileeditor</artifactId>
+        <version>2.3</version>
+        <scope>system</scope>
+        <systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/ckfinderplugin-fileeditor-2.3.jar</systemPath>
+        </dependency>
+        <dependency>
+        <groupId>com.ckfinder</groupId>
+        <artifactId>ckfinderplugin-imageresize</artifactId>
+        <version>2.3</version>
+        <scope>system</scope>
+        <systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/ckfinderplugin-imageresize-2.3.jar</systemPath>
+        </dependency>
+        <!-- CKFinder end -->
+  </dependencies>
+
+  <build>
+    <finalName>luvsea-common</finalName>
+  </build>
+</project>

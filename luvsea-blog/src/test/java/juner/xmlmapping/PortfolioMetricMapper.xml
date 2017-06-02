@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.rquest.riskmaster.mapper.PortfolioMetricMapper" >
+  <resultMap id="BaseResultMap" type="com.rquest.riskmaster.entity.PortfolioMetric" >
+    <id column="id_portfolio" property="idPortfolio" jdbcType="VARCHAR" />
+    <id column="dt_market" property="dtMarket" jdbcType="DATE" />
+    <id column="cd_metric" property="cdMetric" jdbcType="VARCHAR" />
+    <result column="amt_metric" property="amtMetric" jdbcType="DECIMAL" />
+    <result column="cd_currency" property="cdCurrency" jdbcType="VARCHAR" />
+    <result column="cd_source" property="cdSource" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id_portfolio, dt_market, cd_metric, amt_metric, cd_currency, cd_source
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="map" >
+    select 
+    <include refid="Base_Column_List" />
+    from portfolio_metrics
+    where id_portfolio = #{idPortfolio,jdbcType=VARCHAR}
+      and dt_market = #{dtMarket,jdbcType=DATE}
+      and cd_metric = #{cdMetric,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="map" >
+    delete from portfolio_metrics
+    where id_portfolio = #{idPortfolio,jdbcType=VARCHAR}
+      and dt_market = #{dtMarket,jdbcType=DATE}
+      and cd_metric = #{cdMetric,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.rquest.riskmaster.entity.PortfolioMetric" >
+    insert into portfolio_metrics (id_portfolio, dt_market, cd_metric, 
+      amt_metric, cd_currency, cd_source
+      )
+    values (#{idPortfolio,jdbcType=VARCHAR}, #{dtMarket,jdbcType=DATE}, #{cdMetric,jdbcType=VARCHAR}, 
+      #{amtMetric,jdbcType=DECIMAL}, #{cdCurrency,jdbcType=VARCHAR}, #{cdSource,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.rquest.riskmaster.entity.PortfolioMetric" >
+    insert into portfolio_metrics
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="idPortfolio != null" >
+        id_portfolio,
+      </if>
+      <if test="dtMarket != null" >
+        dt_market,
+      </if>
+      <if test="cdMetric != null" >
+        cd_metric,
+      </if>
+      <if test="amtMetric != null" >
+        amt_metric,
+      </if>
+      <if test="cdCurrency != null" >
+        cd_currency,
+      </if>
+      <if test="cdSource != null" >
+        cd_source,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="idPortfolio != null" >
+        #{idPortfolio,jdbcType=VARCHAR},
+      </if>
+      <if test="dtMarket != null" >
+        #{dtMarket,jdbcType=DATE},
+      </if>
+      <if test="cdMetric != null" >
+        #{cdMetric,jdbcType=VARCHAR},
+      </if>
+      <if test="amtMetric != null" >
+        #{amtMetric,jdbcType=DECIMAL},
+      </if>
+      <if test="cdCurrency != null" >
+        #{cdCurrency,jdbcType=VARCHAR},
+      </if>
+      <if test="cdSource != null" >
+        #{cdSource,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rquest.riskmaster.entity.PortfolioMetric" >
+    update portfolio_metrics
+    <set >
+      <if test="amtMetric != null" >
+        amt_metric = #{amtMetric,jdbcType=DECIMAL},
+      </if>
+      <if test="cdCurrency != null" >
+        cd_currency = #{cdCurrency,jdbcType=VARCHAR},
+      </if>
+      <if test="cdSource != null" >
+        cd_source = #{cdSource,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id_portfolio = #{idPortfolio,jdbcType=VARCHAR}
+      and dt_market = #{dtMarket,jdbcType=DATE}
+      and cd_metric = #{cdMetric,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rquest.riskmaster.entity.PortfolioMetric" >
+    update portfolio_metrics
+    set amt_metric = #{amtMetric,jdbcType=DECIMAL},
+      cd_currency = #{cdCurrency,jdbcType=VARCHAR},
+      cd_source = #{cdSource,jdbcType=VARCHAR}
+    where id_portfolio = #{idPortfolio,jdbcType=VARCHAR}
+      and dt_market = #{dtMarket,jdbcType=DATE}
+      and cd_metric = #{cdMetric,jdbcType=VARCHAR}
+  </update>
+</mapper>

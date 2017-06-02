@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.rquest.riskmaster.mapper.PortfolioMapper" >
+  <resultMap id="BaseResultMap" type="com.rquest.riskmaster.entity.Portfolio" >
+    <id column="id_portfolio" property="idPortfolio" jdbcType="VARCHAR" />
+    <result column="name_portfolio" property="namePortfolio" jdbcType="VARCHAR" />
+    <result column="name_display" property="nameDisplay" jdbcType="VARCHAR" />
+    <result column="cd_port_type" property="cdPortType" jdbcType="VARCHAR" />
+    <result column="nbr_level" property="nbrLevel" jdbcType="INTEGER" />
+    <result column="id_parent" property="idParent" jdbcType="VARCHAR" />
+    <result column="flag_lowest" property="flagLowest" jdbcType="VARCHAR" />
+    <result column="txt_desc" property="txtDesc" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id_portfolio, name_portfolio, name_display, cd_port_type, nbr_level, id_parent, flag_lowest, 
+    txt_desc
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from portfolios
+    where id_portfolio = #{idPortfolio,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from portfolios
+    where id_portfolio = #{idPortfolio,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.rquest.riskmaster.entity.Portfolio" >
+    insert into portfolios (id_portfolio, name_portfolio, name_display, 
+      cd_port_type, nbr_level, id_parent, 
+      flag_lowest, txt_desc)
+    values (#{idPortfolio,jdbcType=VARCHAR}, #{namePortfolio,jdbcType=VARCHAR}, #{nameDisplay,jdbcType=VARCHAR}, 
+      #{cdPortType,jdbcType=VARCHAR}, #{nbrLevel,jdbcType=INTEGER}, #{idParent,jdbcType=VARCHAR}, 
+      #{flagLowest,jdbcType=VARCHAR}, #{txtDesc,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.rquest.riskmaster.entity.Portfolio" >
+    insert into portfolios
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="idPortfolio != null" >
+        id_portfolio,
+      </if>
+      <if test="namePortfolio != null" >
+        name_portfolio,
+      </if>
+      <if test="nameDisplay != null" >
+        name_display,
+      </if>
+      <if test="cdPortType != null" >
+        cd_port_type,
+      </if>
+      <if test="nbrLevel != null" >
+        nbr_level,
+      </if>
+      <if test="idParent != null" >
+        id_parent,
+      </if>
+      <if test="flagLowest != null" >
+        flag_lowest,
+      </if>
+      <if test="txtDesc != null" >
+        txt_desc,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="idPortfolio != null" >
+        #{idPortfolio,jdbcType=VARCHAR},
+      </if>
+      <if test="namePortfolio != null" >
+        #{namePortfolio,jdbcType=VARCHAR},
+      </if>
+      <if test="nameDisplay != null" >
+        #{nameDisplay,jdbcType=VARCHAR},
+      </if>
+      <if test="cdPortType != null" >
+        #{cdPortType,jdbcType=VARCHAR},
+      </if>
+      <if test="nbrLevel != null" >
+        #{nbrLevel,jdbcType=INTEGER},
+      </if>
+      <if test="idParent != null" >
+        #{idParent,jdbcType=VARCHAR},
+      </if>
+      <if test="flagLowest != null" >
+        #{flagLowest,jdbcType=VARCHAR},
+      </if>
+      <if test="txtDesc != null" >
+        #{txtDesc,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rquest.riskmaster.entity.Portfolio" >
+    update portfolios
+    <set >
+      <if test="namePortfolio != null" >
+        name_portfolio = #{namePortfolio,jdbcType=VARCHAR},
+      </if>
+      <if test="nameDisplay != null" >
+        name_display = #{nameDisplay,jdbcType=VARCHAR},
+      </if>
+      <if test="cdPortType != null" >
+        cd_port_type = #{cdPortType,jdbcType=VARCHAR},
+      </if>
+      <if test="nbrLevel != null" >
+        nbr_level = #{nbrLevel,jdbcType=INTEGER},
+      </if>
+      <if test="idParent != null" >
+        id_parent = #{idParent,jdbcType=VARCHAR},
+      </if>
+      <if test="flagLowest != null" >
+        flag_lowest = #{flagLowest,jdbcType=VARCHAR},
+      </if>
+      <if test="txtDesc != null" >
+        txt_desc = #{txtDesc,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id_portfolio = #{idPortfolio,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rquest.riskmaster.entity.Portfolio" >
+    update portfolios
+    set name_portfolio = #{namePortfolio,jdbcType=VARCHAR},
+      name_display = #{nameDisplay,jdbcType=VARCHAR},
+      cd_port_type = #{cdPortType,jdbcType=VARCHAR},
+      nbr_level = #{nbrLevel,jdbcType=INTEGER},
+      id_parent = #{idParent,jdbcType=VARCHAR},
+      flag_lowest = #{flagLowest,jdbcType=VARCHAR},
+      txt_desc = #{txtDesc,jdbcType=VARCHAR}
+    where id_portfolio = #{idPortfolio,jdbcType=VARCHAR}
+  </update>
+</mapper>
