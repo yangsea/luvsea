@@ -1,0 +1,49 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.luvsea</groupId>
+		<artifactId>luvsea</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>luvsea-web</artifactId>
+
+	<dependencyManagement>
+		<dependencies>
+		<!-- Override Spring Data release train provided by Spring Boot -->
+<!--         <dependency> -->
+<!--             <groupId>org.springframework.data</groupId> -->
+<!--             <version>Fowler-SR2</version> -->
+<!--             <scope>import</scope> -->
+<!--             <type>pom</type> -->
+<!--         </dependency> -->
+			<dependency>
+				<!-- Import dependency management from Spring Boot -->
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>1.5.4.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			
+		</dependencies>
+	</dependencyManagement>
+	<dependencies>
+
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-parent -->
+		<!-- <dependency> -->
+		<!-- <groupId>org.springframework.boot</groupId> -->
+		<!-- <artifactId>spring-boot-starter-parent</artifactId> -->
+		<!-- <version>1.5.4.RELEASE</version> -->
+		<!-- </dependency> -->
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
+		  由于使用 了management方式，这个不需要。
+		 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+<!-- 			<version>1.5.4.RELEASE</version> -->
+		</dependency>
+
+	</dependencies>
+</project>

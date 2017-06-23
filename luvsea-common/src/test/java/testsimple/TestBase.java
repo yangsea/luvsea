@@ -3,6 +3,31 @@ package testsimple;
 import java.util.Date;
 
 public class TestBase {
+    
+    private int testSc;
+    int testSco;
+//    default int a;
+    int packages;
+    
+    public int getTestSc() {
+        return testSc;
+    }
+
+
+    public void setTestSc(int testSc) {
+        this.testSc = testSc;
+    }
+
+
+    public int getTestSco() {
+        return testSco;
+    }
+
+
+    public void setTestSco(int testSco) {
+        this.testSco = testSco;
+    }
+
 
     public static void main(String[] args) {
 //        int z=0;
