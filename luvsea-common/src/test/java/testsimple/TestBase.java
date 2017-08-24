@@ -45,8 +45,8 @@ public class TestBase {
 //        Integer b = null;
 //        int a = b;
 //        System.out.println(a);
-//        System.out.println((int)((Math.random()*9+1)*10));
-        String a = null;
-        a.indexOf("a");
+        
+//        String a = null;
+//        a.indexOf("a");
     }
 }

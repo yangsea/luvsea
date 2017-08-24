@@ -8,7 +8,7 @@ public class TestException extends Exception
         
         public static void main(String[] args) 
         {
-                Test t =null;
+                Test  t =null;
                 try
                 {
                         t =new Test(-1);

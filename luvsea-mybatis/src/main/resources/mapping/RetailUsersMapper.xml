@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="gdzy.shop.dao.user.RetailUsersMapper" >
+<cache/>
+  <resultMap id="BaseResultMap" type="gdzy.shop.pojo.RetailUsers" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="ccode" property="ccode" jdbcType="VARCHAR" />
+    <result column="certno" property="certno" jdbcType="VARCHAR" />
+    <result column="shopname" property="shopname" jdbcType="VARCHAR" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="shopmaster" property="shopmaster" jdbcType="VARCHAR" />
+    <result column="csource" property="csource" jdbcType="VARCHAR" />
+    <result column="points" property="points" jdbcType="INTEGER" />
+<!--     <result column="iflag" property="iflag" jdbcType="INTEGER" /> -->
+<!--     <result column="csummary" property="csummary" jdbcType="VARCHAR" /> -->
+<!--     <result column="curmonthpoints" property="curmonthpoints" jdbcType="INTEGER" /> -->
+<!--     <result column="acmlatepoints" property="acmlatepoints" jdbcType="INTEGER" /> -->
+    <result column="bid" property="bid" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+<!--     id, ccode, certno, shopname, address, shopmaster, csource, points, iflag, csummary,  -->
+<!--     curmonthpoints, acmlatepoints,bid -->
+      id, ccode, certno, shopname, address, shopmaster, csource, points,bid
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from wemall_retail_users
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+    <select id="selectByCertno" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from wemall_retail_users
+    where certno = #{certno,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from wemall_retail_users
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="gdzy.shop.pojo.RetailUsers" >
+    insert into wemall_retail_users (id, ccode, certno, 
+      shopname, address, shopmaster, 
+      csource, points, iflag, 
+      csummary, curmonthpoints, acmlatepoints
+      )
+    values (#{id,jdbcType=INTEGER}, #{ccode,jdbcType=VARCHAR}, #{certno,jdbcType=VARCHAR}, 
+      #{shopname,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{shopmaster,jdbcType=VARCHAR}, 
+      #{csource,jdbcType=VARCHAR}, #{points,jdbcType=INTEGER}, #{iflag,jdbcType=INTEGER}, 
+      #{csummary,jdbcType=VARCHAR}, #{curmonthpoints,jdbcType=INTEGER}, #{acmlatepoints,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="gdzy.shop.pojo.RetailUsers" >
+    insert into wemall_retail_users
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="ccode != null" >
+        ccode,
+      </if>
+      <if test="certno != null" >
+        certno,
+      </if>
+      <if test="shopname != null" >
+        shopname,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="shopmaster != null" >
+        shopmaster,
+      </if>
+      <if test="csource != null" >
+        csource,
+      </if>
+      <if test="points != null" >
+        points,
+      </if>
+      <if test="iflag != null" >
+        iflag,
+      </if>
+      <if test="csummary != null" >
+        csummary,
+      </if>
+      <if test="curmonthpoints != null" >
+        curmonthpoints,
+      </if>
+      <if test="acmlatepoints != null" >
+        acmlatepoints,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="ccode != null" >
+        #{ccode,jdbcType=VARCHAR},
+      </if>
+      <if test="certno != null" >
+        #{certno,jdbcType=VARCHAR},
+      </if>
+      <if test="shopname != null" >
+        #{shopname,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="shopmaster != null" >
+        #{shopmaster,jdbcType=VARCHAR},
+      </if>
+      <if test="csource != null" >
+        #{csource,jdbcType=VARCHAR},
+      </if>
+      <if test="points != null" >
+        #{points,jdbcType=INTEGER},
+      </if>
+      <if test="iflag != null" >
+        #{iflag,jdbcType=INTEGER},
+      </if>
+      <if test="csummary != null" >
+        #{csummary,jdbcType=VARCHAR},
+      </if>
+      <if test="curmonthpoints != null" >
+        #{curmonthpoints,jdbcType=INTEGER},
+      </if>
+      <if test="acmlatepoints != null" >
+        #{acmlatepoints,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="gdzy.shop.pojo.RetailUsers" >
+    update wemall_retail_users
+    <set >
+      <if test="ccode != null" >
+        ccode = #{ccode,jdbcType=VARCHAR},
+      </if>
+      <if test="certno != null" >
+        certno = #{certno,jdbcType=VARCHAR},
+      </if>
+      <if test="shopname != null" >
+        shopname = #{shopname,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="shopmaster != null" >
+        shopmaster = #{shopmaster,jdbcType=VARCHAR},
+      </if>
+      <if test="csource != null" >
+        csource = #{csource,jdbcType=VARCHAR},
+      </if>
+      <if test="points != null" >
+        points = #{points,jdbcType=INTEGER},
+      </if>
+      <if test="iflag != null" >
+        iflag = #{iflag,jdbcType=INTEGER},
+      </if>
+      <if test="csummary != null" >
+        csummary = #{csummary,jdbcType=VARCHAR},
+      </if>
+      <if test="curmonthpoints != null" >
+        curmonthpoints = #{curmonthpoints,jdbcType=INTEGER},
+      </if>
+      <if test="acmlatepoints != null" >
+        acmlatepoints = #{acmlatepoints,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="gdzy.shop.pojo.RetailUsers" >
+    update wemall_retail_users
+    set ccode = #{ccode,jdbcType=VARCHAR},
+      certno = #{certno,jdbcType=VARCHAR},
+      shopname = #{shopname,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      shopmaster = #{shopmaster,jdbcType=VARCHAR},
+      csource = #{csource,jdbcType=VARCHAR},
+      points = #{points,jdbcType=INTEGER},
+      iflag = #{iflag,jdbcType=INTEGER},
+      csummary = #{csummary,jdbcType=VARCHAR},
+      curmonthpoints = #{curmonthpoints,jdbcType=INTEGER},
+      acmlatepoints = #{acmlatepoints,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="getRetailUsers" resultType="gdzy.shop.pojo.vo.RetailUsersVO" parameterType="gdzy.shop.pojo.RetailUsers" >
+   		<if test="bid>0">
+   			select 
+   				t.bid id ,b_name shopname ,t.bid certno,CASE WHEN SUM(wrd.points) IS NULL THEN 0 ELSE SUM(wrd.points) END integral,t.b_phone shopphone
+   			from wemall_big_retail_user t,wemall_retail_users wru,wemall_retail_detail wrd
+   			where t.bid = wru.bid and wru.certno = wrd.certno
+            and t.bid =  #{bid,jdbcType=INTEGER}
+        </if>
+  		<if test="certno!=null">
+		    select 
+		     wru.id,wru.shopname,wru.certno,CASE WHEN SUM(wrd.points) IS NULL THEN 0 ELSE SUM(wrd.points) END integral,wru.shopphone
+		    FROM wemall_retail_users wru 
+		    LEFT JOIN wemall_retail_detail wrd ON (wru.certno=wrd.certno)
+		    <where>
+		        <if test="certno!=null">
+		                and wru.certno = #{certno,jdbcType=VARCHAR} 
+		        </if>   
+		        AND wru.certno is NOT NULL;
+		    </where>
+	   </if> 
+  </select>
+</mapper>

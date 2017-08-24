@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="gdzy.shop.dao.promotion.PromotionMapper" >
+    <cache/>
+  <resultMap id="BaseResultMap" type="gdzy.shop.pojo.promotion.Promotion" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="p_name" property="pName" jdbcType="VARCHAR" />
+	<result column="description" property="description" jdbcType="VARCHAR" />
+	<result column="points" property="points" jdbcType="INTEGER" />
+	<result column="img_height" property="imgHeight" jdbcType="INTEGER" />
+	<result column="img_path" property="imgPath" jdbcType="VARCHAR" />
+	<result column="url" property="url" jdbcType="VARCHAR" />
+	<result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+	<result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="invalid" property="invalid" jdbcType="BIT" />
+    <result column="enterprise_id" property="enterpriseId" jdbcType="INTEGER" />
+    <result column="tag_id" property="tagId" jdbcType="INTEGER" />
+  </resultMap>
+  
+  <resultMap id="BaseResultMap_NaviColumn" type="gdzy.shop.pojo.promotion.NaviColumn" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="c_name" property="cName" jdbcType="VARCHAR" />
+    <result column="img_height" property="imgHeight" jdbcType="INTEGER" />
+    <result column="img_width" property="imgWidth" jdbcType="INTEGER" />
+    <result column="img_path" property="imgPath" jdbcType="VARCHAR" />
+    <result column="url" property="url" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="invalid" property="invalid" jdbcType="BIT" />
+    <result column="enterprise_id" property="enterpriseId" jdbcType="INTEGER" />
+    <result column="menu_type" property="menuType" jdbcType="INTEGER" />
+  </resultMap>
+  
+  <sql id="Base_Column_List" >
+    id, p_name,description,points, img_height,img_path,url,create_time,update_time,status,invalid,enterprise_id,tag_id
+  </sql>
+  <sql id="Base_Column_List_NaviColumn" >
+    id, c_name, img_height, img_width, img_path,url,create_time,update_time,status,invalid,enterprise_id,menu_type
+  </sql>
+  <select id="getPromotions" resultMap="BaseResultMap" parameterType="gdzy.shop.pojo.promotion.Promotion">
+    select 
+    <include refid="Base_Column_List"></include>
+    from wemall_promotion 
+    where invalid = 0 and enterprise_id = #{enterpriseId,jdbcType=INTEGER} 
+    <if test="tagId!=null">
+        and tag_id = #{tagId,jdbcType=INTEGER}
+    </if>;
+  </select>
+  
+   <select id="getNaviColumns" resultMap="BaseResultMap_NaviColumn" parameterType="gdzy.shop.pojo.promotion.NaviColumn">
+    
+    select 
+    <include refid="Base_Column_List_NaviColumn"></include>
+    from wemall_navi_column 
+    where invalid = 0 and enterprise_id = #{enterpriseId,jdbcType=INTEGER} 
+    <if test="menuType!=null">
+        and menu_type = #{menuType,jdbcType=INTEGER}
+    </if>
+    ;
+  </select>
+</mapper>

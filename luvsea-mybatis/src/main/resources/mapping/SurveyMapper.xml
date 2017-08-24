@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="gdzy.shop.dao.SurveyMapper" >
+  <resultMap id="BaseResultMap" type="gdzy.shop.pojo.Survey" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="gender" property="gender" jdbcType="SMALLINT" />
+    <result column="age" property="age" jdbcType="SMALLINT" />
+    <result column="income" property="income" jdbcType="INTEGER" />
+    <result column="is_days" property="isDays" jdbcType="SMALLINT" />
+    <result column="favorite" property="favorite" jdbcType="VARCHAR" />
+    <result column="attention" property="attention" jdbcType="VARCHAR" />
+    <result column="impression" property="impression" jdbcType="VARCHAR" />
+    <result column="buy_from" property="buyFrom" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="SMALLINT" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="invalid" property="invalid" jdbcType="BIT" />
+    <result column="openid" property="openid" jdbcType="VARCHAR" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="province" property="province" jdbcType="INTEGER" />
+    <result column="city" property="city" jdbcType="INTEGER" />
+    <result column="county" property="county" jdbcType="INTEGER" />
+    <result column="type" property="type" jdbcType="TINYINT" />
+    <result column="qrcode" property="qrcode" jdbcType="VARCHAR" />
+    <result column="enterpriseid" property="enterpriseid" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, name, phone, gender, age, income, is_days, favorite, attention, impression, buy_from, 
+    status, create_time, invalid, openid, address, province, city, county, type, qrcode, 
+    enterpriseid
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_activity_survey
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_activity_survey
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="gdzy.shop.pojo.Survey" >
+    insert into t_activity_survey (id, name, phone, 
+      gender, age, income, 
+      is_days, favorite, attention, 
+      impression, buy_from, status, 
+      create_time, invalid, openid, 
+      address, province, city, 
+      county, type, qrcode, 
+      enterpriseid)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
+      #{gender,jdbcType=SMALLINT}, #{age,jdbcType=SMALLINT}, #{income,jdbcType=INTEGER}, 
+      #{isDays,jdbcType=SMALLINT}, #{favorite,jdbcType=VARCHAR}, #{attention,jdbcType=VARCHAR}, 
+      #{impression,jdbcType=VARCHAR}, #{buyFrom,jdbcType=VARCHAR}, #{status,jdbcType=SMALLINT}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{invalid,jdbcType=BIT}, #{openid,jdbcType=VARCHAR}, 
+      #{address,jdbcType=VARCHAR}, #{province,jdbcType=INTEGER}, #{city,jdbcType=INTEGER}, 
+      #{county,jdbcType=INTEGER}, #{type,jdbcType=TINYINT}, #{qrcode,jdbcType=VARCHAR}, 
+      #{enterpriseid,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="gdzy.shop.pojo.Survey" >
+    insert into t_activity_survey
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="phone != null" >
+        phone,
+      </if>
+      <if test="gender != null" >
+        gender,
+      </if>
+      <if test="age != null" >
+        age,
+      </if>
+      <if test="income != null" >
+        income,
+      </if>
+      <if test="isDays != null" >
+        is_days,
+      </if>
+      <if test="favorite != null" >
+        favorite,
+      </if>
+      <if test="attention != null" >
+        attention,
+      </if>
+      <if test="impression != null" >
+        impression,
+      </if>
+      <if test="buyFrom != null" >
+        buy_from,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="invalid != null" >
+        invalid,
+      </if>
+      <if test="openid != null" >
+        openid,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="province != null" >
+        province,
+      </if>
+      <if test="city != null" >
+        city,
+      </if>
+      <if test="county != null" >
+        county,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="qrcode != null" >
+        qrcode,
+      </if>
+      <if test="enterpriseid != null" >
+        enterpriseid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null" >
+        #{gender,jdbcType=SMALLINT},
+      </if>
+      <if test="age != null" >
+        #{age,jdbcType=SMALLINT},
+      </if>
+      <if test="income != null" >
+        #{income,jdbcType=INTEGER},
+      </if>
+      <if test="isDays != null" >
+        #{isDays,jdbcType=SMALLINT},
+      </if>
+      <if test="favorite != null" >
+        #{favorite,jdbcType=VARCHAR},
+      </if>
+      <if test="attention != null" >
+        #{attention,jdbcType=VARCHAR},
+      </if>
+      <if test="impression != null" >
+        #{impression,jdbcType=VARCHAR},
+      </if>
+      <if test="buyFrom != null" >
+        #{buyFrom,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=SMALLINT},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="invalid != null" >
+        #{invalid,jdbcType=BIT},
+      </if>
+      <if test="openid != null" >
+        #{openid,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null" >
+        #{province,jdbcType=INTEGER},
+      </if>
+      <if test="city != null" >
+        #{city,jdbcType=INTEGER},
+      </if>
+      <if test="county != null" >
+        #{county,jdbcType=INTEGER},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=TINYINT},
+      </if>
+      <if test="qrcode != null" >
+        #{qrcode,jdbcType=VARCHAR},
+      </if>
+      <if test="enterpriseid != null" >
+        #{enterpriseid,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="gdzy.shop.pojo.Survey" >
+    update t_activity_survey
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null" >
+        gender = #{gender,jdbcType=SMALLINT},
+      </if>
+      <if test="age != null" >
+        age = #{age,jdbcType=SMALLINT},
+      </if>
+      <if test="income != null" >
+        income = #{income,jdbcType=INTEGER},
+      </if>
+      <if test="isDays != null" >
+        is_days = #{isDays,jdbcType=SMALLINT},
+      </if>
+      <if test="favorite != null" >
+        favorite = #{favorite,jdbcType=VARCHAR},
+      </if>
+      <if test="attention != null" >
+        attention = #{attention,jdbcType=VARCHAR},
+      </if>
+      <if test="impression != null" >
+        impression = #{impression,jdbcType=VARCHAR},
+      </if>
+      <if test="buyFrom != null" >
+        buy_from = #{buyFrom,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=SMALLINT},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="invalid != null" >
+        invalid = #{invalid,jdbcType=BIT},
+      </if>
+      <if test="openid != null" >
+        openid = #{openid,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null" >
+        province = #{province,jdbcType=INTEGER},
+      </if>
+      <if test="city != null" >
+        city = #{city,jdbcType=INTEGER},
+      </if>
+      <if test="county != null" >
+        county = #{county,jdbcType=INTEGER},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=TINYINT},
+      </if>
+      <if test="qrcode != null" >
+        qrcode = #{qrcode,jdbcType=VARCHAR},
+      </if>
+      <if test="enterpriseid != null" >
+        enterpriseid = #{enterpriseid,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="gdzy.shop.pojo.Survey" >
+    update t_activity_survey
+    set name = #{name,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      gender = #{gender,jdbcType=SMALLINT},
+      age = #{age,jdbcType=SMALLINT},
+      income = #{income,jdbcType=INTEGER},
+      is_days = #{isDays,jdbcType=SMALLINT},
+      favorite = #{favorite,jdbcType=VARCHAR},
+      attention = #{attention,jdbcType=VARCHAR},
+      impression = #{impression,jdbcType=VARCHAR},
+      buy_from = #{buyFrom,jdbcType=VARCHAR},
+      status = #{status,jdbcType=SMALLINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      invalid = #{invalid,jdbcType=BIT},
+      openid = #{openid,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      province = #{province,jdbcType=INTEGER},
+      city = #{city,jdbcType=INTEGER},
+      county = #{county,jdbcType=INTEGER},
+      type = #{type,jdbcType=TINYINT},
+      qrcode = #{qrcode,jdbcType=VARCHAR},
+      enterpriseid = #{enterpriseid,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  
+   <select id="getSurveys" parameterType="gdzy.shop.pojo.Survey" resultType="gdzy.shop.pojo.Survey">
+	    select * from t_activity_survey 
+	    <where>
+	           1=1 and invalid = 0 and enterpriseid = #{enterpriseid,jdbcType=VARCHAR}  
+	          and type =  #{type,jdbcType=TINYINT} 
+	           and 
+             (openid = #{openid,jdbcType=VARCHAR}  
+             <if test="qrcode != null">
+                or qrcode = #{qrcode,jdbcType=VARCHAR}
+             </if>) 
+	    </where>
+    </select>
+</mapper>

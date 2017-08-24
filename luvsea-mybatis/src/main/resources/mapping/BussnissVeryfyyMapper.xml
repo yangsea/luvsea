@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="gdzy.shop.dao.user.BussnissVeryfyyMapper" >
+<cache/>
+  <resultMap id="BaseResultMap" type="gdzy.shop.pojo.BussnissVeryfyy" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="uid" property="uid" jdbcType="VARCHAR" />
+    <result column="certno" property="certno" jdbcType="VARCHAR" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="dync_password" property="dyncPassword" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="session_id" property="sessionId" jdbcType="VARCHAR" />
+    <result column="image" property="image" jdbcType="VARCHAR" />
+    <result column="balance" property="balance" jdbcType="REAL" />
+    <result column="score" property="score" jdbcType="INTEGER" />
+    <result column="continue_sign" property="continueSign" jdbcType="INTEGER" />
+    <result column="birthday" property="birthday" jdbcType="VARCHAR" />
+    <result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="last_sign_time" property="lastSignTime" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="time" property="time" jdbcType="TIMESTAMP" />
+    <result column="gender" property="gender" jdbcType="VARCHAR" />
+    <result column="nickname" property="nickname" jdbcType="VARCHAR" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="age" property="age" jdbcType="INTEGER" />
+    <result column="job_id" property="jobId" jdbcType="INTEGER" />
+    <result column="is_clean" property="isClean" jdbcType="BIT" />
+    <result column="is_verified" property="isVerified" jdbcType="BIT" />
+    <result column="updated_at" property="updatedAt" jdbcType="INTEGER" />
+    <result column="is_init" property="isInit" jdbcType="TINYINT" />
+    <result column="is_retail" property="isRetail" jdbcType="TINYINT" />
+    <result column="retail_num" property="retailNum" jdbcType="VARCHAR" />
+    <result column="last_upt_time" property="lastUptTime" jdbcType="INTEGER" />
+    <result column="login_total" property="loginTotal" jdbcType="INTEGER" />
+    <result column="last_login_time" property="lastLoginTime" jdbcType="INTEGER" />
+    <result column="last_login_ip" property="lastLoginIp" jdbcType="VARCHAR" />
+    <result column="is_del" property="isDel" jdbcType="TINYINT" />
+    <result column="is_over" property="isOver" jdbcType="TINYINT" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="province" property="province" jdbcType="VARCHAR" />
+    <result column="city" property="city" jdbcType="VARCHAR" />
+    <result column="area" property="area" jdbcType="VARCHAR" />
+    <result column="ml_id" property="mlId" jdbcType="INTEGER" />
+    <result column="is_merge" property="isMerge" jdbcType="TINYINT" />
+    <result column="role" property="role" jdbcType="TINYINT" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="gdzy.shop.pojo.BussnissVeryfyyWithBLOBs" extends="BaseResultMap" >
+    <result column="email" property="email" jdbcType="LONGVARCHAR" />
+    <result column="job" property="job" jdbcType="LONGVARCHAR" />
+    <result column="realname" property="realname" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, uid, certno, username, dync_password, password, session_id, image, balance, score, 
+    continue_sign, birthday, createtime, last_sign_time, status, time, gender, nickname, 
+    phone, age, job_id, is_clean, is_verified, updated_at, is_init, is_retail, retail_num, 
+    last_upt_time, login_total, last_login_time, last_login_ip, is_del, is_over, address, 
+    province, city, area, ml_id, is_merge, role
+  </sql>
+  <sql id="Blob_Column_List" >
+    email, job, realname
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from wemall_bussnissveryfyy
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+   <select id="selectBybussnCertno" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from wemall_bussnissveryfyy
+    where certno = #{certno,jdbcType=VARCHAR} order by id desc  limit 1
+  </select>
+     <select id="selectBybussnPhone" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from wemall_bussnissveryfyy
+    where phone = #{phone,jdbcType=VARCHAR} limit 1
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from wemall_bussnissveryfyy
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="gdzy.shop.pojo.BussnissVeryfyyWithBLOBs" >
+    insert into wemall_bussnissveryfyy (id, uid, certno, 
+      username, dync_password, password, 
+      session_id, image, balance, 
+      score, continue_sign, birthday, 
+      createtime, last_sign_time, status, 
+      time, gender, nickname, 
+      phone, age, job_id, 
+      is_clean, is_verified, updated_at, 
+      is_init, is_retail, retail_num, 
+      last_upt_time, login_total, last_login_time, 
+      last_login_ip, is_del, is_over, 
+      address, province, city, 
+      area, ml_id, is_merge, 
+      role, email, job, 
+      realname,bid)
+    values (#{id,jdbcType=INTEGER}, #{uid,jdbcType=VARCHAR}, #{certno,jdbcType=VARCHAR}, 
+      #{username,jdbcType=VARCHAR}, #{dyncPassword,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{sessionId,jdbcType=VARCHAR}, #{image,jdbcType=VARCHAR}, #{balance,jdbcType=REAL}, 
+      #{score,jdbcType=INTEGER}, #{continueSign,jdbcType=INTEGER}, #{birthday,jdbcType=VARCHAR}, 
+      #{createtime,jdbcType=TIMESTAMP}, #{lastSignTime,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}, 
+      #{time,jdbcType=TIMESTAMP}, #{gender,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR}, 
+      #{phone,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, #{jobId,jdbcType=INTEGER}, 
+      #{isClean,jdbcType=BIT}, #{isVerified,jdbcType=BIT}, #{updatedAt,jdbcType=INTEGER}, 
+      #{isInit,jdbcType=TINYINT}, #{isRetail,jdbcType=TINYINT}, #{retailNum,jdbcType=VARCHAR}, 
+      #{lastUptTime,jdbcType=INTEGER}, #{loginTotal,jdbcType=INTEGER}, #{lastLoginTime,jdbcType=INTEGER}, 
+      #{lastLoginIp,jdbcType=VARCHAR}, #{isDel,jdbcType=TINYINT}, #{isOver,jdbcType=TINYINT}, 
+      #{address,jdbcType=VARCHAR}, #{province,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, 
+      #{area,jdbcType=VARCHAR}, #{mlId,jdbcType=INTEGER}, #{isMerge,jdbcType=TINYINT}, 
+      #{role,jdbcType=TINYINT}, #{email,jdbcType=LONGVARCHAR}, #{job,jdbcType=LONGVARCHAR}, 
+      #{realname,jdbcType=LONGVARCHAR},#{bid,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="gdzy.shop.pojo.BussnissVeryfyyWithBLOBs" >
+    insert into wemall_bussnissveryfyy
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="uid != null" >
+        uid,
+      </if>
+      <if test="certno != null" >
+        certno,
+      </if>
+      <if test="username != null" >
+        username,
+      </if>
+      <if test="dyncPassword != null" >
+        dync_password,
+      </if>
+      <if test="password != null" >
+        password,
+      </if>
+      <if test="sessionId != null" >
+        session_id,
+      </if>
+      <if test="image != null" >
+        image,
+      </if>
+      <if test="balance != null" >
+        balance,
+      </if>
+      <if test="score != null" >
+        score,
+      </if>
+      <if test="continueSign != null" >
+        continue_sign,
+      </if>
+      <if test="birthday != null" >
+        birthday,
+      </if>
+      <if test="createtime != null" >
+        createtime,
+      </if>
+      <if test="lastSignTime != null" >
+        last_sign_time,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="time != null" >
+        time,
+      </if>
+      <if test="gender != null" >
+        gender,
+      </if>
+      <if test="nickname != null" >
+        nickname,
+      </if>
+      <if test="phone != null" >
+        phone,
+      </if>
+      <if test="age != null" >
+        age,
+      </if>
+      <if test="jobId != null" >
+        job_id,
+      </if>
+      <if test="isClean != null" >
+        is_clean,
+      </if>
+      <if test="isVerified != null" >
+        is_verified,
+      </if>
+      <if test="updatedAt != null" >
+        updated_at,
+      </if>
+      <if test="isInit != null" >
+        is_init,
+      </if>
+      <if test="isRetail != null" >
+        is_retail,
+      </if>
+      <if test="retailNum != null" >
+        retail_num,
+      </if>
+      <if test="lastUptTime != null" >
+        last_upt_time,
+      </if>
+      <if test="loginTotal != null" >
+        login_total,
+      </if>
+      <if test="lastLoginTime != null" >
+        last_login_time,
+      </if>
+      <if test="lastLoginIp != null" >
+        last_login_ip,
+      </if>
+      <if test="isDel != null" >
+        is_del,
+      </if>
+      <if test="isOver != null" >
+        is_over,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="province != null" >
+        province,
+      </if>
+      <if test="city != null" >
+        city,
+      </if>
+      <if test="area != null" >
+        area,
+      </if>
+      <if test="mlId != null" >
+        ml_id,
+      </if>
+      <if test="isMerge != null" >
+        is_merge,
+      </if>
+      <if test="role != null" >
+        role,
+      </if>
+      <if test="email != null" >
+        email,
+      </if>
+      <if test="job != null" >
+        job,
+      </if>
+      <if test="realname != null" >
+        realname,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="uid != null" >
+        #{uid,jdbcType=VARCHAR},
+      </if>
+      <if test="certno != null" >
+        #{certno,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="dyncPassword != null" >
+        #{dyncPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="sessionId != null" >
+        #{sessionId,jdbcType=VARCHAR},
+      </if>
+      <if test="image != null" >
+        #{image,jdbcType=VARCHAR},
+      </if>
+      <if test="balance != null" >
+        #{balance,jdbcType=REAL},
+      </if>
+      <if test="score != null" >
+        #{score,jdbcType=INTEGER},
+      </if>
+      <if test="continueSign != null" >
+        #{continueSign,jdbcType=INTEGER},
+      </if>
+      <if test="birthday != null" >
+        #{birthday,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastSignTime != null" >
+        #{lastSignTime,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="time != null" >
+        #{time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gender != null" >
+        #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="nickname != null" >
+        #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null" >
+        #{age,jdbcType=INTEGER},
+      </if>
+      <if test="jobId != null" >
+        #{jobId,jdbcType=INTEGER},
+      </if>
+      <if test="isClean != null" >
+        #{isClean,jdbcType=BIT},
+      </if>
+      <if test="isVerified != null" >
+        #{isVerified,jdbcType=BIT},
+      </if>
+      <if test="updatedAt != null" >
+        #{updatedAt,jdbcType=INTEGER},
+      </if>
+      <if test="isInit != null" >
+        #{isInit,jdbcType=TINYINT},
+      </if>
+      <if test="isRetail != null" >
+        #{isRetail,jdbcType=TINYINT},
+      </if>
+      <if test="retailNum != null" >
+        #{retailNum,jdbcType=VARCHAR},
+      </if>
+      <if test="lastUptTime != null" >
+        #{lastUptTime,jdbcType=INTEGER},
+      </if>
+      <if test="loginTotal != null" >
+        #{loginTotal,jdbcType=INTEGER},
+      </if>
+      <if test="lastLoginTime != null" >
+        #{lastLoginTime,jdbcType=INTEGER},
+      </if>
+      <if test="lastLoginIp != null" >
+        #{lastLoginIp,jdbcType=VARCHAR},
+      </if>
+      <if test="isDel != null" >
+        #{isDel,jdbcType=TINYINT},
+      </if>
+      <if test="isOver != null" >
+        #{isOver,jdbcType=TINYINT},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null" >
+        #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="area != null" >
+        #{area,jdbcType=VARCHAR},
+      </if>
+      <if test="mlId != null" >
+        #{mlId,jdbcType=INTEGER},
+      </if>
+      <if test="isMerge != null" >
+        #{isMerge,jdbcType=TINYINT},
+      </if>
+      <if test="role != null" >
+        #{role,jdbcType=TINYINT},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="job != null" >
+        #{job,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="realname != null" >
+        #{realname,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="gdzy.shop.pojo.BussnissVeryfyyWithBLOBs" >
+    update wemall_bussnissveryfyy
+    <set >
+      <if test="uid != null" >
+        uid = #{uid,jdbcType=VARCHAR},
+      </if>
+      <if test="certno != null" >
+        certno = #{certno,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null" >
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="dyncPassword != null" >
+        dync_password = #{dyncPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="sessionId != null" >
+        session_id = #{sessionId,jdbcType=VARCHAR},
+      </if>
+      <if test="image != null" >
+        image = #{image,jdbcType=VARCHAR},
+      </if>
+      <if test="balance != null" >
+        balance = #{balance,jdbcType=REAL},
+      </if>
+      <if test="score != null" >
+        score = #{score,jdbcType=INTEGER},
+      </if>
+      <if test="continueSign != null" >
+        continue_sign = #{continueSign,jdbcType=INTEGER},
+      </if>
+      <if test="birthday != null" >
+        birthday = #{birthday,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastSignTime != null" >
+        last_sign_time = #{lastSignTime,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="time != null" >
+        time = #{time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gender != null" >
+        gender = #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="nickname != null" >
+        nickname = #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null" >
+        age = #{age,jdbcType=INTEGER},
+      </if>
+      <if test="jobId != null" >
+        job_id = #{jobId,jdbcType=INTEGER},
+      </if>
+      <if test="isClean != null" >
+        is_clean = #{isClean,jdbcType=BIT},
+      </if>
+      <if test="isVerified != null" >
+        is_verified = #{isVerified,jdbcType=BIT},
+      </if>
+      <if test="updatedAt != null" >
+        updated_at = #{updatedAt,jdbcType=INTEGER},
+      </if>
+      <if test="isInit != null" >
+        is_init = #{isInit,jdbcType=TINYINT},
+      </if>
+      <if test="isRetail != null" >
+        is_retail = #{isRetail,jdbcType=TINYINT},
+      </if>
+      <if test="retailNum != null" >
+        retail_num = #{retailNum,jdbcType=VARCHAR},
+      </if>
+      <if test="lastUptTime != null" >
+        last_upt_time = #{lastUptTime,jdbcType=INTEGER},
+      </if>
+      <if test="loginTotal != null" >
+        login_total = #{loginTotal,jdbcType=INTEGER},
+      </if>
+      <if test="lastLoginTime != null" >
+        last_login_time = #{lastLoginTime,jdbcType=INTEGER},
+      </if>
+      <if test="lastLoginIp != null" >
+        last_login_ip = #{lastLoginIp,jdbcType=VARCHAR},
+      </if>
+      <if test="isDel != null" >
+        is_del = #{isDel,jdbcType=TINYINT},
+      </if>
+      <if test="isOver != null" >
+        is_over = #{isOver,jdbcType=TINYINT},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null" >
+        province = #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        city = #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="area != null" >
+        area = #{area,jdbcType=VARCHAR},
+      </if>
+      <if test="mlId != null" >
+        ml_id = #{mlId,jdbcType=INTEGER},
+      </if>
+      <if test="isMerge != null" >
+        is_merge = #{isMerge,jdbcType=TINYINT},
+      </if>
+      <if test="role != null" >
+        role = #{role,jdbcType=TINYINT},
+      </if>
+      <if test="email != null" >
+        email = #{email,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="job != null" >
+        job = #{job,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="realname != null" >
+        realname = #{realname,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="gdzy.shop.pojo.BussnissVeryfyyWithBLOBs" >
+    update wemall_bussnissveryfyy
+    set uid = #{uid,jdbcType=VARCHAR},
+      certno = #{certno,jdbcType=VARCHAR},
+      username = #{username,jdbcType=VARCHAR},
+      dync_password = #{dyncPassword,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      session_id = #{sessionId,jdbcType=VARCHAR},
+      image = #{image,jdbcType=VARCHAR},
+      balance = #{balance,jdbcType=REAL},
+      score = #{score,jdbcType=INTEGER},
+      continue_sign = #{continueSign,jdbcType=INTEGER},
+      birthday = #{birthday,jdbcType=VARCHAR},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      last_sign_time = #{lastSignTime,jdbcType=INTEGER},
+      status = #{status,jdbcType=INTEGER},
+      time = #{time,jdbcType=TIMESTAMP},
+      gender = #{gender,jdbcType=VARCHAR},
+      nickname = #{nickname,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      age = #{age,jdbcType=INTEGER},
+      job_id = #{jobId,jdbcType=INTEGER},
+      is_clean = #{isClean,jdbcType=BIT},
+      is_verified = #{isVerified,jdbcType=BIT},
+      updated_at = #{updatedAt,jdbcType=INTEGER},
+      is_init = #{isInit,jdbcType=TINYINT},
+      is_retail = #{isRetail,jdbcType=TINYINT},
+      retail_num = #{retailNum,jdbcType=VARCHAR},
+      last_upt_time = #{lastUptTime,jdbcType=INTEGER},
+      login_total = #{loginTotal,jdbcType=INTEGER},
+      last_login_time = #{lastLoginTime,jdbcType=INTEGER},
+      last_login_ip = #{lastLoginIp,jdbcType=VARCHAR},
+      is_del = #{isDel,jdbcType=TINYINT},
+      is_over = #{isOver,jdbcType=TINYINT},
+      address = #{address,jdbcType=VARCHAR},
+      province = #{province,jdbcType=VARCHAR},
+      city = #{city,jdbcType=VARCHAR},
+      area = #{area,jdbcType=VARCHAR},
+      ml_id = #{mlId,jdbcType=INTEGER},
+      is_merge = #{isMerge,jdbcType=TINYINT},
+      role = #{role,jdbcType=TINYINT},
+      email = #{email,jdbcType=LONGVARCHAR},
+      job = #{job,jdbcType=LONGVARCHAR},
+      realname = #{realname,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="gdzy.shop.pojo.BussnissVeryfyy" >
+    update wemall_bussnissveryfyy
+    set uid = #{uid,jdbcType=VARCHAR},
+      certno = #{certno,jdbcType=VARCHAR},
+      username = #{username,jdbcType=VARCHAR},
+      dync_password = #{dyncPassword,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      session_id = #{sessionId,jdbcType=VARCHAR},
+      image = #{image,jdbcType=VARCHAR},
+      balance = #{balance,jdbcType=REAL},
+      score = #{score,jdbcType=INTEGER},
+      continue_sign = #{continueSign,jdbcType=INTEGER},
+      birthday = #{birthday,jdbcType=VARCHAR},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      last_sign_time = #{lastSignTime,jdbcType=INTEGER},
+      status = #{status,jdbcType=INTEGER},
+      time = #{time,jdbcType=TIMESTAMP},
+      gender = #{gender,jdbcType=VARCHAR},
+      nickname = #{nickname,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      age = #{age,jdbcType=INTEGER},
+      job_id = #{jobId,jdbcType=INTEGER},
+      is_clean = #{isClean,jdbcType=BIT},
+      is_verified = #{isVerified,jdbcType=BIT},
+      updated_at = #{updatedAt,jdbcType=INTEGER},
+      is_init = #{isInit,jdbcType=TINYINT},
+      is_retail = #{isRetail,jdbcType=TINYINT},
+      retail_num = #{retailNum,jdbcType=VARCHAR},
+      last_upt_time = #{lastUptTime,jdbcType=INTEGER},
+      login_total = #{loginTotal,jdbcType=INTEGER},
+      last_login_time = #{lastLoginTime,jdbcType=INTEGER},
+      last_login_ip = #{lastLoginIp,jdbcType=VARCHAR},
+      is_del = #{isDel,jdbcType=TINYINT},
+      is_over = #{isOver,jdbcType=TINYINT},
+      address = #{address,jdbcType=VARCHAR},
+      province = #{province,jdbcType=VARCHAR},
+      city = #{city,jdbcType=VARCHAR},
+      area = #{area,jdbcType=VARCHAR},
+      ml_id = #{mlId,jdbcType=INTEGER},
+      is_merge = #{isMerge,jdbcType=TINYINT},
+      role = #{role,jdbcType=TINYINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
