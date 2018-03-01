@@ -24,3 +24,6 @@ blog/.project
 */build
 */.settings/
 */.project
+.idea
+*/*.iml
+*/logs

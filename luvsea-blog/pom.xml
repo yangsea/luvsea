@@ -162,6 +162,11 @@
                     </dependency>    
                 </dependencies>    
            </plugin>    
+             <plugin>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok-maven-plugin</artifactId>
+                <version>1.12.6.0</version>
+            </plugin>
         </plugins>
 <!--         </pluginManagement> -->
 <!--            <plugins>  -->
