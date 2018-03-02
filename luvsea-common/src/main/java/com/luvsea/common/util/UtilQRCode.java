@@ -3,6 +3,7 @@ package com.luvsea.common.util;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.Map;
@@ -38,8 +39,9 @@ public class UtilQRCode {
             hints.put(EncodeHintType.CHARACTER_SET, "UTF-8");
             BitMatrix bitMatrix = multiFormatWriter.encode(content, BarcodeFormat.QR_CODE, width, height,hints);
             // fileName as xxx.jpg
-            File file = new File(path,fileName);
-            MatrixToImageWriter.writeToFile(bitMatrix, format, file);
+//            File file = new File(path,fileName);
+            Path paths = Paths.get(path+File.separator+fileName);
+            MatrixToImageWriter.writeToPath(bitMatrix, format, paths);
         } catch (Exception e) {
             e.printStackTrace();
         }

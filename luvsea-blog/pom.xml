@@ -162,10 +162,21 @@
                     </dependency>    
                 </dependencies>    
            </plugin>    
+<!-- <<<<<<< HEAD -->
              <plugin>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok-maven-plugin</artifactId>
                 <version>1.12.6.0</version>
+<!-- ======= -->
+           
+<!--               <plugin> -->
+<!--             <groupId>org.apache.maven.plugins</groupId> -->
+<!--             <artifactId>maven-surefire-plugin</artifactId> -->
+<!--             <configuration> -->
+<!--                 <testFailureIgnore>true</testFailureIgnore> -->
+<!--             </configuration> -->
+            
+<!-- >>>>>>> cfc3958e41f39065603fcd4af246a088bfdc4222 -->
             </plugin>
         </plugins>
 <!--         </pluginManagement> -->

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="gdzy.shop.dao.RetailLogMapper">
+  <resultMap id="BaseResultMap" type="gdzy.shop.pojo.RetailLog">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="oldphone" jdbcType="VARCHAR" property="oldphone" />
+    <result column="newphone" jdbcType="VARCHAR" property="newphone" />
+    <result column="certno" jdbcType="VARCHAR" property="certno" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="invalid" jdbcType="BIT" property="invalid" />
+    <result column="uid" jdbcType="BIGINT" property="uid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, username, oldphone, newphone, certno, create_time, status, invalid, uid
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from wemall_retail_log
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from wemall_retail_log
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="gdzy.shop.pojo.RetailLog">
+    insert into wemall_retail_log (id, username, oldphone, 
+      newphone, certno, create_time, 
+      status, invalid, uid)
+    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{oldphone,jdbcType=VARCHAR}, 
+      #{newphone,jdbcType=VARCHAR}, #{certno,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{status,jdbcType=INTEGER}, #{invalid,jdbcType=BIT}, #{uid,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="gdzy.shop.pojo.RetailLog">
+    insert into wemall_retail_log
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="username != null">
+        username,
+      </if>
+      <if test="oldphone != null">
+        oldphone,
+      </if>
+      <if test="newphone != null">
+        newphone,
+      </if>
+      <if test="certno != null">
+        certno,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="invalid != null">
+        invalid,
+      </if>
+      <if test="uid != null">
+        uid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="oldphone != null">
+        #{oldphone,jdbcType=VARCHAR},
+      </if>
+      <if test="newphone != null">
+        #{newphone,jdbcType=VARCHAR},
+      </if>
+      <if test="certno != null">
+        #{certno,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="invalid != null">
+        #{invalid,jdbcType=BIT},
+      </if>
+      <if test="uid != null">
+        #{uid,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="gdzy.shop.pojo.RetailLog">
+    update wemall_retail_log
+    <set>
+      <if test="username != null">
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="oldphone != null">
+        oldphone = #{oldphone,jdbcType=VARCHAR},
+      </if>
+      <if test="newphone != null">
+        newphone = #{newphone,jdbcType=VARCHAR},
+      </if>
+      <if test="certno != null">
+        certno = #{certno,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="invalid != null">
+        invalid = #{invalid,jdbcType=BIT},
+      </if>
+      <if test="uid != null">
+        uid = #{uid,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="gdzy.shop.pojo.RetailLog">
+    update wemall_retail_log
+    set username = #{username,jdbcType=VARCHAR},
+      oldphone = #{oldphone,jdbcType=VARCHAR},
+      newphone = #{newphone,jdbcType=VARCHAR},
+      certno = #{certno,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      status = #{status,jdbcType=INTEGER},
+      invalid = #{invalid,jdbcType=BIT},
+      uid = #{uid,jdbcType=BIGINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

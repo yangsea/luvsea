@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="gdzy.shop.dao.user.WemallTaskMapper">
+    <cache/>
+	<resultMap id="BaseResultMap" type="gdzy.shop.pojo.user.WemallTask">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="ntype" property="ntype" jdbcType="INTEGER" />
+		<result column="cname" property="cname" jdbcType="VARCHAR" />
+		<result column="dcrdate" property="dcrdate" jdbcType="TIMESTAMP" />
+		<result column="nstatus" property="nstatus" jdbcType="INTEGER" />
+		<result column="imgpath" property="imgpath" jdbcType="VARCHAR" />
+		<result column="url" property="url" jdbcType="VARCHAR" />
+		<result column="enterpriseid" property="enterpriseid" jdbcType="INTEGER" />
+	</resultMap>
+	<resultMap id="ResultMapWithBLOBs" type="gdzy.shop.pojo.user.WemallTask"
+		extends="BaseResultMap">
+		<result column="cext" property="cext" jdbcType="LONGVARCHAR" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, ntype, cname, dcrdate, nstatus, imgpath, url
+	</sql>
+	<sql id="Blob_Column_List">
+		cext
+	</sql>
+	<select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs"
+		parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		,
+		<include refid="Blob_Column_List" />
+		from wemall_task
+		where id = #{id,jdbcType=INTEGER}
+	</select>
+	<select id="getTasks" resultMap="BaseResultMap">
+
+		select id,ntype,cname,dcrdate, nstatus, imgpath,url, cext,enterpriseid,uid
+		from wemall_task WHERE enterpriseid=#{enterpriseid} ORDER BY dcrdate
+		DESC LIMIT #{offset},#{limit}
+
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+		delete from wemall_task
+		where id = #{id,jdbcType=INTEGER}
+	</delete>
+	<insert id="insert" parameterType="gdzy.shop.pojo.user.WemallTask">
+		insert into wemall_task (id, ntype, cname,
+		dcrdate, nstatus, imgpath,
+		url, cext)
+		values (#{id,jdbcType=INTEGER}, #{ntype,jdbcType=INTEGER},
+		#{cname,jdbcType=VARCHAR},
+		#{dcrdate,jdbcType=TIMESTAMP}, #{nstatus,jdbcType=INTEGER}, #{imgpath,jdbcType=VARCHAR},
+		#{url,jdbcType=VARCHAR}, #{cext,jdbcType=LONGVARCHAR})
+	</insert>
+	<insert id="insertSelective" parameterType="gdzy.shop.pojo.user.WemallTask">
+		insert into wemall_task
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="ntype != null">
+				ntype,
+			</if>
+			<if test="cname != null">
+				cname,
+			</if>
+			<if test="dcrdate != null">
+				dcrdate,
+			</if>
+			<if test="nstatus != null">
+				nstatus,
+			</if>
+			<if test="imgpath != null">
+				imgpath,
+			</if>
+			<if test="url != null">
+				url,
+			</if>
+			<if test="cext != null">
+				cext,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=INTEGER},
+			</if>
+			<if test="ntype != null">
+				#{ntype,jdbcType=INTEGER},
+			</if>
+			<if test="cname != null">
+				#{cname,jdbcType=VARCHAR},
+			</if>
+			<if test="dcrdate != null">
+				#{dcrdate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="nstatus != null">
+				#{nstatus,jdbcType=INTEGER},
+			</if>
+			<if test="imgpath != null">
+				#{imgpath,jdbcType=VARCHAR},
+			</if>
+			<if test="url != null">
+				#{url,jdbcType=VARCHAR},
+			</if>
+			<if test="cext != null">
+				#{cext,jdbcType=LONGVARCHAR},
+			</if>
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective" parameterType="gdzy.shop.pojo.user.WemallTask">
+		update wemall_task
+		<set>
+			<if test="ntype != null">
+				ntype = #{ntype,jdbcType=INTEGER},
+			</if>
+			<if test="cname != null">
+				cname = #{cname,jdbcType=VARCHAR},
+			</if>
+			<if test="dcrdate != null">
+				dcrdate = #{dcrdate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="nstatus != null">
+				nstatus = #{nstatus,jdbcType=INTEGER},
+			</if>
+			<if test="imgpath != null">
+				imgpath = #{imgpath,jdbcType=VARCHAR},
+			</if>
+			<if test="url != null">
+				url = #{url,jdbcType=VARCHAR},
+			</if>
+			<if test="cext != null">
+				cext = #{cext,jdbcType=LONGVARCHAR},
+			</if>
+		</set>
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+	<update id="updateByPrimaryKeyWithBLOBs" parameterType="gdzy.shop.pojo.user.WemallTask">
+		update wemall_task
+		set ntype = #{ntype,jdbcType=INTEGER},
+		cname = #{cname,jdbcType=VARCHAR},
+		dcrdate = #{dcrdate,jdbcType=TIMESTAMP},
+		nstatus = #{nstatus,jdbcType=INTEGER},
+		imgpath = #{imgpath,jdbcType=VARCHAR},
+		url = #{url,jdbcType=VARCHAR},
+		cext = #{cext,jdbcType=LONGVARCHAR}
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="gdzy.shop.pojo.user.WemallTask">
+		update wemall_task
+		set ntype = #{ntype,jdbcType=INTEGER},
+		cname = #{cname,jdbcType=VARCHAR},
+		dcrdate = #{dcrdate,jdbcType=TIMESTAMP},
+		nstatus = #{nstatus,jdbcType=INTEGER},
+		imgpath = #{imgpath,jdbcType=VARCHAR},
+		url = #{url,jdbcType=VARCHAR}
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+</mapper>

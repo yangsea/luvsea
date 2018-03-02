@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="gdzy.shop.dao.user.UserMapper">
+    <cache/>
+	<resultMap id="BaseResultMap" type="gdzy.shop.pojo.user.wx.User">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="uid" property="uid" jdbcType="INTEGER" />
+		<result column="phone" property="phone" jdbcType="VARCHAR" />
+		<result column="openid" property="openId" jdbcType="VARCHAR" />
+		<result column="username" property="userName" jdbcType="VARCHAR" />
+		<result column="level" property="level" jdbcType="INTEGER" />
+		<result column="level_name" property="levelName" jdbcType="VARCHAR" />
+		<result column="nickname" property="nickName" jdbcType="VARCHAR" />
+		<result column="status" property="status" jdbcType="VARCHAR" />
+		<result column="score" property="score" jdbcType="VARCHAR" />
+		<result column="image" property="image" jdbcType="VARCHAR" />
+		<result column="symbol" property="symbol" jdbcType="VARCHAR" />
+		<result column="shop_cart_count" property="shopCartCount"
+			jdbcType="VARCHAR" />
+		<result column="personal_status" property="personalStatus"
+			jdbcType="VARCHAR" />
+		<result column="order_status" property="OrderStatus" jdbcType="VARCHAR" />
+		<result column="bind_status" property="bindStatus" jdbcType="VARCHAR" />
+		<result column="address" property="address" jdbcType="VARCHAR" />
+		<result column="birthday" property="birthday" jdbcType="VARCHAR" />
+		<result column="city" property="city" jdbcType="VARCHAR" />
+		<result column="area" property="district" jdbcType="VARCHAR" />
+		<result column="email" property="email" jdbcType="VARCHAR" />
+		<result column="province" property="province" jdbcType="VARCHAR" />
+		<result column="gender" property="sex" jdbcType="VARCHAR" />
+		<result column="job" property="vocation" jdbcType="VARCHAR" />
+
+	</resultMap>
+	<sql id="Base_Column_List">
+		id,uid,phone,openid,username,level,level_name,nickname,status,score,image,symbol,
+		shop_cart_count,personal_status,order_status,bind_status,address,birthday,city,area,email,
+		province,gender,job
+	</sql>
+
+	<update id="updateByPrimaryKeySelective" useGeneratedKeys="true"
+		keyProperty="id" parameterType="gdzy.shop.pojo.user.wx.User">
+
+		<selectKey keyProperty="id" resultType="int" order="BEFORE">
+			select count(*) from wemall_user where uid = #{uid}
+		</selectKey>
+		<if test="id > 0">
+			update wemall_user
+			<set>
+				<if test="phone != null">
+					phone = #{phone,jdbcType=VARCHAR},
+				</if>
+				<if test="userName != null">
+					username = #{userName,jdbcType=VARCHAR},
+				</if>
+				<if test="level != null">
+					level = #{level,jdbcType=INTEGER},
+				</if>
+				<if test="levelName != null">
+					level_name = #{levelName,jdbcType=VARCHAR},
+				</if>
+				<if test="nickName != null">
+					nickname = #{nickName,jdbcType=VARCHAR},
+				</if>
+				<if test="status != null">
+					status = #{status,jdbcType=VARCHAR},
+				</if>
+				<if test="score != null">
+					score = #{score,jdbcType=VARCHAR},
+				</if>
+				<if test="image != null">
+					image = #{image,jdbcType=VARCHAR},
+				</if>
+				<if test="symbol != null">
+					symbol = #{symbol,jdbcType=VARCHAR},
+				</if>
+				<if test="shopCartCount != null">
+					shop_cart_count = #{shopCartCount,jdbcType=VARCHAR},
+				</if>
+				<if test="personalStatus != null">
+					personal_status = #{personalStatus,jdbcType=VARCHAR},
+				</if>
+				<if test="OrderStatus != null">
+					order_status = #{OrderStatus,jdbcType=VARCHAR},
+				</if>
+				<if test="bindStatus != null">
+					bind_status = #{bindStatus,jdbcType=VARCHAR},
+				</if>
+				<if test="address != null">
+					address = #{address,jdbcType=VARCHAR},
+				</if>
+				<if test="birthday != null">
+					birthday = #{birthday,jdbcType=VARCHAR},
+				</if>
+				<if test="city != null">
+					city = #{city,jdbcType=VARCHAR},
+				</if>
+				<if test="district != null">
+					area = #{district,jdbcType=VARCHAR},
+				</if>
+				<if test="email != null">
+					email = #{email,jdbcType=VARCHAR},
+				</if>
+				<if test="province != null">
+					province = #{province,jdbcType=VARCHAR},
+				</if>
+				<if test="sex != null">
+					gender = #{sex,jdbcType=VARCHAR},
+				</if>
+				<if test="vocation != null">
+					vocation = #{vocation,jdbcType=VARCHAR},
+				</if>
+			</set>
+			<where>
+
+			</where>
+			where id = #{id,jdbcType=INTEGER}
+		</if>
+
+		<if test="id==0">
+			insert into wemall_user
+			(uid,openid,phone,nickname,gender,province,city,area)
+			values
+			(
+			#{uid,jdbcType=INTEGER}, #{openId,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR},
+			#{nickName,jdbcType=VARCHAR},
+			#{sex,jdbcType=VARCHAR}, #{province,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR},
+			#{district,jdbcType=VARCHAR}
+			);
+		</if>
+
+	</update>
+
+	<select id="getUserByOpenId" resultMap="BaseResultMap"
+		parameterType="gdzy.shop.pojo.user.wx.User">
+
+		SELECT
+		<include refid="Base_Column_List" />
+		FROM wemall_user wu
+		<where>
+			<if test="null!=openId">
+				openid = #{openId,jdbcType=VARCHAR}
+			</if>
+			<if test="null!=phone">
+				and phone = #{phone,jdbcType=VARCHAR}
+			</if>
+		</where>
+
+	</select>
+
+	<insert id="addUser" useGeneratedKeys="true" keyProperty="id"
+		parameterType="gdzy.shop.pojo.user.wx.User">
+		insert into wemall_user
+		(openid,uid,phone)
+		values
+		(
+		#{openId,jdbcType=VARCHAR},#{uid,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}
+		);
+	</insert>
+
+
+	<insert id="addSpread" parameterType="java.lang.Integer">
+		insert into wemall_user_spread
+		(spread_id,u_id,create_time)
+		values
+		(
+		  #{spreadId,jdbcType=INTEGER},#{uId,jdbcType=VARCHAR},unix_timestamp()
+		);
+	</insert>
+</mapper>

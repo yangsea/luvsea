@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="gdzy.shop.dao.StaffMapper" >
+  <resultMap id="BaseResultMap" type="gdzy.shop.pojo.Staff" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="uid" property="uid" jdbcType="INTEGER" />
+    <result column="group" property="group" jdbcType="INTEGER" />
+    <result column="note" property="note" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="job" property="job" jdbcType="VARCHAR" />
+    <result column="duty" property="duty" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="INTEGER" />
+    <result column="state" property="state" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, uid, `group`, note, `name`, phone, job, duty, create_time, state
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from wemall_worker
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from wemall_worker
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="gdzy.shop.pojo.Staff" >
+    insert into wemall_worker (id, uid, group, 
+      note, name, phone, 
+      job, duty, create_time, 
+      state)
+    values (#{id,jdbcType=INTEGER}, #{uid,jdbcType=INTEGER}, #{group,jdbcType=INTEGER}, 
+      #{note,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
+      #{job,jdbcType=VARCHAR}, #{duty,jdbcType=VARCHAR}, #{createTime,jdbcType=INTEGER}, 
+      #{state,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="gdzy.shop.pojo.Staff" >
+    insert into wemall_worker
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="uid != null" >
+        uid,
+      </if>
+      <if test="group != null" >
+        group,
+      </if>
+      <if test="note != null" >
+        note,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="phone != null" >
+        phone,
+      </if>
+      <if test="job != null" >
+        job,
+      </if>
+      <if test="duty != null" >
+        duty,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="state != null" >
+        state,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="uid != null" >
+        #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="group != null" >
+        #{group,jdbcType=INTEGER},
+      </if>
+      <if test="note != null" >
+        #{note,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="job != null" >
+        #{job,jdbcType=VARCHAR},
+      </if>
+      <if test="duty != null" >
+        #{duty,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=INTEGER},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="gdzy.shop.pojo.Staff" >
+    update wemall_worker
+    <set >
+      <if test="uid != null" >
+        uid = #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="group != null" >
+        group = #{group,jdbcType=INTEGER},
+      </if>
+      <if test="note != null" >
+        note = #{note,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="job != null" >
+        job = #{job,jdbcType=VARCHAR},
+      </if>
+      <if test="duty != null" >
+        duty = #{duty,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=INTEGER},
+      </if>
+      <if test="state != null" >
+        state = #{state,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="gdzy.shop.pojo.Staff" >
+    update wemall_worker
+    set uid = #{uid,jdbcType=INTEGER},
+      group = #{group,jdbcType=INTEGER},
+      note = #{note,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      job = #{job,jdbcType=VARCHAR},
+      duty = #{duty,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=INTEGER},
+      state = #{state,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="getStaffs" resultMap="BaseResultMap" parameterType="gdzy.shop.pojo.Staff" >
+    select 
+    <include refid="Base_Column_List" />
+    from wemall_worker
+    where `name` = #{name,jdbcType=VARCHAR} order by create_time desc;
+  </select>
+</mapper>

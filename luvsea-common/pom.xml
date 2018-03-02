@@ -57,6 +57,23 @@
         <systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/ckfinderplugin-imageresize-2.3.jar</systemPath>
         </dependency>
         <!-- CKFinder end -->
+        
+         <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-redis</artifactId>
+            <version>1.8.4.RELEASE</version>
+        </dependency>
+        
+        <!-- https://mvnrepository.com/artifact/commons-net/commons-net -->
+<!-- 	<dependency> -->
+<!-- 	    <groupId>commons-net</groupId> -->
+<!-- 	    <artifactId>commons-net</artifactId> -->
+<!-- 	    <version>3.6</version> -->
+<!-- 	</dependency> -->
+        
+        <dependencies>
+	   
+</dependencies>
   </dependencies>
 
   <build>

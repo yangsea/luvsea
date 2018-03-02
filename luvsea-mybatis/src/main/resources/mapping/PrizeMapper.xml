@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="gdzy.shop.dao.PrizeMapper" >
+  <resultMap id="BaseResultMap" type="gdzy.shop.pojo.Prize" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="ordersn" property="ordersn" jdbcType="VARCHAR" />
+    <result column="nuid" property="nUid" jdbcType="INTEGER" />
+    <result column="prize_level" property="prizeLevel" jdbcType="INTEGER" />
+    <result column="cateid" property="cateId" jdbcType="INTEGER" />
+    <result column="pid" property="pId" jdbcType="INTEGER" />
+    <result column="cname" property="cName" jdbcType="VARCHAR" />
+    <result column="prize_text" property="prizeText" jdbcType="VARCHAR" />
+    <result column="ccrdate" property="ccrData" jdbcType="TIMESTAMP" />
+    <result column="nstatus" property="nstatus" jdbcType="INTEGER" />
+  </resultMap>
+    <resultMap id="TemplateResultMap" type="gdzy.shop.pojo.ActivityTemplate" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="nenterprise_id" property="nenterpriseId" jdbcType="INTEGER" />
+    <result column="nactivitytype_id" property="nactivitytypeId" jdbcType="INTEGER" />
+    <result column="nmain_activity_id" property="nmainactivityId" jdbcType="INTEGER" />
+    <result column="nactivity_id" property="nactivityId" jdbcType="INTEGER" />
+    <result column="refer" property="refer" jdbcType="VARCHAR" />
+    <result column="points" property="points" jdbcType="INTEGER" />
+    <result column="cdesc" property="cdesc" jdbcType="VARCHAR" />
+    <result column="crman" property="crman" jdbcType="VARCHAR" />
+    <result column="crdate" property="crdate" jdbcType="TIMESTAMP" />
+    <result column="actiontype" property="isAdd" jdbcType="INTEGER" />
+    <result column="cname" property="cname" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+          id,ordersn, nuid, prize_level,cateid,pid,cname,prize_text,nstatus,points
+  </sql>
+  <sql id="Template_Column_List" >
+          id,nenterprise_id, nactivitytype_id, nmain_activity_id,nactivity_id,refer,cdesc,crman,crdate,actiontype,cname
+  </sql>
+  <select id="getPrize" resultMap="BaseResultMap" parameterType="gdzy.shop.pojo.Prize" >
+        select 
+         <include refid="Base_Column_List" />
+	    from  ${extendsFiled}
+	    where id = #{id,jdbcType=INTEGER}
+  </select>
+  
+  <update id="updatePrize" parameterType="gdzy.shop.pojo.Prize" >
+    update ${extendsFiled}
+    set nstatus = 3020 
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  
+<!--   获取模板 -->
+    <select id="getTemplate" resultMap="TemplateResultMap" parameterType="gdzy.shop.pojo.ActivityTemplate" >
+        select 
+         <include refid="Template_Column_List" />
+        from  act_activities_refer
+        where nactivity_id = #{nactivityId,jdbcType=INTEGER}
+  </select>
+  
+</mapper>
